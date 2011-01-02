@@ -14,4 +14,4 @@ This under the MIT License.
 ##Demo Blog
 [http://blog.looseleaf.org/][] (Japanese)
 
-[http://blog.looseleaf.org/][]: http://blog.looseleaf.org/
+[http://blog.looseleaf.org/]: http://blog.looseleaf.org/
