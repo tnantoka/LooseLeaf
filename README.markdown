@@ -7,11 +7,11 @@ This under the MIT License.
 [express]: http://expressjs.com/
 
 ##Getting Started
-[http://looseleaf.org/howto.html][]
+[http://looseleafjs.org/howto.html][]
 
-[http://looseleaf.org/howto.html]: http://looseleaf.org/howto.html
+[http://looseleafjs.org/howto.html]: http://looseleafjs.org/howto.html
 
 ##Demo Blog
-[http://blog.looseleaf.org/][] (Japanese)
+[http://blog.looseleafjs.org/][] (Japanese)
 
-[http://blog.looseleaf.org/]: http://blog.looseleaf.org/
+[http://blog.looseleafjs.org/]: http://blog.looseleafjs.org/
