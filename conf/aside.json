@@ -1,0 +1,19 @@
+{
+	"about": "node.js上で動くブログエンジン\"LooseLeaf\"の開発日誌です。<br />毎日Node関連の記事を書いていきます。",
+	"author": {
+		"name": "tnantoka",
+		"img": "/file/author.png",
+		"links": [
+			{"href": "http://twitter.com/tnantoka", "text": "Twitter(@tnantoka)"},
+			{"href": "http://blog.bornneet.com/", "text": "Blog"}
+		]
+	},
+	"links": [
+		{"href": "http://vicuna.jp/", "text": "Vicuna CMS"},
+		{"href": "http://nodejs.org/", "text": "Node.js"},
+		{"href": "http://expressjs.com/", "text": "Express"},
+		{"href": "http://looseleafjs.org/", "text": "LooseLeaf"},
+		{"href": "http://blog.bornneet.com/", "text": "bornneet.com"},
+		{"href": "/admin/login/", "text": "Login"}
+	]
+}

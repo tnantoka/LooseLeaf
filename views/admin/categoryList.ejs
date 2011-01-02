@@ -1,0 +1,71 @@
+<body class="category double">
+<%- partial('admin/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+				<h2>Category List</h2>
+				<!-- TODO: External css -->
+				<form method="post" action="/admin/category/edit/" style="background: none;" id="editForm">
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Entries</th>
+						<th>Count</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+					<% for (var i in categories) { %>
+					<tr>
+						<td><label for="name_<%= i %>"><%= i %></label></td>
+						<td><input type="text" name="name_<%= i %>" id="name_<%= i %>" value="<%= categories[i].name %>" /></td>
+						<td><a href="/category/<%= i %>/" target="_blank">Entries</a></td>
+						<td><%= categories[i].entries.length %></td>
+						<td><input type="submit" class="submit post" value="Change Name" onclick="document.getElementById('editForm').action = '/admin/category/edit/<%= i %>/';" /></td>
+						<td>
+							<% if (i != 0) { %>
+							<input type="button" class="submit post" value="Delete" onclick="location.href='/admin/category/delete/<%= i %>/';" />
+							<% } else { %>
+							Can't delete
+							<% } %>
+						</td>
+					</tr>
+					<% } %>
+				</table>
+				</form>
+				
+				<!-- New Category form -->
+				<h2>Add Category</h2>
+				<form class="post" method="post" action="/admin/category/new/">
+					<fieldset>
+						<legend>Category Form</legend>
+						<div>
+							<p class="commentModerated">
+								<%- msg %>
+							</p>
+						</div>
+						<dl>
+							<dt>
+								<label for="name">Name</label>
+							</dt>
+							<dd>
+								<input type="text" class="inputField" id="name" name="name" />
+							</dd>
+						</dl>
+						<div class="action">
+							<input type="submit" class="submit post" value="Add" />
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('admin/utilities') %> 
+<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+</div>
+<!--end content-->

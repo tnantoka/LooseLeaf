@@ -1,0 +1,60 @@
+<body class="category double">
+<%- partial('admin/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+			<!-- Post Entry form -->
+			<form class="post" method="post" action="/admin/entry/delete/<%= entry.id %>/">
+				<fieldset>
+					<legend>Login Form</legend>
+					<div>
+						<p class="commentModerated">
+							以下の記事を削除しますか？
+						</p>
+					</div>
+					<dl>
+						<dt>
+							ID
+						</dt>
+						<dd>
+							<%= entry.id %>
+						</dd>
+						<dt>
+							Title
+						</dt>
+						<dd>
+							<%= entry.title %>
+						</dd>
+						<dt>
+							Category
+						</dt>
+						<dd>
+							<%= categories[entry.category].name %>
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
+							Body
+						</dt>
+						<dd>
+							<%= entry.opening %>
+						</dd>
+					</dl>
+					<div class="action">
+						<input type="submit" class="submit post" value="Delete" />
+					</div>
+				</fieldset>
+			</form>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('admin/utilities') %> 
+<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+</div>
+<!--end content-->

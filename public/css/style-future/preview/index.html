@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head profile="http://purl.org/net/ns/metaprof">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../import.css" />
+<link rel="stylesheet" type="text/css" href="debug/debug.css" />
+
+<!-- Auto Reload
+<META HTTP-EQUIV="Refresh" Content="3">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+ -->
+
+<!-- Jquery -->
+<script type="text/javascript" src="debug/jquery141.js"></script>
+<script type="text/javascript" src="debug/debug.js"></script>
+
+
+<title>Index</title>
+</head>
+<body class="mainIndex double">
+<div id="header">
+ <p class="siteName"><a href="#">Skin Preview</a></p>
+ <p class="description">Vicuna Custom Skin</p>
+ <ul id="globalNavi">
+  <li class="current"><a href="#">About</a></li>
+  <li><a href="#">Archives</a></li>
+  <li><a href="#">Guest Book</a></li>
+  <li><a href="#">Bookmarks</a></li>
+ </ul>
+</div>
+<div id="content">
+ <div id="main">
+  <p class="topicPath"><a href="#a1">Home</a> &gt; <a href="#b">XHTML CSS</a> &gt; <span class="current">Movable Type</span></p>
+  <h1>Change with class</h1>
+  <div class="section entry" id="entry000005">
+   <h2><a href="#111">Switching Layout</a></h2>
+   <ul class="info">
+    <li class="date">2007-02-22 (Thu)</li>
+    <li class="category"><a href="#" title="CMS Index">CMS Tool</a></li>
+   </ul>
+   <div class="textBody">
+    <p><img style="float: right;" src="debug/illust_vicuna.png" alt="Vicuna" width="107" height="172" /></p>
+    <p>Vicuna private skin has become the mechanism where layout changes with the class which is added to the body element of the theme source.</p>
+    <p>This has meant the fact that in class for layout which is shown in the  one for skin each templet can be modified in layout of the taste.</p>
+    <p class="clear">You try looking at the modification of layout of the index page as an example.</p>
+    <pre>&lt;body class=&quot;mainIndex <em>double</em>&quot;&gt;</pre>
+    <p class="img_L"><img src="debug/default.gif" width="180" height="130" alt="double" /></p>
+    <p>In initial condition as description above, double and mainIndex class for layout are divided in the space by class attribute, is set as two values. As for mainIndex class it is not necessary to modify in class in order to identify the template.</p>
+    <p>div#utilities in double class becomes a sidebar arranged on side of div#main.</p>
+    <dl>
+     <dt>Single Column</dt>
+     <dd>body class=&quot;<em>single</em>&quot;</dd>
+     <dt>Double Column - Menu on Right</dt>
+     <dd>body class=&quot;<em>double</em>&quot;</dd>
+     <dt>Double Column - Menu on Left</dt>
+     <dd>body class=&quot;<em>double-l</em>&quot;</dd>
+     <dt>Multi Column</dt>
+     <dd>body class=&quot;<em>multi</em>&quot;</dd>
+     <dt>Multi Column - Double Menu on Right</dt>
+     <dd>body class=&quot;<em>multi2</em>&quot;</dd>
+     <dt>Multi Column - Double Menu on Left</dt>
+     <dd>body class=&quot;<em>multi2-l</em>&quot;</dd>
+    </dl>
+    <p class="continue"><a href="#14" title="Movable Type Template Vicuna" rel="nofollow">Continue reading</a></p>
+   </div>
+   <ul class="reaction">
+    <li class="comment"><a href="#15" title="Movable Type Template Vicuna" rel="nofollow">Comment</a>: <span class="count">0</span></li>
+    <li class="trackback"><a href="#16" title="Movable Type Template Vicuna" rel="nofollow">TrackBack</a>: <span class="count">0</span></li>
+   </ul>
+  </div>
+  <div class="section entry" id="entry000004">
+   <h2><a href="#170">single class</a></h2>
+   <ul class="info">
+    <li class="date">2007-02-22 (Thu)</li>
+    <li class="category"><a href="#18" title="Movable Type Index">Movable Type</a></li>
+   </ul>
+   <div class="textBody">
+    <p><img src="debug/default-single.gif" width="180" height="200" alt="double" /></p>
+    <p>div#utilities in single class becomes 2 lines arranged under the div#main.</p>
+    <p class="continue"><a href="#19" rel="nofollow">Continue reading</a></p>
+   </div>
+   <ul class="reaction">
+    <li class="comment"><a href="#20" rel="nofollow">Comment</a>: <span class="count">0</span></li>
+    <li class="trackback"><a href="#21" rel="nofollow">TrackBack</a>: <span class="count">0</span></li>
+   </ul>
+  </div>
+  <div class="section entry" id="entry000003">
+   <h2><a href="#221">multi class</a></h2>
+   <ul class="info">
+    <li class="date">2007-02-22 (Thu)</li>
+    <li class="category"><a href="#23" title="Movable Type Index">Movable Type</a></li>
+   </ul>
+   <div class="textBody">
+    <p class="img_R"><img src="debug/3column-type1.gif" width="180" height="130" alt="multi" /></p>
+    <p>Multiple column module is installed exist in the skin and they are possible to do 3 column indications.</p>
+    <pre class="clear">&lt;body class=&quot;mainIndex <em>multi</em>&quot;&gt;</pre>
+    <p>In multi class as for div#utilities it is developed on left and right of the div#main, the left becomes main navigation.<br />
+     (Depending on the skin of other multi column configuration is possible.)</p>
+    <h3>Tag cloud</h3>
+    <ul class="tagCloud">
+     <li class="level2"><a href="./" title="20 Entries">3DCG</a></li>
+     <li class="level5"><a href="./" title="3 Entries">AKIRA</a></li>
+     <li class="level3"><a href="./" title="14 Entries">Artworks</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Book</a></li>
+     <li class="level2"><a href="./" title="25 Entries">CSS</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Event</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Firefox</a></li>
+     <li class="level2"><a href="./" title="22 Entries">Flash</a></li>
+     <li class="level2"><a href="./" title="19 Entries">HTML</a></li>
+     <li class="level6"><a href="./" title="1 Entries">JavaScript</a></li>
+     <li class="level4"><a href="./" title="5 Entries">Lesson</a></li>
+     <li class="level3"><a href="./" title="10 Entries">Memo</a></li>
+     <li class="level4"><a href="./" title="6 Entries">Modeling</a></li>
+     <li class="level5"><a href="./" title="3 Entries">Modo</a></li>
+     <li class="level3"><a href="./" title="14 Entries">Movable Type</a></li>
+     <li class="level4"><a href="./" title="4 Entries">Murmur</a></li>
+     <li class="level3"><a href="./" title="8 Entries">neta</a></li>
+     <li class="level5"><a href="./" title="3 Entries">Photoshop</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Play</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Poser</a></li>
+     <li class="level4"><a href="./" title="4 Entries">Sample</a></li>
+     <li class="level4"><a href="./" title="7 Entries">School</a></li>
+     <li class="level5"><a href="./" title="3 Entries">SEO</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Skin</a></li>
+     <li class="level4"><a href="./" title="5 Entries">Swift3D</a></li>
+     <li class="level1"><a href="./" title="28 Entries">Tips</a></li>
+     <li class="level3"><a href="./" title="9 Entries">Tool</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Vicuna</a></li>
+     <li class="level2"><a href="./" title="15 Entries">Vicuna CMS</a></li>
+     <li class="level3"><a href="./" title="8 Entries">Web Design</a></li>
+    </ul>
+    <p class="continue"><a href="#25" rel="nofollow">Continue reading</a></p>
+   </div>
+   <ul class="reaction">
+    <li class="comment"><a href="#26" rel="nofollow">Comment</a>: <span class="count">0</span></li>
+    <li class="trackback"><a href="#27" rel="nofollow">TrackBack</a>: <span class="count">0</span></li>
+   </ul>
+  </div>
+  <div class="section entry" id="entry000002">
+   <h2><a href="#281">Eye Catch Module</a></h2>
+   <ul class="info">
+    <li class="date">2007-02-22 (Thu)</li>
+    <li class="category"><a href="#29" title="Movable Type Index">Movable Type</a></li>
+   </ul>
+   <div class="textBody">
+    <p>The Eye Catch image is the element which gives visual impact to the visitor at the time of page designing directly.</p>
+    <p>Here is insertion and the edit method of the Eye Catch image.</p>
+    <pre>&lt;body class=&quot;mainIndex <em>eye-c</em>&quot;&gt;</pre>
+    <dl class="data">
+     <dt>body class="eye-h"</dt>
+     <dd><img src="debug/icon_layout07.png" alt="header" width="120" height="100" /></dd>
+     <dt>body class="eye-c"</dt>
+     <dd><img src="debug/icon_layout08.png" alt="content" width="120" height="100" /></dd>
+     <dt>body class=&quot;eye-m&quot;</dt>
+     <dd><img src="debug/icon_layout09.png" alt="content" width="120" height="100" /></dd>
+     <dt>body class=&quot;multi eye-h&quot;</dt>
+     <dd><img src="debug/icon_layout10.png" alt="content" width="120" height="100" /></dd>
+    </dl>
+    <ul class="flip" id="flip2">
+     <li class="newer">Newer: <a href="#ssww">Movable Type Template Vicuna</a></li>
+     <li class="older">Older: <a href="#sssw">Web Standards Design</a></li>
+    </ul>
+    <p class="continue"><a href="#30" rel="nofollow">Continue reading</a></p>
+   </div>
+   <ul class="reaction">
+    <li class="comment"><a href="#31" rel="nofollow">Comment</a>: <span class="count">0</span></li>
+    <li class="trackback"><a href="#32" rel="nofollow">TrackBack</a>: <span class="count">0</span></li>
+   </ul>
+  </div>
+  <p class="archives"><a href="#">More...</a></p>
+  <p class="topicPath" id="path2"><a href="#" title="Home">Home</a></p>
+ </div>
+ <!-- end main-->
+ <div id="utilities">
+  <!--
+		<div class="freeSpace">
+			<ul>
+				<li>a</li>
+				<li>a</li>
+				<li>a</li>
+
+			</ul>
+		</div>
+-->
+  <dl class="navi">
+   <dt>About</dt>
+   <dd>
+    <p>Text Text Text</p>
+   </dd>
+   <dt>Calendar</dt>
+   <dd>
+    <table class="calendar" cellpadding="0" cellspacing="0" summary="Monthly calendar">
+     <caption>
+     &laquo; February 2007 <a href="#" title="Older" rel="nofollow">&raquo;</a>
+     </caption>
+     <tr>
+      <th class="sun" title="Sunday">S</th>
+      <th title="Monday">M</th>
+      <th title="Tuesday">T</th>
+      <th title="Wednesday">W</th>
+      <th title="Thursday">T</th>
+      <th title="Friday">F</th>
+      <th class="sat" title="Saturday">S</th>
+     </tr>
+     <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+     </tr>
+     <tr>
+      <td><a href="#111ss">4</a></td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+     </tr>
+     <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+     </tr>
+     <tr>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td><a href="#">22</a></td>
+      <td>23</td>
+      <td class="today">24</td>
+     </tr>
+     <tr>
+      <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+     </tr>
+    </table>
+   </dd>
+   <dt>Recent Entries</dt>
+   <dd>
+    <ul>
+     <li><a href="#001">Movable Type Template Vicuna</a></li>
+     <li><a href="#002">Elements</a></li>
+     <li><a href="#003">Web Standards Design</a></li>
+     <li><a href="#004">Headding Test</a></li>
+     <li><a href="#005">Entry title</a></li>
+    </ul>
+   </dd>
+   <dt>Categories</dt>
+   <dd>
+    <ul>
+     <li><a href="#a1" title="5">CG</a></li>
+     <li><a href="#a2" title="3">Flash</a></li>
+     <li><a href="#a3" title="4">Impressions</a></li>
+     <li><a href="#a4" title="7">Movable Type</a></li>
+     <li><span class="topLevel">Top level Category</span>
+      <ul>
+       <li><span class="topLevel">Sub Category</span></li>
+       <li><span class="topLevel">Sub Category</span></li>
+       <li><span class="topLevel"><a href="#b1">Sub Category</a></span></li>
+      </ul>
+     </li>
+     <li><a href="#a6" title="4">Web</a></li>
+     <li><a href="#a7" title="13">XHTML CSS</a></li>
+    </ul>
+   </dd>
+   <dt>Archives</dt>
+   <dd>
+    <ul>
+     <li><a href="#a8" title="1" rel="nofollow">2007-02</a></li>
+     <li><a href="#a9" title="2" rel="nofollow">2006-05</a></li>
+     <li><a href="#a10" title="1" rel="nofollow">2006-04</a></li>
+     <li><a href="#a11">All</a></li>
+    </ul>
+   </dd>
+  </dl>
+  <!--end navi-->
+  <dl class="others">
+   <dt>Search</dt>
+   <dd>
+    <form method="get" action="#">
+     <fieldset>
+      <legend>
+      <label for="searchKeyword">Search</label>
+      </legend>
+      <div>
+       <input type="hidden" name="IncludeBlogs" value="1" />
+       <input type="text" class="inputField" id="searchKeyword"  name="search" size="10" onfocus="if (this.value == 'Keyword(s)') this.value = '';" onblur="if (this.value == '') this.value = 'Keyword(s)';" value="Keyword(s)" />
+       <input type="submit" class="submit" id="submit" value="Search" />
+      </div>
+     </fieldset>
+    </form>
+   </dd>
+   <dt>Feeds</dt>
+   <dd>
+    <ul class="feed">
+     <li class="rss"><a href="#">RSS2.0</a></li>
+     <li class="atom"><a href="#">ATOM</a></li>
+    </ul>
+   </dd>
+   <dt>Tag Cloud</dt>
+   <dd>
+    <ul class="tagCloud">
+     <li class="level2"><a href="./" title="20 Entries">3DCG</a></li>
+     <li class="level5"><a href="./" title="3 Entries">AKIRA</a></li>
+     <li class="level3"><a href="./" title="14 Entries">Artworks</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Book</a></li>
+     <li class="level2"><a href="./" title="25 Entries">CSS</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Event</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Firefox</a></li>
+     <li class="level2"><a href="./" title="22 Entries">Flash</a></li>
+     <li class="level2"><a href="./" title="19 Entries">HTML</a></li>
+     <li class="level6"><a href="./" title="1 Entries">JavaScript</a></li>
+     <li class="level4"><a href="./" title="5 Entries">Lesson</a></li>
+     <li class="level3"><a href="./" title="10 Entries">Memo</a></li>
+     <li class="level4"><a href="./" title="6 Entries">Modeling</a></li>
+     <li class="level5"><a href="./" title="3 Entries">Modo</a></li>
+     <li class="level3"><a href="./" title="14 Entries">Movable Type</a></li>
+     <li class="level4"><a href="./" title="4 Entries">Murmur</a></li>
+     <li class="level3"><a href="./" title="8 Entries">neta</a></li>
+     <li class="level5"><a href="./" title="3 Entries">Photoshop</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Play</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Poser</a></li>
+     <li class="level4"><a href="./" title="4 Entries">Sample</a></li>
+     <li class="level4"><a href="./" title="7 Entries">School</a></li>
+     <li class="level5"><a href="./" title="3 Entries">SEO</a></li>
+     <li class="level6"><a href="./" title="1 Entries">Skin</a></li>
+     <li class="level4"><a href="./" title="5 Entries">Swift3D</a></li>
+     <li class="level1"><a href="./" title="28 Entries">Tips</a></li>
+     <li class="level3"><a href="./" title="9 Entries">Tool</a></li>
+     <li class="level5"><a href="./" title="2 Entries">Vicuna</a></li>
+     <li class="level2"><a href="./" title="15 Entries">Vicuna CMS</a></li>
+     <li class="level3"><a href="./" title="8 Entries">Web Design</a></li>
+    </ul>
+   </dd>
+   <dt>Links</dt>
+   <dd>
+    <ul>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+     <li><a href="#">Website Link</a></li>
+    </ul>
+   </dd>
+  </dl>
+  <!--end others-->
+ </div>
+ <!--end utilities-->
+ <p class="return"><a href="#header">Return to page top</a></p>
+</div>
+<!--end content-->
+<div id="footer">
+ <ul class="support">
+  <li>Powered by Vicuna CMS</li>
+ </ul>
+ <address>
+ Copyright &copy; 3ping.org All Rights Reserved.
+ </address>
+</div>
+</body>
+</html>

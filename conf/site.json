@@ -1,0 +1,18 @@
+{
+	"siteName": "Daily Node",
+	"description": "LooseLeaf開発日誌",
+	
+	"userId": "admin",
+	"password": "pass",
+	
+	"recentEntries": 5,
+	"indexEntries": 5,
+	"listEntries": 10,
+	
+	"useBundleLib": false,
+	"viewEngine": "ejs",
+	"port": 3000,
+	
+	"opening": 100,
+	"continue": "…"
+}
