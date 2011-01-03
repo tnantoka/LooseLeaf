@@ -97,11 +97,17 @@ for (var i = 0; i < Entries.length; i++) {
 /* Require third-party modules */
 if (Conf.site.useBundleLib) {
 	require.paths.unshift(__dirname + '/lib/');
-	var express = require('express');
-	var form = require('connect-form');
-} else {
-	var express = require('express');
-	var form = require('connect-form');
+}
+var express = require('express');
+var form = require('connect-form');
+var daemon = require('daemon');
+
+/* Daemon */
+daemon.run(__dirname + '/logs/looseleaf.log', __dirname + '/pids/looseleaf.pid', function (err, started) {
+
+if (err) {
+	console.log('Error starting daemon: ' + err);
+	return;
 }
 
 /* Create express server and export for spark */
@@ -374,3 +380,7 @@ if (!module.parent) {
 if (Conf.site.password == 'pass') {
 	console.log('[warning] Your password is default! Please change immediately!!');
 }
+
+/* Daemon */
+console.log('Daemon started successfully');
+});
