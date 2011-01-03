@@ -102,8 +102,39 @@ var express = require('express');
 var form = require('connect-form');
 var daemon = require('daemon');
 
+/* Global Functions */
+
+// Set common property to locals
+function initLocals(locals) {
+	locals.siteName = Conf.site.siteName;
+	locals.description = Conf.site.description;
+
+	locals.about = Conf.aside.about,
+	locals.author = Conf.aside.author, 
+	locals.links = Conf.aside.links
+	
+	locals.categories = Conf.categories;
+	locals.tags = Conf.tags;
+
+	// Recent Entries
+	var recent = [];
+	for (var i = 0; i < Conf.site.recentEntries; i++) {
+		if (Entries[i]) {
+			recent.push(Entries[i]);
+		}
+	}
+	locals.recent = recent;
+
+	return locals
+}
+
+// Make opening contents
+function makeOpening(body) {
+	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
+}
+
 /* Daemon */
-daemon.run(__dirname + '/logs/looseleaf.log', __dirname + '/pids/looseleaf.pid', function (err, started) {
+daemon.run('logs/looseleaf.log', 'pids/looseleaf.pid', function (err, started) {
 
 if (err) {
 	console.log('Error starting daemon: ' + err);
@@ -149,38 +180,6 @@ app.configure('production', function() {
 //		res.send('error');
 //	});
 });
-
-/* Global Functions */
-
-// Set common property to locals
-function initLocals(locals) {
-	locals.siteName = Conf.site.siteName;
-	locals.description = Conf.site.description;
-
-	locals.about = Conf.aside.about,
-	locals.author = Conf.aside.author, 
-	locals.links = Conf.aside.links
-	
-	locals.categories = Conf.categories;
-	locals.tags = Conf.tags;
-
-	// Recent Entries
-	var recent = [];
-	for (var i = 0; i < Conf.site.recentEntries; i++) {
-		if (Entries[i]) {
-			recent.push(Entries[i]);
-		}
-	}
-	locals.recent = recent;
-
-	return locals
-}
-
-// Make opening contents
-function makeOpening(body) {
-	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
-}
-
 
 /* Set routes */
 
