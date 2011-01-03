@@ -22,7 +22,7 @@
 			<dt><a href="/entry/<%= entries[i].id %>/"><%= entries[i].title %></a><span class="date"> - Posted date: <%= entries[i].date %></span></dt>
 			<dd>
 				<ul>
-					<li class="textBody"><%= entries[i].opening %>…</li>
+					<li class="textBody"><%- entries[i].opening %>…</li>
 					<li class="author">Posted by: <span class="name"><%= author.name %></span></li>
 					<li class="category">Category: <a href="./" title="<%= categories[entries[i].category].name %> Index"><%= categories[entries[i].category].name %></a></li>
 					<!-- TODO: Tags
