@@ -1,0 +1,18 @@
+{
+	"id": 1,
+	"title": "あああ",
+	"date": "Tue Jan 04 2011 22:03:10 GMT+0900 (JST)",
+	"category": "0",
+	"tags": [],
+	"body": "おおおお",
+	"comments": [
+		{
+			"author": "時間",
+			"email": "",
+			"uri": "http://",
+			"body": "時間",
+			"date": "Tue Jan 04 2011 22:03:23 GMT+0900 (JST)"
+		}
+	],
+	"trackbacks": []
+}

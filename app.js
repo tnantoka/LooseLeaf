@@ -133,6 +133,19 @@ function makeOpening(body) {
 	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
 }
 
+/* Create express server and export for spark */
+var app = module.exports = express.createServer(
+	// For uploading files
+	form({ keepExtensions: true })
+);
+
+/* No daemon mode for mac */
+if (process.argv[2] == 'nodeamon') {
+	daemon.run = function(log, pid, func) {
+		func();
+	};
+}
+
 /* Daemon */
 daemon.run('logs/looseleaf.log', 'pids/looseleaf.pid', function (err, started) {
 
@@ -140,12 +153,6 @@ if (err) {
 	console.log('Error starting daemon: ' + err);
 	return;
 }
-
-/* Create express server and export for spark */
-var app = module.exports = express.createServer(
-	// For uploading files
-	form({ keepExtensions: true })
-);
 
 /* Configuration app */
 app.configure(function() {
@@ -311,6 +318,7 @@ app.post(Mapping.comment, function(req, res) {
 	var email = req.body.email;
 	var uri = req.body.uri;
 	var body = req.body.body;
+	var date = new Date().toString();
 
 	if (isNaN(id) || /^0[0-9]+$/.test(id) || index == -1 || !author || !body) {
 		res.redirect('back');	
@@ -327,7 +335,8 @@ app.post(Mapping.comment, function(req, res) {
 					author: author,
 					email: email,
 					uri: uri,
-					body: body
+					body: body, 
+					date: date
 				});
 				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8', function(err) {
 					if (err) {
