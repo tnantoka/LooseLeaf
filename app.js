@@ -390,5 +390,7 @@ if (Conf.site.password == 'pass') {
 }
 
 /* Daemon */
-console.log('Daemon started successfully');
+if (process.argv[2] != 'nodeamon') {
+	console.log('Daemon started successfully');
+}
 });
