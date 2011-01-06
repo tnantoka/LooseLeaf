@@ -1,6 +1,10 @@
 {
 	"siteName": "Daily Node",
 	"description": "LooseLeaf開発日誌",
+	"copyright": {
+		"href": "http://blog.bornneet.com/",
+		"text": "bornneet.com"
+	},
 	
 	"userId": "admin",
 	"password": "pass",

@@ -108,6 +108,7 @@ var daemon = require('daemon');
 function initLocals(locals) {
 	locals.siteName = Conf.site.siteName;
 	locals.description = Conf.site.description;
+	locals.copyright = Conf.site.copyright;
 
 	locals.about = Conf.aside.about,
 	locals.author = Conf.aside.author, 
