@@ -107,7 +107,7 @@ var daemon = require('daemon');
 
 // Set common property to locals
 function initLocals(locals) {
-	locals.powerdBy = "LooseLeaf " + VERSION;
+	locals.poweredBy = "LooseLeaf " + VERSION;
 
 	locals.siteName = Conf.site.siteName;
 	locals.description = Conf.site.description;
