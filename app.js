@@ -1,9 +1,10 @@
 /*
  * LooseLeaf: A blog engine on node.js & express
  * https://looseleafjs.org/
- * Version: 0.1
  * License: The MIT License
  */
+
+var VERSION = 0.1;
 
 // TODO: Tags
 // TODO: Error page
@@ -106,6 +107,8 @@ var daemon = require('daemon');
 
 // Set common property to locals
 function initLocals(locals) {
+	locals.powerdBy = "LooseLeaf " + VERSION;
+
 	locals.siteName = Conf.site.siteName;
 	locals.description = Conf.site.description;
 	locals.copyright = Conf.site.copyright;
