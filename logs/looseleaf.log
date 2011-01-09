@@ -1,2 +1,7 @@
-[warning] Your password is default! Please change immediately!!
-Daemon started successfully
+"Daily Node" server listening on port 3000
+
+net.js:822
+        if (e.errno != EMFILE) throw e;
+                               ^
+Error: ENOTSOCK, Socket operation on non-socket
+    at IOWatcher.callback (net.js:820:24)

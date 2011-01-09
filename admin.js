@@ -3,9 +3,24 @@
 // TODO: Remove sync API
 
 /* Functions for admin */
+
+// Check session
 function isLogged(req) {
 	return req.session && req.session.userId == Conf.site.userId
 }
+
+/*
+// Analyze tags
+function analyzeTags(body) {
+	var segment = segmenter.segment(body);
+	var tags = {};
+	for (var i = 0; i < segment.length; i++) {
+		tags[segment[i]] = tags[segment[i]] ? tags[segment[i]] + 1 : 1;
+	} 
+	return tags;
+}
+*/
+
 
 /* Set routes for admin */
 

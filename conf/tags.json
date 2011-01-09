@@ -1,10 +1,10 @@
 {
 	"0": {
 		"name": "tag1",
-		"count": 1
+		"entries": []
 	},
 	"1": {
 		"name": "tag2",
-		"count": 2
+		"entries": []
 	}
 }

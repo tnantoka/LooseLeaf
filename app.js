@@ -102,6 +102,8 @@ if (Conf.site.useBundleLib) {
 var express = require('express');
 var form = require('connect-form');
 var daemon = require('daemon');
+// var segmenter = require('./lib/segmenter');
+var atom = require('./lib/atom');
 
 /* Global Functions */
 
@@ -134,6 +136,8 @@ function initLocals(locals) {
 
 // Make opening contents
 function makeOpening(body) {
+	// Remove tag
+	body = body.replace(/<[^>]+?>/g, '');
 	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
 }
 
@@ -202,6 +206,7 @@ var Mapping = {
 	entry: '/entry/:id/', 
 	comment: '/entry/:id/comment/', 
 	category: '/category/:id/', 
+	atom: '/atom',
 	admin: {
 		root: '/admin?', 
 		login: '/admin/login/',
@@ -254,6 +259,8 @@ var View = {
 		}
 	}
 };
+
+/* Routes for general */
 
 // Index
 app.get(Mapping.root, function(req, res) {
@@ -374,6 +381,43 @@ app.get(Mapping.category, function(req, res) {
 			})
 		});
 	}
+});
+
+/* Routes for alternate */
+
+// Atom
+app.get(Mapping.atom, function(req, res) {
+
+	var obj = {};
+	
+	obj.title = Conf.site.siteName;
+	obj.href = Conf.site.href;
+	
+	obj.author = {
+		name: Conf.aside.author.name
+	};
+	
+	// Recent Entries
+	var recent = [];
+	for (var i = 0; i < Conf.site.recentEntries; i++) {
+		if (Entries[i]) {
+			var entry = {};
+			entry.title = Entries[i].title;
+			entry.href = Conf.site.href.replace(/\/$/,  Mapping.entry.replace(':id', Entries[i].id));
+			entry.updated =  Entries[i].date;
+			entry.summary = Entries[i].opening;
+			recent.push(entry);
+		}
+	}
+	
+	obj.entries = recent;
+	
+	console.log(obj);
+	
+	res.contentType('application/atom+xml')
+	res.send(atom.generate(obj));
+
+
 });
 
 /* Include external source file for admin */
