@@ -412,8 +412,6 @@ app.get(Mapping.atom, function(req, res) {
 	
 	obj.entries = recent;
 	
-	console.log(obj);
-	
 	res.contentType('application/atom+xml')
 	res.send(atom.generate(obj));
 
