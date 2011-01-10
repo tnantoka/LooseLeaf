@@ -349,7 +349,7 @@ app.post(Mapping.comment, function(req, res) {
 					body: body, 
 					date: date
 				});
-				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8', function(err) {
+				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "¥t"), 'UTF-8', function(err) {
 					if (err) {
 						res.redirect('back');
 					}
