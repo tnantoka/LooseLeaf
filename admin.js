@@ -253,11 +253,14 @@ app.post(Mapping.admin.entry.edit, function(req, res) {
 					Entries[index].category = entry.category = category;
 					Entries[index].tags = entry.tags = tags;
 					Entries[index].body = entry.body = body;
-					Entries[index].date = entry.date = date;
+// Date is never update
+//					Entries[index].date = entry.date = date;
+					Entries[index].update = entry.update = date;
 					Entries[index].opening = makeOpening(body);
 
-					Entries.unshift(Entries[index]);
-					Entries.splice(index + 1, 1);
+// Not change the sorting order of Entries
+//					Entries.unshift(Entries[index]);
+//					Entries.splice(index + 1, 1);
 	
 					Conf.categories[category].entries.unshift(id);
 

@@ -15,6 +15,9 @@
 	<div class="section entry">
 		<ul class="info">
 			<li class="date"><%= entry.date %></li>
+			<% if (entry.update) { %>
+			<li class="date update">Update: <%= entry.update %></li>
+			<% } %>
 			<li class="category"><a href="/category/<%= entry.category %>/" title="<%= categories[entry.category].name %> Index"><%= categories[entry.category].name %></a></li>
 			<li class="tag">
 			<% for (var i = 0; i < entry.tags.length; i++) { %>

@@ -52,6 +52,7 @@ var Entries = (function() {
 			id: entry.id,
 			title: entry.title,
 			date: entry.date,
+			update: entry.update,
 			category: entry.category,
 			tags: entry.tags,
 			comments: entry.comments.length,

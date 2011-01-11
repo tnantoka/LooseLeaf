@@ -9,6 +9,9 @@
 		<h2><a href="/entry/<%= entries[i].id %>/"><%= entries[i].title %></a></h2>
 		<ul class="info">
 			<li class="date"><%= entries[i].date %></li>
+			<% if (entries[i].update) { %>
+			<li class="date update">Update: <%= entries[i].update %></li>
+			<% } %>
 			<li class="category"><a href="/category/<%= entries[i].category %>/" title="<%= categories[entries[i].category].name %> Index"><%= categories[entries[i].category].name %></a></li>
 			<li class="tag">
 			<% for (var j = 0; j < entries[i].tags.length; j++) { %>

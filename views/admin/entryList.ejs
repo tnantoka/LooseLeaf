@@ -11,6 +11,7 @@
 						<th>ID</th>
 						<th>Title</th>
 						<th>Date</th>
+						<th>Update</th>
 						<th>Category</th>
 						<th>Comments</th>
 						<th>Edit</th>
@@ -20,7 +21,15 @@
 					<tr>
 						<td><%= entries[i].id %></td>
 						<td><a href="/entry/<%= entries[i].id %>/" target="_blank"><%= entries[i].title %></a></td>
-						<td><%= entries[i].date %></td>
+						<td>
+							<%= entries[i].date %>
+						</td>
+						<td>
+							<% if (entries[i].update) { %>
+								<span class="update"><%= entries[i].update %></span>
+							<% } %>
+							&nbsp;
+						</td>
 						<td><%= categories[entries[i].category].name %></td>
 						<td><%= entries[i].comments %></td>
 						<td><input type="button" class="submit post" value="Edit" onclick="location.href='/admin/entry/edit/<%= entries[i].id %>/';" /></td>
