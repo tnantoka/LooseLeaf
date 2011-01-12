@@ -139,7 +139,7 @@ app.post(Mapping.admin.entry.new, function(req, res) {
 			Entries.unshift({
 				id: id,
 				title: title,
-				date: date,
+				date: toReadableDate(date),
 				category: category,
 				tags: [],
 				comments: 0,
@@ -255,7 +255,8 @@ app.post(Mapping.admin.entry.edit, function(req, res) {
 					Entries[index].body = entry.body = body;
 // Date is never update
 //					Entries[index].date = entry.date = date;
-					Entries[index].update = entry.update = date;
+					entry.update = date;
+					Entries[index].update = toReadableDate(entry.update);
 					Entries[index].opening = makeOpening(body);
 
 // Not change the sorting order of Entries

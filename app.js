@@ -51,8 +51,9 @@ var Entries = (function() {
 		entries.push({
 			id: entry.id,
 			title: entry.title,
-			date: entry.date,
-			update: entry.update,
+			// TODO: toReadable when store file
+			date: toReadableDate(entry.date),
+			update: toReadableDate(entry.update),
 			category: entry.category,
 			tags: entry.tags,
 			comments: entry.comments.length,
@@ -140,6 +141,40 @@ function makeOpening(body) {
 	// Remove tag
 	body = body.replace(/<[^>]+?>/g, '');
 	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
+}
+
+// Date to readable string
+function toReadableDate(s) {
+	
+	if (!s) return;
+	
+	var date = new Date(s);
+	
+	var year = date.getFullYear();
+	var month = fillZero((date.getMonth() + 1), 2);
+	var day = fillZero(date.getDate(), 2);
+	var hours = fillZero(date.getHours(), 2);
+	var minutes = fillZero(date.getMinutes(), 2);
+	var seconds = fillZero(date.getSeconds(), 2);
+
+	var offset = date.getTimezoneOffset();
+	var offsetSign = offset > 0 ? '-' : '+';
+	var offsetHours = fillZero(Math.floor(Math.abs(offset) / 60), 2)
+	var offsetMinutes = fillZero(Math.abs(offset) % 60, 2);
+
+	var dateString = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds + offsetSign + offsetHours + ':' + offsetMinutes;
+
+	return dateString;
+}
+
+// TODO: to Util class
+// Fill zero for string
+function fillZero(s, n) {
+	var zero = '';
+	for (var i = 0; i < n; i++) {
+		zero += '0';
+	} 
+	return (zero + s).slice(-n);
 }
 
 /* Create express server and export for spark */
