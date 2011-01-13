@@ -215,7 +215,7 @@ app.configure(function() {
 // session.regenerate() error occurs
 //	app.use(app.router);
 
-	app.use(express.staticProvider(__dirname + '/public'));
+	app.use(express.staticProvider(baseDir + '/public'));
 
 // For session support
 	app.use(express.cookieDecoder());
