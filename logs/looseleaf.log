@@ -1,6 +1,0 @@
-
-net.js:822
-        if (e.errno != EMFILE) throw e;
-                               ^
-Error: ENOTSOCK, Socket operation on non-socket
-    at IOWatcher.callback (net.js:820:24)
