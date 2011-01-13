@@ -17,11 +17,15 @@ var crypto = require('crypto');
 
 /* Configure your looseleaf */
 
+
+var baseDir = process.argv[2].indexOf('basedir=') != -1 ? process.argv[2].replace('basedir=', '') : '.';
+var noDeamon = (process.argv[3] || process.argv[2]) == 'nodeamon';
+
 // File paths
 var Path = {
-	conf: 'conf/',
-	entries: 'entries/',
-	file: __dirname + '/public/file/'
+	conf: baseDir + '/conf/',
+	entries: baseDir + '/entries/',
+	file: baseDir + '/public/file/'
 };
 
 // Load conf files
@@ -184,7 +188,7 @@ var app = module.exports = express.createServer(
 );
 
 /* No daemon mode for mac */
-if (process.argv[2] == 'nodeamon') {
+if (noDeamon) {
 	daemon.run = function(log, pid, func) {
 		func();
 	};
@@ -472,7 +476,7 @@ if (Conf.site.password == 'pass') {
 }
 
 /* Daemon */
-if (process.argv[2] != 'nodeamon') {
+if (noDeamon) {
 	console.log('Daemon started successfully');
 }
 });

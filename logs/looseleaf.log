@@ -1,4 +1,3 @@
-"Daily Node" server listening on port 3000
 
 net.js:822
         if (e.errno != EMFILE) throw e;
