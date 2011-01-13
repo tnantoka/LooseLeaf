@@ -244,6 +244,7 @@ var Mapping = {
 	top: '/index/0/', 
 	index: '/index/:offset/', 
 	entry: '/entry/:id/', 
+	entry2: '/entry2/:id/', 
 	comment: '/entry/:id/comment/', 
 	category: '/category/:id/', 
 	atom: '/atom',
@@ -277,6 +278,7 @@ var Mapping = {
 var View = {
 	index: 'index', 
 	entry: 'entry', 
+	entry2: 'entry2', 
 
 	admin: {
 		login: 'admin/login',
@@ -347,6 +349,35 @@ app.get(Mapping.entry, function(req, res) {
 			else {
 				var entry = JSON.parse(data);
 				res.render(View.entry, {
+					locals: initLocals({
+						pageTitle: entry.title,
+						msg: '',
+						entry: entry,
+						prev: index - 1 >= 0 ? Entries[index - 1] : null,
+						next: index + 1 < Entries.length ? Entries[index + 1] : null,
+					})				
+				});
+			}
+		});
+	}
+});
+
+// Show entry2
+app.get(Mapping.entry2, function(req, res) {
+	var id = req.params.id;
+	var index = Entries.getIndex(id);
+	if (isNaN(id) || /^0[0-9]+$/.test(id) || index == -1) {
+		res.redirect(Mapping.top);
+	}
+	else {
+		id = parseInt(id);
+		fs.readFile(Path.entries + id + '.json', 'UTF-8', function(err, data) {
+			if (err) {
+				res.redirect(Mapping.top);
+			}
+			else {
+				var entry = JSON.parse(data);
+				res.render(View.entry2, {
 					locals: initLocals({
 						pageTitle: entry.title,
 						msg: '',
@@ -476,7 +507,7 @@ if (Conf.site.password == 'pass') {
 }
 
 /* Daemon */
-if (noDeamon) {
+if (!noDeamon) {
 	console.log('Daemon started successfully');
 }
 });
