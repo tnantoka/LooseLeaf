@@ -5,3 +5,7 @@ span.update {
 	color: red;
 }
 
+.entry2 div#utilities {
+	display: none;
+	boder: 1px solid red;
+}

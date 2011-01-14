@@ -1,7 +1,9 @@
-<body class="individual single">
+<body class="individual single entry2">
 <%- partial('header') %>
+	<p id="socketControl2"><a href="#">Hello, WebSocket!</a></p>
 <div id="content">
 <div id="main">
+	<p id="socketControl"><a href="#" title="Hello, WebSocket!">&#x25B7;</a></p>
 	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/category/<%= entry.category %>/"><%= categories[entry.category].name %></a> &gt; <span class="current"><%= pageTitle %></span></p>
 	<ul class="flip" id="flip1">
 		<% if (prev != null) { %>
@@ -112,6 +114,7 @@
 </div>
 <!-- end main-->
 <%- partial('utilities') %> 
+<%- partial('utilities2') %> 
 <p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
 </div>
 <!--end content-->
