@@ -348,6 +348,10 @@ app.get(Mapping.entry, function(req, res) {
 			}
 			else {
 				var entry = JSON.parse(data);
+				
+				entry.date = Entries[index].date;
+				entry.update = Entries[index].update;
+				
 				res.render(View.entry, {
 					locals: initLocals({
 						pageTitle: entry.title,
