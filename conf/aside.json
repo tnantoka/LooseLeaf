@@ -15,5 +15,12 @@
 		{"href": "http://looseleafjs.org/", "text": "LooseLeaf"},
 		{"href": "http://blog.bornneet.com/", "text": "bornneet.com"},
 		{"href": "/admin/login/", "text": "Login"}
+	], 
+	"globalNavi": [
+		{"href": "http://looseleafjs.org/", "text": "Home"},
+		{"href": "/", "text": "Blog", "current": true},
+		{"href": "http://expressjs.com/", "text": "Express"},
+		{"href": "https://github.com/tnantoka/LooseLeaf/downloads", "text": "Download"},
+		{"href": "https://github.com/tnantoka/LooseLeaf", "text": "Source"}
 	]
 }

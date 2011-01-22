@@ -121,9 +121,10 @@ function initLocals(locals) {
 	locals.description = Conf.site.description;
 	locals.copyright = Conf.site.copyright;
 
-	locals.about = Conf.aside.about,
-	locals.author = Conf.aside.author, 
-	locals.links = Conf.aside.links
+	locals.about = Conf.aside.about;
+	locals.author = Conf.aside.author; 
+	locals.links = Conf.aside.links;
+	locals.globalNavi = Conf.aside.globalNavi;
 	
 	locals.categories = Conf.categories;
 	locals.tags = Conf.tags;
@@ -381,6 +382,10 @@ app.get(Mapping.entry2, function(req, res) {
 			}
 			else {
 				var entry = JSON.parse(data);
+				
+				entry.date = Entries[index].date;
+				entry.update = Entries[index].update;
+				
 				res.render(View.entry2, {
 					locals: initLocals({
 						pageTitle: entry.title,

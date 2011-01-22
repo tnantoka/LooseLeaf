@@ -2,9 +2,12 @@
 	<p class="siteName"><a href="/"><%= siteName %></a></p>
 	<p class="description"><%= description %></p>
 	<ul id="globalNavi">
-		<li><a href="http://looseleafjs.org/">Home</a></li>
-		<li class="current"><a href="/">Blog</a></li>
-		<li><a href="https://github.com/tnantoka/LooseLeaf/downloads">Download</a></li>
-		<li><a href="https://github.com/tnantoka/LooseLeaf">Source</a></li>
+		<% for (var i in globalNavi) { %>
+			<li
+			<% if (globalNavi[i].current) { %>
+				class="current"
+			<% } %>	
+			><a href="<%= globalNavi[i].href %>"><%= globalNavi[i].text %></a></li>	
+		<% } %>
 	</ul>
 </div>
