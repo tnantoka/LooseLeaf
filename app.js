@@ -13,7 +13,6 @@ var VERSION = 0.1;
 
 /* Require standard modules */
 var fs = require('fs');
-var crypto = require('crypto');
 
 /* Configure your looseleaf */
 
@@ -501,6 +500,7 @@ app.get(Mapping.atom, function(req, res) {
 /* Include external source file for admin */
 // TODO: Build
 eval(fs.readFileSync('admin.js', 'UTF-8'));
+//require('admin')(app);
 
 /* Only listen on $ node app.js */
 if (!module.parent) {

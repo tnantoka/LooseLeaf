@@ -21,6 +21,8 @@ function analyzeTags(body) {
 }
 */
 
+//module.exports = exports = function(app) {
+
 
 /* Set routes for admin */
 
@@ -558,3 +560,5 @@ app.post(Mapping.admin.file.delete, function(req, res) {
 	}
 });
 
+
+//};
