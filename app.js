@@ -16,7 +16,6 @@ var fs = require('fs');
 
 /* Configure your looseleaf */
 
-
 var baseDir = process.argv[2].indexOf('basedir=') != -1 ? process.argv[2].replace('basedir=', '') : '.';
 var noDeamon = (process.argv[3] || process.argv[2]) == 'nodeamon';
 
@@ -33,23 +32,24 @@ var Conf = {
 	aside: JSON.parse(fs.readFileSync(Path.conf + 'aside.json', 'UTF-8')), 
 	categories: JSON.parse(fs.readFileSync(Path.conf + 'categories.json', 'UTF-8')), 
 	tags: JSON.parse(fs.readFileSync(Path.conf + 'tags.json', 'UTF-8'))
-}
+};
 
 // Init Entries
 var Entries = (function() {
 	var entries = [];
+	var i = 0;
 
 	var files = fs.readdirSync(Path.entries);
 	var jsonFiles = [];
 	// Select only .json files
-	for (var i = 0; i < files.length; i++) {
+	for (i = 0; i < files.length; i++) {
 		if (/^[0-9]+.json$/.test(files[i])) {
 			jsonFiles.push(files[i]);
 		}
 	}
 
 	// Init entries meta info
-	for (var i = 0; i < jsonFiles.length; i++) {
+	for (i = 0; i < jsonFiles.length; i++) {
 		var entry = JSON.parse(fs.readFileSync(Path.entries + jsonFiles[i]));
 		entries.push({
 			id: entry.id,
@@ -84,7 +84,7 @@ var Entries = (function() {
 				return i;
 			}
 		}
-		return -1
+		return -1;
 	};
 	
 	entries.getIndex = getIndex;
@@ -94,7 +94,9 @@ var Entries = (function() {
 
 // Init categories
 for (var i in Conf.categories) {
-	Conf.categories[i].entries = [];	
+	if (Conf.categories.hasOwnProperty(i)) {
+		Conf.categories[i].entries = [];	
+	}
 }
 for (var i = 0; i < Entries.length; i++) {
 	Conf.categories[Entries[i].category].entries.push(Entries[i].id);
@@ -137,20 +139,22 @@ function initLocals(locals) {
 	}
 	locals.recent = recent;
 
-	return locals
+	return locals;
 }
 
 // Make opening contents
 function makeOpening(body) {
 	// Remove tag
 	body = body.replace(/<[^>]+?>/g, '');
-	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continue : '');
+	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continueSign : '');
 }
 
 // Date to readable string
 function toReadableDate(s) {
 	
-	if (!s) return;
+	if (!s) { 
+		return;
+	}
 	
 	var date = new Date(s);
 	
@@ -163,7 +167,7 @@ function toReadableDate(s) {
 
 	var offset = date.getTimezoneOffset();
 	var offsetSign = offset > 0 ? '-' : '+';
-	var offsetHours = fillZero(Math.floor(Math.abs(offset) / 60), 2)
+	var offsetHours = fillZero(Math.floor(Math.abs(offset) / 60), 2);
 	var offsetMinutes = fillZero(Math.abs(offset) % 60, 2);
 
 	var dateString = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds + offsetSign + offsetHours + ':' + offsetMinutes;
@@ -219,7 +223,7 @@ app.configure(function() {
 
 // For session support
 	app.use(express.cookieDecoder());
-	app.use(express.session());
+	app.use(express.session({secret: 'looseleafjs'}));
 });
 
 // Default
@@ -255,22 +259,22 @@ var Mapping = {
 		index: '/admin/index/',
 		ref: '/admin/login/?ref=' ,
 		entry: {
-			new: '/admin/entry/new/', 
+			add: '/admin/entry/add/', 
 			edit: '/admin/entry/edit/:id/', 
 			list: '/admin/entry/list/', 
-			delete: '/admin/entry/delete/:id/', 
+			remove: '/admin/entry/remove/:id/'
 		}, 
 		category: {
-			new: '/admin/category/new/',
+			add: '/admin/category/add/',
 			list: '/admin/category/list/',
 			edit: '/admin/category/edit/:id/',
-			delete: '/admin/category/delete/:id/',
+			remove: '/admin/category/remove/:id/'
 		},
 		file: {
-			new: '/admin/file/new/',
+			add: '/admin/file/add/',
 			list: '/admin/file/list/',
 			confirm: '/admin/file/confirm/',
-			delete: '/admin/file/delete/',
+			remove: '/admin/file/remove/'
 		}
 	}
 };
@@ -289,15 +293,15 @@ var View = {
 			result: 'admin/entryResult', 
 			list: 'admin/entryList', 
 			confirm: 'admin/entryConfirm', 
-			delete: 'admin/entryDelete', 
+			remove: 'admin/entryRemove' 
 		},
 		category: {
 			list: 'admin/categoryList', 
-			confirm: 'admin/categoryConfirm', 
+			confirm: 'admin/categoryConfirm'
 		},
 		file: {
 			list: 'admin/fileList', 
-			confirm: 'admin/fileConfirm', 
+			confirm: 'admin/fileConfirm'
 		}
 	}
 };
@@ -310,11 +314,11 @@ app.get(Mapping.root, function(req, res) {
 });
 app.get(Mapping.index, function(req, res) {
 	var offset = req.params.offset;
-	if ((isNaN(offset) || /^0[0-9]+$/.test(offset) || offset < 0 || offset >= Entries.length / Conf.site.indexEntries) && Entries.length != 0) {
+	if ((isNaN(offset) || /^0[0-9]+$/.test(offset) || offset < 0 || offset >= Entries.length / Conf.site.indexEntries) && Entries.length !== 0) {
 		res.redirect(Mapping.top);
 	}
 	else {
-		offset = parseInt(offset);
+		offset = parseInt(offset, 10);
 		var entries = [];
 		var start = offset * Conf.site.indexEntries;
 		for (var i = start; i < start + Conf.site.indexEntries; i++) {
@@ -341,7 +345,7 @@ app.get(Mapping.entry, function(req, res) {
 		res.redirect(Mapping.top);
 	}
 	else {
-		id = parseInt(id);
+		id = parseInt(id, 10);
 		fs.readFile(Path.entries + id + '.json', 'UTF-8', function(err, data) {
 			if (err) {
 				res.redirect(Mapping.top);
@@ -358,7 +362,7 @@ app.get(Mapping.entry, function(req, res) {
 						msg: '',
 						entry: entry,
 						prev: index - 1 >= 0 ? Entries[index - 1] : null,
-						next: index + 1 < Entries.length ? Entries[index + 1] : null,
+						next: index + 1 < Entries.length ? Entries[index + 1] : null
 					})				
 				});
 			}
@@ -374,7 +378,7 @@ app.get(Mapping.entry2, function(req, res) {
 		res.redirect(Mapping.top);
 	}
 	else {
-		id = parseInt(id);
+		id = parseInt(id, 10);
 		fs.readFile(Path.entries + id + '.json', 'UTF-8', function(err, data) {
 			if (err) {
 				res.redirect(Mapping.top);
@@ -391,7 +395,7 @@ app.get(Mapping.entry2, function(req, res) {
 						msg: '',
 						entry: entry,
 						prev: index - 1 >= 0 ? Entries[index - 1] : null,
-						next: index + 1 < Entries.length ? Entries[index + 1] : null,
+						next: index + 1 < Entries.length ? Entries[index + 1] : null
 					})				
 				});
 			}
@@ -456,7 +460,7 @@ app.get(Mapping.category, function(req, res) {
 		res.render('category', {
 			locals: initLocals({
 				pageTitle: Conf.categories[id].name,
-				entries: entries,
+				entries: entries
 			})
 		});
 	}
@@ -491,7 +495,7 @@ app.get(Mapping.atom, function(req, res) {
 	
 	obj.entries = recent;
 	
-	res.contentType('application/atom+xml')
+	res.contentType('application/atom+xml');
 	res.send(atom.generate(obj));
 
 

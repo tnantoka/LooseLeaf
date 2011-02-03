@@ -6,7 +6,7 @@
 
 // Check session
 function isLogged(req) {
-	return req.session && req.session.userId == Conf.site.userId
+	return req.session && req.session.userId == Conf.site.userId;
 }
 
 /*
@@ -80,7 +80,7 @@ app.get(Mapping.admin.index, function(req, res) {
 	else {
 		res.render(View.admin.index, {
 			locals: initLocals({
-				pageTitle: 'Dashboard',
+				pageTitle: 'Dashboard'
 			}), 
 			layout: View.admin.layout
 		});
@@ -95,16 +95,16 @@ app.get(Mapping.admin.logout, function(req, res) {
 });
 
 // Post new entry
-app.get(Mapping.admin.entry.new, function(req, res) {
+app.get(Mapping.admin.entry.add, function(req, res) {
 	if (!isLogged(req)) {
-		res.redirect(Mapping.admin.ref + Mapping.admin.entry.new);
+		res.redirect(Mapping.admin.ref + Mapping.admin.entry.add);
 	}
 	else {
 		res.render(View.admin.entry.form, {
 			locals: initLocals({
 				pageTitle: 'Post New Entry',
 				msg: '',
-				action: Mapping.admin.entry.new,
+				action: Mapping.admin.entry.add,
 				entry: {
 					title: '',
 					category: 0,
@@ -115,27 +115,28 @@ app.get(Mapping.admin.entry.new, function(req, res) {
 		});
 	}
 });
-app.post(Mapping.admin.entry.new, function(req, res) {
+app.post(Mapping.admin.entry.add, function(req, res) {
 	if (!isLogged(req)) {
-		res.redirect(Mapping.admin.ref + Mapping.admin.entry.new);
+		res.redirect(Mapping.admin.ref + Mapping.admin.entry.add);
 	}
 	else {
 		var title = req.body.title;
 		var category = req.body.category;
 		var body = req.body.body;
-		if (!title || category == null || !body) {
+		if (!title || category === null || !body) {
 			res.redirect('back');
 		}
 		else {
-			if (Entries.length != 0) {
+			var id;
+			if (Entries.length !== 0) {
 				var ids = [];
 				for (var i = 0; i < Entries.length; i++) {
 					ids.push(Entries[i].id);
 				}
-				var id = Math.max.apply(null, ids) + 1;
+				id = Math.max.apply(null, ids) + 1;
 			}
 			else {
-				var id = 1;
+				id = 1;
 			}
 			var date = new Date().toString();
 			Entries.unshift({
@@ -188,7 +189,7 @@ app.get(Mapping.admin.entry.list, function(req, res) {
 		res.render(View.admin.entry.list, {
 			locals: initLocals({
 				pageTitle: 'Entry List',
-				entries: Entries,
+				entries: Entries
 			}), 
 			layout: View.admin.layout
 		});
@@ -235,7 +236,7 @@ app.post(Mapping.admin.entry.edit, function(req, res) {
 		var category = req.body.category;
 		var tags = [];
 		var body = req.body.body;
-		if (!title || category == null || !body) {
+		if (!title || category === null || !body) {
 			res.redirect('back');
 		}
 		else {
@@ -289,10 +290,10 @@ app.post(Mapping.admin.entry.edit, function(req, res) {
 });
 
 // Delete entry
-app.get(Mapping.admin.entry.delete, function(req, res) {
+app.get(Mapping.admin.entry.remove, function(req, res) {
 	var id = req.params.id;
 	if (!isLogged(req)) {
-		res.redirect(Mapping.admin.ref + Mapping.admin.entry.delete.replace(':id', id));
+		res.redirect(Mapping.admin.ref + Mapping.admin.entry.remove.replace(':id', id));
 	}
 	else if (Entries.getIndex(id) == -1) {
 		res.redirect(Mapping.admin.entry.list);		
@@ -308,10 +309,10 @@ app.get(Mapping.admin.entry.delete, function(req, res) {
 		});	
 	}	
 });
-app.post(Mapping.admin.entry.delete, function(req, res) {
+app.post(Mapping.admin.entry.remove, function(req, res) {
 	var id = req.params.id;
 	if (!isLogged(req)) {
-		res.redirect(Mapping.admin.ref + Mapping.admin.entry.delete.replace(':id', id));
+		res.redirect(Mapping.admin.ref + Mapping.admin.entry.remove.replace(':id', id));
 	}
 	else if (Entries.getIndex(id) == -1) {
 		res.redirect(Mapping.admin.entry.list);		
@@ -330,7 +331,7 @@ app.post(Mapping.admin.entry.delete, function(req, res) {
 				res.redirect('back');
 			}
 			else {
-				res.render(View.admin.entry.delete, {
+				res.render(View.admin.entry.remove, {
 					locals: initLocals({
 						pageTitle: 'Delete Entry', 
 						entry: entry
@@ -359,7 +360,7 @@ app.get(Mapping.admin.category.list, function(req, res) {
 });
 
 // Add new category
-app.post(Mapping.admin.category.new, function(req, res) {
+app.post(Mapping.admin.category.add, function(req, res) {
 	if (!isLogged(req)) {
 		res.redirect(Mapping.admin.ref + Mapping.admin.category.list);
 	}
@@ -370,13 +371,15 @@ app.post(Mapping.admin.category.new, function(req, res) {
 		} else {
 			var ids = [];
 			for (var i in Conf.categories) {
-				ids.push(i);
+				if (Conf.categories.hasOwnProperty(i)) {
+					ids.push(i);
+				}
 			}
 			var id = Math.max.apply(null, ids) + 1;
 			Conf.categories[id] = {
 				name: name,
 				entries: []
-			}
+			};
 			fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, "\t"), 'UTF-8', function(err) {
 				if (err) {
 					res.redirect('back');
@@ -413,7 +416,7 @@ app.post(Mapping.admin.category.edit, function(req, res) {
 });
 
 // Delete entry
-app.get(Mapping.admin.category.delete, function(req, res) {
+app.get(Mapping.admin.category.remove, function(req, res) {
 	var id = req.params.id;
 	if (!isLogged(req)) {
 		res.redirect(Mapping.admin.ref + Mapping.admin.category.list);
@@ -423,7 +426,7 @@ app.get(Mapping.admin.category.delete, function(req, res) {
 	}
 	else {
 		// May not delete category id 0
-		if (id == 0) {
+		if (id === 0) {
 			res.redirect('back');
 		}
 		res.render(View.admin.category.confirm, {
@@ -435,7 +438,7 @@ app.get(Mapping.admin.category.delete, function(req, res) {
 		});
 	}
 });
-app.post(Mapping.admin.category.delete, function(req, res) {
+app.post(Mapping.admin.category.remove, function(req, res) {
 	var id = req.params.id;
 	if (!isLogged(req)) {
 		res.redirect(Mapping.admin.ref + Mapping.admin.category.list);
@@ -445,14 +448,15 @@ app.post(Mapping.admin.category.delete, function(req, res) {
 	}
 	else {
 		var entries = Conf.categories[id].entries;
-		for (var i = 0; i < entries.length; i++) {
+		var i;
+		for (i = 0; i < entries.length; i++) {
 			var entryId = entries[i];
 			var entry = JSON.parse(fs.readFileSync(Path.entries + entryId + '.json', 'UTF-8'));
 			entry.category = 0;
 			fs.writeFileSync(Path.entries + entryId + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8');
 		}
-		for (var i = 0; i < Entries.length; i++) {
-			if (Entries[i].category = id) {
+		for (i = 0; i < Entries.length; i++) {
+			if (Entries[i].category == id) {
 				Entries[i].category = 0;
 			}
 		}
@@ -504,7 +508,7 @@ app.get(Mapping.admin.file.list, function(req, res) {
 });
 
 // Add new file
-app.post(Mapping.admin.file.new, function(req, res) {
+app.post(Mapping.admin.file.add, function(req, res) {
 	if (!isLogged(req)) {
 		res.redirect(Mapping.admin.ref + Mapping.admin.file.list);
 	}
@@ -543,7 +547,7 @@ app.post(Mapping.admin.file.confirm, function(req, res) {
 		});
 	}
 });
-app.post(Mapping.admin.file.delete, function(req, res) {
+app.post(Mapping.admin.file.remove, function(req, res) {
 	var name = req.body.name;
 	if (!isLogged(req)) {
 		res.redirect(Mapping.admin.ref + Mapping.admin.file.list);
