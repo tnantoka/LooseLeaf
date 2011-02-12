@@ -42,7 +42,7 @@
 			<h2>Comment:<span class="count"><%= entry.comments.length %></span></h2>
 			<dl class="log">
 				<% for (var i = 0; i < entry.comments.length; i++) { %>
-				<dt id="comment001"><span class="name"><%= entry.comments[i].author %></span><span class="date"><%= entry.comments[i].date %></span></dt>
+				<dt id="comment<%= i %>"><span class="name"><%= entry.comments[i].author %></span><span class="date"><%= entry.comments[i].date %></span></dt>
 				<dd>
 					<p><%= entry.comments[i].body %></p>
 				</dd>
@@ -90,21 +90,21 @@
 			</form>
 		</div>
 		<!-- end div#comment -->
-		<!-- TODO: Trackback
 		<div class="section" id="trackback">
 			<h2>Trackback:<span class="count">0</span></h2>
 			<dl class="info">
 				<dt>TrackBack URL for this entry</dt>
-				<dd class="URL">http://mt.vicuna.jp/hoge/hoge/mt-tb.cgi/64</dd>
+				<dd class="URL"><%= tbUrl %></dd>
 				<dt>Listed below are links to weblogs that reference</dt>
-				<dd><a href="#">Elements</a> from <a href="#">mt.vicuna.jp</a></dd>
+				<dd><a href="<%= entryUrl %>"><%= entry.title %></a> from <a href="<%= copyright.href %>"><%= siteName %></a></dd>
 			</dl>
 			<dl class="log">
-				<dt id="ping31"><span class="name"><a href="#" rel="nofollow">Title</a></span> <span class="date">2007-03-10 (Sat) 23:25</span></dt>
-				<dd>Text Text Text</dd>
+				<% for (var i = 0; i < entry.trackbacks.length; i++) { %>
+				<dt id="ping<%= i %>"<span class="name"><a href="<%= entry.trackbacks[i].url %>" rel="nofollow"><%= entry.trackbacks[i].title %></a></span> <span class="date"><%= entry.trackbacks[i].date %></span></dt>
+				<dd><%= entry.trackbacks[i].excerpt %></dd>
+				<% } %>			
 			</dl>
 		</div>
-		-->
 		<!-- end div#trackback -->
 	</div>
 	<!-- end div.entry -->

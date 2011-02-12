@@ -123,6 +123,7 @@ app.post(Mapping.admin.entry.add, function(req, res) {
 		var title = req.body.title;
 		var category = req.body.category;
 		var body = req.body.body;
+		var tb = req.body.tb;
 		if (!title || category === null || !body) {
 			res.redirect('back');
 		}
@@ -160,7 +161,7 @@ app.post(Mapping.admin.entry.add, function(req, res) {
 				comments: [],
 				trackbacks: []
 			};
-			fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8', function(err) {
+			fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, '\t'), 'UTF-8', function(err) {
 				if (err) {
 					res.redirect('back');
 				}
@@ -173,6 +174,61 @@ app.post(Mapping.admin.entry.add, function(req, res) {
 						}), 
 						layout: View.admin.layout
 					});
+					
+					// TrackBack
+					if (tb) {
+						var urls = tb.split(/\n|\r\n|\r/);
+						var content = 
+							'title=' + encodeURIComponent(title) +
+							'&excerpt=' + encodeURIComponent(makeExcerpt(body)) +
+							'&url=' + encodeURIComponent(Conf.site.href.replace(/\/$/,  Mapping.entry.replace(':id', id))) +
+							'&blog_name=' + encodeURIComponent(Conf.site.siteName);
+						for (var i = 0; i < urls.length; i++) {
+							if (urls[i]) {
+							
+								var url = require('url').parse(urls[i]);
+							
+								var options = {
+									host: url.hostname,
+									port: url.port || '80',
+									path: url.pathname,
+									method: 'POST',
+									headers: {
+										'Content-Type': 'application/x-www-form-urlencoded'
+									}
+								};
+								
+								if (url.search) {
+									options.path += url.search;
+								}
+								if (url.hash) {
+									options.path += url.hash;
+								}
+								
+								var req = require('http').request(options, function(res) {
+									res.setEncoding('utf8');
+									res.on('data', function (chunk) {	
+										console.log('response data: ' + chunk);
+										// TODO: chunked
+										// TODO: xml parsing
+										var err = chunk.match(/<error>(.+?)<\/error>/);
+										if (err && err[1] == '1') {
+    										var msg = chunk.match(/<message>(.+?)<\/message>/);
+    										console.log('[error] ' + msg[1]);
+										} else if (!err) {
+    										console.log('[error] TrackBack Error');
+										}										
+									});
+  								});
+  								
+								req.on('error', function (e) {
+    										console.log('[error] ' + e.message);									
+								});
+								req.write(content);
+								req.end();
+							}
+						}
+					}
 				}
 			});
 		}
@@ -268,7 +324,7 @@ app.post(Mapping.admin.entry.edit, function(req, res) {
 	
 					Conf.categories[category].entries.unshift(id);
 
-					fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8', function(err) {
+					fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, '\t'), 'UTF-8', function(err) {
 						if (err) {
 							res.redirect('back');
 						}
@@ -380,7 +436,7 @@ app.post(Mapping.admin.category.add, function(req, res) {
 				name: name,
 				entries: []
 			};
-			fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, "\t"), 'UTF-8', function(err) {
+			fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, '\t'), 'UTF-8', function(err) {
 				if (err) {
 					res.redirect('back');
 				}
@@ -404,7 +460,7 @@ app.post(Mapping.admin.category.edit, function(req, res) {
 	else {
 		var name = req.body['name_' + id];
 		Conf.categories[id].name = name;
-		fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, "\t"), 'UTF-8', function(err) {
+		fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, '\t'), 'UTF-8', function(err) {
 			if (err) {
 				res.redirect('back');
 			}
@@ -453,7 +509,7 @@ app.post(Mapping.admin.category.remove, function(req, res) {
 			var entryId = entries[i];
 			var entry = JSON.parse(fs.readFileSync(Path.entries + entryId + '.json', 'UTF-8'));
 			entry.category = 0;
-			fs.writeFileSync(Path.entries + entryId + '.json', JSON.stringify(entry, null, "\t"), 'UTF-8');
+			fs.writeFileSync(Path.entries + entryId + '.json', JSON.stringify(entry, null, '\t'), 'UTF-8');
 		}
 		for (i = 0; i < Entries.length; i++) {
 			if (Entries[i].category == id) {
@@ -464,7 +520,7 @@ app.post(Mapping.admin.category.remove, function(req, res) {
 		Conf.categories[0].entries = Conf.categories[id].entries.concat(Conf.categories[0].entries);
 		delete Conf.categories[id];
 	
-		fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, "\t"), 'UTF-8', function(err) {
+		fs.writeFile(Path.conf + 'categories.json', JSON.stringify(Conf.categories, null, '\t'), 'UTF-8', function(err) {
 			if (err) {
 				res.redirect('back');
 			}

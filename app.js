@@ -112,6 +112,10 @@ var daemon = require('daemon');
 // var segmenter = require('./lib/segmenter');
 var atom = require('./lib/atom');
 
+// Inline require
+// var url = require('path');
+// var http = require('http');
+
 /* Global Functions */
 
 // Set common property to locals
@@ -147,6 +151,13 @@ function makeOpening(body) {
 	// Remove tag
 	body = body.replace(/<[^>]+?>/g, '');
 	return body.slice(0, Conf.site.opening) + (body.length > Conf.site.opening ? Conf.site.continueSign : '');
+}
+
+// Make excerpt contents for TrackBack
+function makeExcerpt(body) {
+	// Remove tag
+	body = body.replace(/<[^>]+?>/g, '');
+	return body.slice(0, 254);
 }
 
 // Date to readable string
@@ -251,6 +262,7 @@ var Mapping = {
 	entry2: '/entry2/:id/', 
 	comment: '/entry/:id/comment/', 
 	category: '/category/:id/', 
+	trackback: '/trackback/:id/', 
 	atom: '/atom',
 	admin: {
 		root: '/admin?', 
@@ -361,6 +373,8 @@ app.get(Mapping.entry, function(req, res) {
 						pageTitle: entry.title,
 						msg: '',
 						entry: entry,
+						tbUrl: Conf.site.href.replace(/\/$/,  Mapping.trackback.replace(':id', Entries[index].id)),
+						entryUrl: Conf.site.href.replace(/\/$/,  Mapping.entry.replace(':id', Entries[index].id)),
 						prev: index - 1 >= 0 ? Entries[index - 1] : null,
 						next: index + 1 < Entries.length ? Entries[index + 1] : null
 					})				
@@ -432,7 +446,7 @@ app.post(Mapping.comment, function(req, res) {
 					body: body, 
 					date: date
 				});
-				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, "¥t"), 'UTF-8', function(err) {
+				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, '\t'), 'UTF-8', function(err) {
 					if (err) {
 						res.redirect('back');
 					}
@@ -462,6 +476,52 @@ app.get(Mapping.category, function(req, res) {
 				pageTitle: Conf.categories[id].name,
 				entries: entries
 			})
+		});
+	}
+});
+
+// TrackBack
+app.post(Mapping.trackback, function(req, res) {
+	var id = req.params.id;
+	var index = Entries.getIndex(id);
+
+	var title = req.body.title;
+	var excerpt = req.body.excerpt;
+	var url = req.body.url;
+	var blog_name = req.body.blog_name;
+	var date = new Date().toString();
+
+	var ERROR_MSG = '<?xml version="1.0" encoding="UTF-8"?><response><error>1</error><message>TrackBack Error</message></response>';
+	var SUCCESS = '<?xml version="1.0" encoding="UTF-8"?><response><error>0</error></response>';
+	res.contentType('application/xml');
+
+	if (isNaN(id) || /^0[0-9]+$/.test(id) || index == -1 || !title || !excerpt || !url || !blog_name) {
+		res.send(ERROR_MSG);
+	}
+	else {
+		Entries[index].trackbacks += 1;
+		fs.readFile(Path.entries + id + '.json', 'UTF-8', function(err, data) {
+			if (err) {
+				res.send(ERROR_MSG);
+			}
+			else {
+				var entry = JSON.parse(data);
+				entry.trackbacks.push({
+					title: title,
+					excerpt: makeExcerpt(excerpt),
+					url: url,
+					blog_name: blog_name, 
+					date: date
+				});
+				fs.writeFile(Path.entries + id + '.json', JSON.stringify(entry, null, '\t'), 'UTF-8', function(err) {
+					if (err) {
+						res.send(ERROR_MSG);
+					}
+					else {
+						res.send(SUCCESS);
+					}
+				});
+			}
 		});
 	}
 });

@@ -27,7 +27,7 @@
 						<td><input type="submit" class="submit post" value="Change Name" onclick="document.getElementById('editForm').action = '/admin/category/edit/<%= i %>/';" /></td>
 						<td>
 							<% if (i != 0) { %>
-							<input type="button" class="submit post" value="Delete" onclick="location.href='/admin/category/delete/<%= i %>/';" />
+							<input type="button" class="submit post" value="Delete" onclick="location.href='/admin/category/remove/<%= i %>/';" />
 							<% } else { %>
 							Can't delete
 							<% } %>
@@ -39,7 +39,7 @@
 				
 				<!-- New Category form -->
 				<h2>Add Category</h2>
-				<form class="post" method="post" action="/admin/category/new/">
+				<form class="post" method="post" action="/admin/category/add/">
 					<fieldset>
 						<legend>Category Form</legend>
 						<div>

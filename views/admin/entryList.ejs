@@ -33,7 +33,7 @@
 						<td><a href="/category/<%= entries[i].category %>/" target="_blank"><%= categories[entries[i].category].name %></a></td>
 						<td><a href="/entry/<%= entries[i].id %>/#comments" target="_blank"><%= entries[i].comments %></a></td>
 						<td><input type="button" class="submit post" value="Edit" onclick="location.href='/admin/entry/edit/<%= entries[i].id %>/';" /></td>
-						<td><input type="button" class="submit post" value="Delete" onclick="location.href='/admin/entry/delete/<%= entries[i].id %>/';" /></td>
+						<td><input type="button" class="submit post" value="Delete" onclick="location.href='/admin/entry/remove/<%= entries[i].id %>/';" /></td>
 					</tr>
 					<% } %>
 				</table>
