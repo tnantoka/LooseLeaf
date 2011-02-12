@@ -202,21 +202,6 @@ var app = module.exports = express.createServer(
 	form({ keepExtensions: true })
 );
 
-/* No daemon mode for mac */
-if (noDeamon) {
-	daemon.run = function(log, pid, func) {
-		func();
-	};
-}
-
-/* Daemon */
-daemon.run('logs/looseleaf.log', 'pids/looseleaf.pid', function (err, started) {
-
-if (err) {
-	console.log('Error starting daemon: ' + err);
-	return;
-}
-
 /* Configuration app */
 app.configure(function() {
 	app.set('views', __dirname + '/views');	
@@ -557,8 +542,6 @@ app.get(Mapping.atom, function(req, res) {
 	
 	res.contentType('application/atom+xml');
 	res.send(atom.generate(obj));
-
-
 });
 
 /* Include external source file for admin */
@@ -581,6 +564,11 @@ if (Conf.site.password == 'pass') {
 
 /* Daemon */
 if (!noDeamon) {
-	console.log('Daemon started successfully');
+	daemon.daemonize('logs/looseleaf.log', 'pids/looseleaf.pid', function (err, pid) {
+		if (err) {
+			console.log('Error starting daemon: ' + err);
+		}
+		console.log('Daemon started successfully with pid: ' + pid);
+	});
 }
-});
+
