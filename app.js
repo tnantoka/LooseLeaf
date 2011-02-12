@@ -571,4 +571,3 @@ if (!noDeamon) {
 		console.log('Daemon started successfully with pid: ' + pid);
 	});
 }
-

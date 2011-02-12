@@ -620,5 +620,4 @@ app.post(Mapping.admin.file.remove, function(req, res) {
 	}
 });
 
-
 //};
