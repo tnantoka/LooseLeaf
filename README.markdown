@@ -2,17 +2,16 @@
 
 JSON based blog engine running on [node.js][] and [express][].
 
+	$ looseleaf yourblog
+	$ node ./yourblog/app.js
+	"yourblog" server listening on port 3000
+
 [node.js]: http://nodejs.org/
 [express]: http://expressjs.com/
 
 ## Installation
 
 	$ npm install looseleaf
-
-## Getting Started
-
-	$ looseleaf yourblog
-	$ node yourblog/app.js
 
 ## Demo
 
