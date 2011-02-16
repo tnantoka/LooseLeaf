@@ -1,21 +1,19 @@
 #!/usr/bin/env node
 
 /* Load modules */
-var 
-	fs = require('fs')
-;
+var fs = require('fs');
 
 /* Define constants */
-var BASE_DIR = __dirname.replace('bin', '');
+var BASE_DIR = __dirname.replace(/[^\/]+?$/, '');
+var VERSION = require('../lib/package').version();
 var DEFAULT_PATH = './blog';
-var VERSION = JSON.parse(fs.readFileSync(BASE_DIR + 'package.json', 'UTF-8')).version;
 var USAGE = ''
 	+ '\x1b[1mUsage\x1b[0m: looseleaf [options] [path="' + DEFAULT_PATH + '"]\n'
 	+ '\n'
 	+ '\x1b[1mOptions\x1b[0m:\n'
 	+ '\t-v, --version\tShow version number\n'
 	+ '\t-h, --help\tShow this help message\n'
-	+ '\t-d, --dir\tShow install directory\n'
+	+ '\t-d, --dir\tShow install directory'
 ;
 
 /* Define functions */
@@ -99,7 +97,7 @@ function copyDir(srcPath, dstPath) {
 	}
 }
 
-// Parse arguments
+/* Parse arguments */
 var args = process.argv.slice(2);
 var path = DEFAULT_PATH;
 while (args.length) {
@@ -124,6 +122,7 @@ while (args.length) {
 
 if (path) {
 	copyDir(BASE_DIR + 'skeleton/', path);
+	console.log('\t\x1b[34mnotice\x1b[39m: Please custom ' + path + '/conf.json');
 } else {
 	error(USAGE);
 }
