@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
 /* Load modules */
-var fs = require('fs');
+var fs = require('fs'),
+	join = require('path').join;
+
 
 /* Define constants */
-var BASE_DIR = __dirname.replace(/[^\/]+?$/, '');
+var BASE_DIR = join(__dirname, '..');
 var VERSION = require('../lib/package').version();
-var DEFAULT_PATH = './blog';
+var DEFAULT_PATH = 'blog';
 var USAGE = ''
 	+ '\x1b[1mUsage\x1b[0m: looseleaf [options] [path="' + DEFAULT_PATH + '"]\n'
 	+ '\n'
@@ -37,7 +39,7 @@ function create(path) {
 
 // Warning messsage
 function warning(msg) {
-  console.log('\t\x1b[31mwarning\x1b[0m: ' + msg);
+  console.error('\t\x1b[31mwarning\x1b[0m: ' + msg);
 }
 
 // Copy directory
@@ -121,8 +123,8 @@ while (args.length) {
 }
 
 if (path) {
-	copyDir(BASE_DIR + 'skeleton/', path);
-	console.log('\t\x1b[34mnotice\x1b[39m: Please custom ' + path + '/conf.json');
+	copyDir(join(BASE_DIR, 'skeleton'), path);
+	console.log('\t\x1b[34mnotice\x1b[39m: Please customize ' + path + '/conf.json');
 } else {
 	error(USAGE);
 }

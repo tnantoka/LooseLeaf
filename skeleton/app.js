@@ -7,7 +7,9 @@ var daemon = require('daemon'),
 	looseleaf = require('looseleaf');
 
 /* Create express server and exports for spark */
-var app = module.exports = looseleaf.init(__dirname);
+var ll = module.exports = looseleaf.init(__dirname);
+var app = ll.app;
+var conf = ll.conf;
 
 /* Parse arguments */
 var args = process.argv.slice(2);
@@ -32,6 +34,13 @@ while (args.length) {
 /* Only listen on $ node app.js */
 if (!module.parent) {
 	app.listen(port);
+
+	console.log('"' + conf.site.name + '" server listening on port %d', app.address().port);
+	
+//	if (Conf.site.password == 'pass') {
+	console.log('[warning] Your password is default! Please change immediately!!');
+//	}
+
 	if (isDaemon) {
 		daemon.daemonize('logs/looseleaf.log', 'logs/looseleaf.pid', function (err, pid) {
 			if (err) {

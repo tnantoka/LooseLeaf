@@ -12,24 +12,7 @@
 	
 	"admin": {
 		"id": "admin",
-		"pass": "pass",
-	},
-	
-	"about": "this is myblog",
-	
-	"author": {
-		"name": "yourname",
-		"img": "/file/author.png",
-		"links": [
-			{
-				"href": "http://twitter.com/yourname",
-				"text": "Twitter(@yourname)"
-			},
-			{
-				"href": "http://www.facebook.com/yourname",
-				"text": "Facebook(@yourname)"
-			}
-		]
+		"pass": "pass"
 	},
 	
 	"globalNavi": [
@@ -39,10 +22,30 @@
 		}
 	],
 	
-	"links": [
-		{
-			"href": "/admin/login/",
-			"text": "Login"
-		}
-	]
+	"sideBar": {
+
+		"about": "this is myblog",
+	
+		"author": {
+			"name": "yourname",
+			"img": "/file/author.png",
+			"links": [
+				{
+					"href": "http://twitter.com/yourname",
+					"text": "Twitter(@yourname)"
+				},
+				{
+					"href": "http://www.facebook.com/yourname",
+					"text": "Facebook(@yourname)"
+				}
+			]
+		},
+
+		"links": [
+			{
+				"href": "/admin/login/",
+				"text": "Login"
+			}		
+		]	
+	}
 }
