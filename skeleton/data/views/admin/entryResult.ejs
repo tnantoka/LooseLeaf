@@ -1,0 +1,62 @@
+<body class="category double">
+<%- partial('admin/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+			<!-- Post Entry form -->
+			<form class="post" method="post" action="#">
+				<fieldset>
+					<legend>Entry Form</legend>
+					<div>
+						<p class="commentModerated">
+							<%- msg %><br />
+							<a href="/admin/entry/list/">記事一覧へ</a>
+						</p>
+					</div>
+					<dl>
+						<dt>
+							ID
+						</dt>
+						<dd>
+							<%= entry.id %>
+						</dd>
+						<dt>
+							Title
+						</dt>
+						<dd>
+							<%= entry.title %>
+						</dd>
+						<dt>
+							Category
+						</dt>
+						<dd>
+							<%= categories[entry.category].name %>
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
+							Body
+						</dt>
+						<dd>
+							<%- entry.body %>
+						</dd>
+					</dl>
+					<div class="action">
+						<input type="button" class="submit post" value="Edit" onclick="location.href='/admin/entry/edit/<%= entry.id %>/';" />
+						<input type="button" class="submit post" value="Show" onclick="location.href='/entry/<%= entry.id %>/';" />
+					</div>
+				</fieldset>
+			</form>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('admin/utilities') %> 
+<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+</div>
+<!--end content-->

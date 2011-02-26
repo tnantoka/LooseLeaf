@@ -37,9 +37,9 @@ if (!module.parent) {
 
 	console.log('"' + conf.site.name + '" server listening on port %d', app.address().port);
 	
-//	if (Conf.site.password == 'pass') {
-	console.log('[warning] Your password is default! Please change immediately!!');
-//	}
+	if (conf.admin.pass == 'pass') {
+		console.log('[warning] Your password is default! Please change immediately!!');
+	}
 
 	if (isDaemon) {
 		daemon.daemonize('logs/looseleaf.log', 'logs/looseleaf.pid', function (err, pid) {
