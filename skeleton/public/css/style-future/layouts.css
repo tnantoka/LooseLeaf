@@ -1,0 +1,626 @@
+@charset "UTF-8";
+
+/*
+Skin Name: Future Skin - Layout Module
+Author: vicuna.jp
+
+Layout Class: single, double
+Eye Cach Class: eye-u, eye-c, eye-h, eye-hb
+Set Class: double eye-u
+Fixed Width Class: f800, f850, f900, f950, f1000
+*/
+
+body {
+	margin: 0 8px;
+	text-align: center;
+}
+
+div#header,
+div#content,
+div#footer {
+	width: 95%; /*(60%~ | 600px~ | 60em~) etc.*/
+	min-width: 600px;
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+}
+
+/*========================================
+
+	Single Column Layout
+	
+	<body class="single">
+
+	┏━━━┓
+	┃━━━┃
+	┣━┳━┫
+	┗━┻━┛
+
+========================================*/
+
+body.single div#main {
+	_height: 1px; /* for IE peekaboo */
+}
+
+body.single ul#flip1 {
+	margin-top: 15px;
+}
+
+body.single div.entry ul.info {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+/* div#utilities
+---------------*/
+
+body.single div#utilities {
+	margin-top: 1em;
+	padding: 1.4em 0;
+	background: #f5f5f5 url(images/common/bg_grad02.png) repeat-x;
+}
+
+body.single div#utilities dl {
+	margin: 0;
+	padding: 1px 0;
+	background-color: #fff;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+}
+
+body.single div#utilities dl dt {
+	margin-bottom: 0;
+	padding: 0.5em 10px 0.5em 10px;
+	border-left: 5px solid #bbb;
+}
+
+body.single div#utilities dl dd {
+	margin: 0 10px 1em;
+	padding: 5px 0;
+	border-left: 5px solid #ddd;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	background: #f7f7f7 url(images/common/bg_line-dot.gif) left top repeat-x;
+}
+
+body.single div#utilities dl dd ul {
+	margin: 0.5em 10px 0.5em 25px;
+}
+
+body.single div#utilities dl dd dt {
+	margn: 0;
+	padding: 0.3em 0;
+	color: #333;
+	border: none;
+	background-color: transparent;
+}
+
+body.single div#utilities dl dd dd {
+	border: none;
+	background-image: none;
+}
+
+body.single div#utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*¥*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+}
+
+body.single div#utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+/* dl.navi
+------------------------*/
+
+body.single div#utilities dl.navi {
+	margin-left: 10px;
+	display: inline; /* for WinIE */
+	float: left;
+	width: 340px;
+}
+
+/* dl.others
+------------------------*/
+
+body.single div#utilities dl.others {
+	margin: 0 10px 0 360px;
+}
+
+body.single div#utilities dl.others form {
+	margin: 0.5em 10px 0;
+}
+
+body.single div#utilities dl.others dd ul.feed {
+	margin: 0;
+}
+
+/*========================================
+
+	Double Column Layout - Sidebar on left
+
+	<body class="double">
+
+	┏┓┏━━━┓
+	┃┃┃━━━┃
+	┗┛┗━━━┛
+
+========================================*/
+
+body.double div#content {
+	background-color: transparent;
+	background-image: url(images/interface/bg_div-content.png);
+	background-repeat: no-repeat;
+}
+
+body.double h1 {
+	margin: 0 0 0 20px;
+	border-left: 1px solid #eee;
+}
+
+/*--------------------------------------
+	div#main
+---------------------------------------*/
+
+body.double div#main {
+	margin-left: 228px;
+	min-height: 1000px;
+	_height: 1000px; /* for IE */
+	background-color: #fff;
+	background-image: url(images/interface/bg_div-main.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+body.double div#main p.topicPath {
+	margin: 1.7em 13em 0 20px;
+}
+
+body.double ul#flip1 {
+	margin-top: 22px;
+}
+
+body.double div#content div.entry ul.info {
+	margin: 0 -20px 0 0;
+	padding-left: 20px;
+	_position: relative; /* for IE6 */
+}
+
+body.double div#content p.return {
+	margin-left: 228px;
+}
+
+/*--------------------------------------
+	div#utilities
+---------------------------------------*/
+
+body.double div#utilities {
+	margin-top: 15px;
+	padding-bottom: 6px;
+	width: 228px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff url(images/interface/bg_div-utilities.png) left bottom no-repeat;
+}
+
+body.double div#utilities dl {
+	margin: 0;
+}
+
+body.double div#utilities dl dt {
+	margin: 0 5px 0 17px;
+	line-height: 1;
+}
+
+body.double div#utilities dl dd {
+	margin: 0;
+	_height: 1px; /* for IE */
+}
+
+body.double div#utilities dd ul li {
+	margin-left: 25px;
+	margin-right: 5px;
+}
+
+body.double div#utilities table.calendar {
+	margin: 0 auto;
+	_margin-left: 15px; /* for IE6 */
+	width: 199px;
+}
+
+body.double div#utilities table.calendar caption {
+	margin: 0 auto;
+	padding: 5px 0 4px;
+	border-bottom: 1px solid #fff;
+	width: 200px;
+	background: #eee url(images/common/bg_caption.gif) no-repeat;
+}
+
+/*--------------------------------------
+	dl.navi
+---------------------------------------*/
+
+body.double div#utilities dl.navi {
+	padding: 1px 0;
+	background: url(images/interface/bg_dl-navi.png) repeat-y;
+}
+
+body.double div#utilities dl.navi dt {
+	padding-bottom: 6px;
+}
+
+body.double div#utilities dl.navi dd {
+	padding-bottom: 38px;
+	background: url(images/interface/bg_dl-navi_dd.png) left bottom no-repeat;
+}
+
+body.double div#utilities dl.navi dd ul {
+	margin: 0 3px 0 17px;
+	padding: 1px 0;
+	background: #f6f6f6 url(images/interface/bg_dl-navi_ul.png) left bottom no-repeat;
+
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+}
+
+body.double div#utilities dl.navi dd ul li a {
+	text-decoration: none;
+}
+
+/* Sub Category */
+
+body.double div#utilities dl.navi dd ul li ul {
+	margin: 0;
+	padding: 0;
+}
+
+body.double div#utilities dl.navi dd ul li li {
+	margin: 0.3em 0 0 10px;
+}
+
+/*--------------------------------------
+	dl.others
+---------------------------------------*/
+
+body.double div#utilities dl.others {
+	padding-top: 0;
+	background: #fff url(images/interface/bg_dl-others.png) no-repeat;
+}
+
+body.double div#utilities dl.others dt {
+	margin: 0 2px;
+	padding: 0 13px;
+	border-bottom: none;
+}
+
+body.double div#utilities dl.others dd {
+	margin: 12px 0;
+	padding: 0;
+}
+
+body.double div#utilities dl.others dd dl dd {
+	margin: 0.2em 10px 0.2em 10px;
+}
+
+body.double div#utilities dl.others dd ul {
+	margin: 0 0 0 5px;
+}
+
+/*	Search
+---------------------------------------*/
+
+body.double div#utilities dl dd form {
+	margin: 0 6px;
+	padding: 7px 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ddd #fff #fff #ddd;
+
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+body.double div#utilities dl dd form fieldset {
+	border: none;
+}
+
+body.double div#utilities dl dd form legend {
+	display: none;
+}
+
+body.double div#utilities dl dd form input {
+	margin-left: 0;
+}
+
+body.double div#utilities dl dd form input.inputField {
+
+}
+
+/*	Feeds
+---------------------------------------*/
+
+body.double div#utilities li.atom,
+body.double div#utilities li.rss {
+	margin-left: 0;
+}
+
+/*--------------------------------------
+	div#utilities dl > dd > *
+---------------------------------------*/
+
+/*	dd > p
+-----------------------------*/
+
+body.double div#utilities dl dd p {
+	margin: 0.6em 13px 0.4em 18px;
+	line-height: 1.4;
+	color: #999;
+	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+}
+
+/*	dd > list
+-----------------------------*/
+
+body.double div#utilities dl dd dl dt {
+	margin: 0.3em 0;
+	background-color: #eee;
+}
+
+body.double div#utilities dl dd dl dt a {
+	text-decoration: none;
+}
+
+body.double div#utilities dl dd dl dd {
+	margin: 0.1em 5px;
+	font-size: 12px;
+}
+
+/*========================================
+
+	Eye Catch
+
+========================================*/
+
+/* Header - <body class="eye-h">
+---------------*/
+
+body.eye-h div#header,
+body.eye-h div#content,
+body.eye-h div#footer {
+	width: 800px;
+}
+
+body.eye-h ul#globalNavi {
+	position: absolute;
+	top: 75px;
+	left: 30px;
+	background-image:  none;
+	border-left: 1px solid #ddd;
+}
+
+body.eye-h ul#globalNavi a {
+	border-right: 1px solid #ddd;
+	color: #666;
+	background-image:  none;
+}
+
+body.eye-h ul#globalNavi a:hover,
+body.eye-h ul#globalNavi li.current a {
+	color: #000;
+}
+
+body.eye-h div#header {
+	padding: 0;
+	height: 122px;
+	background-image: url(images/eyeCatch/header.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-h div#header p.siteName {
+	margin: 0;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+}
+
+body.eye-h div#header p.siteName a {
+	color: #333;
+}
+
+body.eye-h div#header p.description {
+	margin: 0;
+	position: absolute;
+	top: 55px;
+	left: 30px;
+	color: #333;
+}
+
+/* Header Banner - <body class="eye-hb">
+---------------*/
+
+body.eye-hb div#header,
+body.eye-hb div#content,
+body.eye-hb div#footer {
+	width: 800px;
+}
+
+body.eye-hb div#header {
+	padding: 0;
+}
+
+body.eye-hb div#header p.siteName {
+	margin: 0;
+}
+
+body.eye-hb div#header p.siteName a {
+	height: 122px;
+	display: block;
+	text-indent: -9999px;
+	background-image: url(images/eyeCatch/header.png);
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+
+body.eye-hb div#header p.description {
+	display: none;
+}
+
+body.eye-hb ul#globalNavi {
+	margin: 5px 0 8px;
+}
+
+/* Content - <body class="double eye-c">
+---------------*/
+
+body.eye-c div#header,
+body.eye-c div#content,
+body.eye-c div#footer {
+	width: 800px;
+}
+
+body.eye-c div#content {
+	padding-top: 228px;
+	background-image: url(images/eyeCatch/content.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-c ul#flip1 {
+	position: absolute;
+	top: 230px;
+	right: 0;
+}
+
+body.eye-c div#content p.topicPath {
+	margin-right: 12.5em;	
+}
+
+body.eye-c div#utilities {
+	top: 230px;
+}
+
+/* Utilities - <body class="double eye-u">
+---------------*/
+
+body.eye-u div#content {
+	background-color: transparent;
+	background-image: url(images/eyeCatch/mini.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-u div#utilities {
+	margin-top: 289px;
+}
+
+/*========================================
+
+	Special Layout set
+
+========================================*/
+
+/* <body class="double eye-u set1">
+---------------*/
+
+body.set1 {
+	
+}
+
+/* <body class="double eye-u set1">
+---------------*/
+
+body.set2 div#main {
+	padding-top: 1px;
+	background-image: none;
+}
+
+body.set2 div#content {
+	padding-top: 200px;
+}
+
+/*========================================
+
+	Others
+
+========================================*/
+
+/* Fixed 800px - <body class="f800">
+---------------*/
+
+body.f800 div#header,
+body.f800 div#content,
+body.f800 div#footer {
+	width: 800px;
+}
+
+/* Fixed 850px - <body class="f850">
+---------------*/
+
+body.f850 div#header,
+body.f850 div#content,
+body.f850 div#footer {
+	width: 850px;
+}
+
+/* Fixed 900px - <body class="f900">
+---------------*/
+
+body.f900 div#header,
+body.f900 div#content,
+body.f900 div#footer {
+	width: 900px;
+}
+
+/* Fixed 950px - <body class="f950">
+---------------*/
+
+body.f950 div#header,
+body.f950 div#content,
+body.f950 div#footer {
+	width: 950px;
+}
+
+/* Fixed 1000px - <body class="f1000">
+---------------*/
+
+body.f1000 div#header,
+body.f1000 div#content,
+body.f1000 div#footer {
+	width: 1000px;
+}
+
+/*========================================
+
+	Archive Type
+
+========================================*/
+
+body.mainIndex p.topicPath,
+body.category p.topicPath {
+	margin-right: 0;
+}
+
+body.mainIndex div#main div.entry ul.info,
+body.category div#main div.entry ul.info {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 10px;
+}
+
+body.individual div#main div.entry ul.info,
+body.archives div#main div.entry ul.info {
+	padding-left: 30px;
+	border-left: none;
+}

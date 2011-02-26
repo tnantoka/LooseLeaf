@@ -1,0 +1,48 @@
+<body class="category double">
+<%- partial('admin/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Date</th>
+						<th>Update</th>
+						<th>Category</th>
+						<th>Comments</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+					<% for (var i = 0; i < entries.length; i++) { %>
+					<tr>
+						<td><%= entries[i].id %></td>
+						<td><a href="/entry/<%= entries[i].id %>/" target="_blank"><%= entries[i].title %></a></td>
+						<td>
+							<%= entries[i].date %>
+						</td>
+						<td>
+							<% if (entries[i].update) { %>
+								<span class="update"><%= entries[i].update %></span>
+							<% } %>
+							&nbsp;
+						</td>
+						<td><a href="/category/<%= entries[i].category %>/" target="_blank"><%= categories[entries[i].category].name %></a></td>
+						<td><a href="/entry/<%= entries[i].id %>/#comments" target="_blank"><%= entries[i].comments %></a></td>
+						<td><input type="button" class="submit post" value="Edit" onclick="location.href='/admin/entry/edit/<%= entries[i].id %>/';" /></td>
+						<td><input type="button" class="submit post" value="Delete" onclick="location.href='/admin/entry/remove/<%= entries[i].id %>/';" /></td>
+					</tr>
+					<% } %>
+				</table>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('admin/utilities') %> 
+<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+</div>
+<!--end content-->

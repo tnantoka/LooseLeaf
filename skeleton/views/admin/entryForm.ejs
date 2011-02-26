@@ -1,0 +1,71 @@
+<body class="category double">
+<%- partial('admin/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+			<!-- Post Entry form -->
+			<form class="post" method="post" action="<%= action %>">
+				<fieldset>
+					<legend>Entry Form</legend>
+					<div>
+						<p class="commentModerated">
+							<%- msg %>
+						</p>
+					</div>
+					<dl>
+						<dt>
+							<label for="title">Title</label>
+						</dt>
+						<dd>
+							<input type="text" class="inputField" id="title" name="title" value="<%= entry.title %>" />
+						</dd>
+						<dt>
+							<label for="category">Category</label>
+						</dt>
+						<dd>
+							<select id="category" name="category">
+							<% for (var i in categories) { %>
+								<option value="<%= i %>"
+								<% if (i == entry.category) { %>
+									selected
+								<% } %>
+								><%= categories[i].name %></option>
+							<% } %>
+							</select>
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
+							<label for="body">Body</label>
+						</dt>
+						<dd>
+							<textarea id="body" name="body" rows="10" cols="50"><%- entry.body %></textarea>
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
+							<label for="tb">TrackBack</label>
+						</dt>
+						<dd>
+							<textarea id="tb" name="tb" rows="3" cols="50"></textarea>
+						</dd>
+					</dl>
+					<div class="action">
+						<input type="submit" class="submit post" value="Post" />
+					</div>
+				</fieldset>
+			</form>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('admin/utilities') %> 
+<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+</div>
+<!--end content-->
