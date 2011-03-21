@@ -1,5 +1,5 @@
 <body class="individual single">
-<%- partial('header') %>
+<%- partial('partials/header') %>
 <div id="content">
 <div id="main">
 	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/category/<%= entry.category %>/"><%= categories[entry.category].name %></a> &gt; <span class="current"><%= pageTitle %></span></p>
@@ -111,7 +111,7 @@
 	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/category/<%= entry.category %>/"><%= categories[entry.category].name %></a> &gt; <span class="current"><%= pageTitle %></span></p>
 </div>
 <!-- end main-->
-<%- partial('utilities') %> 
+<%- partial('partials/utilities') %> 
 <p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
 </div>
 <!--end content-->
