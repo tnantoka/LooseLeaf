@@ -22,4 +22,3 @@ JSON based blog engine running on [node.js][] and [express][].
 ## License 
 
 The MIT License
-
