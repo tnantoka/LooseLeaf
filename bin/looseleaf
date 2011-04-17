@@ -34,12 +34,12 @@ function error(msg) {
 
 // Show message when create 
 function create(path) {
-  console.log('\t\x1b[32mcreate\x1b[0m: ' + path);
+//  console.log('\x1b[32mcreate\x1b[0m: ' + path);
 }
 
 // Warning messsage
 function warning(msg) {
-  console.error('\t\x1b[31mwarning\x1b[0m: ' + msg);
+  console.error('\x1b[31mwarning\x1b[0m: ' + msg);
 }
 
 // Copy directory
@@ -126,7 +126,8 @@ while (args.length) {
 
 if (path) {
   copyDir(join(BASE_DIR, 'skeleton'), path);
-  console.log('\t\x1b[34mnotice\x1b[39m: Please customize ' + path + '/conf.json');
+  console.log('\x1b[34mnotice\x1b[39m: Please customize ' + path + '/conf.json');
+  console.log('done');
 } else {
   error(USAGE);
 }

@@ -1,6 +1,7 @@
+</head>
 <!-- TODO External JS -->
 <body class="individual single" onload="document.getElementById('userId').focus();">
-<%- partial('../partials/admin/header') %>
+<%- partial('../partials/header') %>
 <div id="content">
 <div id="main">
 	<p class="topicPath"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %></span></p>
@@ -8,7 +9,7 @@
 	<div class="section entry">
 		<div class="textBody">
 			<!-- Login form -->
-			<form class="post" method="post" action="/admin/login/">
+			<form class="post" method="post" action="<%= mapping.uri.admin.login %>">
 				<fieldset>
 					<legend>Login Form</legend>
 					<div>
@@ -47,3 +48,4 @@
 <p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
 </div>
 <!--end content-->
+<%- partial('../partials/footer') %>

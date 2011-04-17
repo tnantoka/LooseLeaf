@@ -2,7 +2,8 @@
 	"site": {
 		"name": "yourblog",
 		"href": "http://localhost:3000/",
-		"description": "mylooseleaf"
+		"description": "mylooseleaf",
+		"theme": "style-future"
 	},
 	
 	"copyright": {

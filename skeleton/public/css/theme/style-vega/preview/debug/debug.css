@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+/*
+	このファイルは編集する必要はありません
+	Previewフォルダ内部にあるファイルは確認時にのみ使用します。
+	スキンと分離しており、アップロードする必要はありません。
+*/
+
+div.debug-tool {
+	width: 120px;
+	position: fixed;
+	right: 3px;
+	top: 3px;
+	text-align: left;
+}
+
+* html div.debug-tool {
+	position: absolute; /* for IE */
+}
+
+div.debug-tool ul {
+	margin: 7px 5px 10px 30px;
+	padding: 0;
+	font-size: 12px;
+	color: #fff;
+}
+
+div.debug-tool ul li a {
+	padding: 0.1em 0;
+	display: block;
+	color: #ccc;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+div.debug-tool ul li:hover {
+	color: #0FF;
+}
+
+div.debug-tool ul li a:hover {
+	color: #fff;
+	background-color: #111;
+}
+
+div.debug-tool h2 {
+	margin: 5px 0 0 13px;
+	font-size: 10px;
+	color: #ced924;
+	text-transform: uppercase;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+div.debug-tool h3 {
+	margin: 5px 0 0 13px;
+	padding: 0;
+	color: #8cb2c9;
+	font-size: 10px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+/*-----------------------
+
+------------------------*/
+
+div.debug-tool div.class,
+div.debug-tool div.pages {
+	margin-bottom: 3px;
+	padding: 5px 0 3px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+	background-color: rgba(0,0,0,0.9);
+	*background-color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*-----------------------
+
+------------------------*/
+
+div.debug-tool p.view {
+	margin: 0;
+	padding: 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+div.debug-tool p.view a {
+		color: #fff;
+		background-color: #9C0;
+		display: block;
+		width: 11px;
+		height: 11px;
+		cursor: pointer;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;	
+}
+
+div.debug-tool p.view a:hover {
+	background-color: #9F0;
+}
+
+/*-----------------------
+
+------------------------*/
+
+body.gh div#header .globalNavi,
+body.gh div#header #globalNavi{
+	display: none!important;
+}
+
+/*-----------------------
+
+------------------------*/
+
+body.single div.debug-tool .single,
+body.double div.debug-tool .double,
+body.double-l div.debug-tool .double-l,
+body.multi div.debug-tool .multi,
+body.multi2 div.debug-tool .multi2,
+body.multi2-l div.debug-tool .multi2-l,
+body.single div.debug-tool .single,
+
+body.eye-h div.debug-tool .eye-h,
+body.eye-hb div.debug-tool .eye-hb,
+body.eye-m div.debug-tool .eye-m,
+body.eye-c div.debug-tool .eye-c,
+body.eye-u div.debug-tool .eye-u,
+
+body.f800 div.debug-tool .f800,
+body.f850 div.debug-tool .f850,
+body.f900 div.debug-tool .f900,
+body.f950 div.debug-tool .f950,
+body.f1000 div.debug-tool .f1000,
+
+body.set1 div.debug-tool .set1,
+body.set2 div.debug-tool .set2,
+body.set3 div.debug-tool .set3,
+
+body.al div.debug-tool .al,
+body.gt div.debug-tool .gt,
+body.gh div.debug-tool .gh,
+
+body.mainIndex div.debug-tool .mainIndex,
+body.category div.debug-tool .category,
+body.archives div.debug-tool .archives,
+body.individual div.debug-tool .individual {
+	color: #06abeb;
+	text-align: center;
+	cursor: text;
+	font-weight: bold;
+	background-color: #00424c;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;	
+}
+
+body.mainIndex div.debug-tool .mainIndex,
+body.category div.debug-tool .category,
+body.archives div.debug-tool .archives,
+body.individual div.debug-tool .individual {
+	color: #ff3f86;
+	background-color: #5f0532;
+}
