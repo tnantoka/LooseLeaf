@@ -93,6 +93,17 @@
 			<% } %>
 			</ul>
 		</dd>
+		<dt>Recent Comments</dt>
+		<dd>
+			<ul>
+			<% for (var i = 0; i < recentComments.length; i++) { %>
+				<li>
+					<a href="/entry/<%= recentComments[i].id %>/#comments"><%= blog.entry.getTitle(recentComments[i].id) %> by <%= recentComments[i].author %></a>
+					<br />(<%= recentComments[i].date %>)
+				</li>
+			<% } %>
+			</ul>
+		</dd>
 		<dt>Categories</dt>
 		<dd>
 			<ul>
