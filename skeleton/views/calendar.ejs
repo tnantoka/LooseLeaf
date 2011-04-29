@@ -1,0 +1,63 @@
+<table class="calendar" cellpadding="0" cellspacing="0" summary="Monthly calendar">
+  <caption>
+<a href="#" title="Newer" rel="nofollow">&laquo;</a> <%= year %>-<%= month %> <a href="#" title="Older" rel="nofollow">&raquo;</a>
+  </caption>
+  <tr>
+    <th class="sun" title="Sunday">S</th>
+    <th title="Monday">M</th>
+    <th title="Tuesday">T</th>
+    <th title="Wednesday">W</th>
+    <th title="Thursday">T</th>
+    <th title="Friday">F</th>
+    <th class="sat" title="Saturday">S</th>
+  </tr>
+  <tr>
+  <%
+    var date = new Date(year + '-' + month + '-' + 1);
+    var day = date.getDay();
+  %>  
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="#111ss">4</a></td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+    <td><a href="#">22</a></td>
+    <td>23</td>
+    <td class="today">24</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>26</td>
+    <td>27</td>
+    <td>28</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
