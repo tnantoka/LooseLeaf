@@ -120,8 +120,8 @@
             <% var count = 0; %>
             <% for (var d in calendar[y][m]) { %>
               <% count += calendar[y][m][d].length; %>              
-              <li><a href="/archive/<%= y %>/<%= m %>/" rel="nofollow"><%= y %>-<%= m %></a>(<%= count %>)</li>
             <% } %>
+            <li><a href="/archive/<%= y %>/<%= m %>/" rel="nofollow"><%= y %>-<%= m %></a>(<%= count %>)</li>
           <% } %>
         <% } %>
       </ul>
