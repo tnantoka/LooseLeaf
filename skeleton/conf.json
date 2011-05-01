@@ -32,7 +32,7 @@
 			"img": "/file/author.png",
 			"links": [
 				{
-					"href": "http://twitter.com/yourname",
+					"href": "http://twitter.com/#!/yourname",
 					"text": "Twitter(@yourname)"
 				},
 				{

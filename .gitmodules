@@ -1,0 +1,3 @@
+[submodule "skeleton/public/tagget"]
+	path = skeleton/public/tagget
+	url = git://github.com/tnantoka/tagget.git
