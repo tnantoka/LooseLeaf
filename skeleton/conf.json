@@ -1,52 +1,52 @@
 {
-	"site": {
-		"name": "yourblog",
-		"href": "http://localhost:3000/",
-		"description": "mylooseleaf",
-		"theme": "style-future"
-	},
-	
-	"copyright": {
-		"href": "http://localhost/",
-		"text": "yoursite"
-	},
-	
-	"admin": {
-		"id": "admin",
-		"pass": "pass"
-	},
-	
-	"globalNavi": [
-		{
-			"href": "http://localhost/",
-			"text": "Home"
-		}
-	],
-	
-	"sidebar": {
+  "site": {
+    "name": "yourblog",
+    "href": "http://localhost:3000/",
+    "description": "My looseleaf.",
+    "theme": "style-future"
+  },
+  
+  "copyright": {
+    "href": "http://localhost/",
+    "text": "yoursite"
+  },
+  
+  "admin": {
+    "id": "admin",
+    "pass": "pass"
+  },
+  
+  "globalNavi": [
+    {
+      "href": "http://localhost/",
+      "text": "Home"
+    }
+  ],
+  
+  "sidebar": {
 
-		"about": "this is myblog",
-	
-		"author": {
-			"name": "yourname",
-			"img": "/file/author.png",
-			"links": [
-				{
-					"href": "http://twitter.com/#!/yourname",
-					"text": "Twitter(@yourname)"
-				},
-				{
-					"href": "http://www.facebook.com/yourname",
-					"text": "Facebook(@yourname)"
-				}
-			]
-		},
+    "about": "This is my blog.",
+  
+    "author": {
+      "name": "yourname",
+      "img": "/file/author.png",
+      "links": [
+        {
+          "href": "http://twitter.com/#!/yourname",
+          "text": "Twitter(@yourname)"
+        },
+        {
+          "href": "http://www.facebook.com/yourname",
+          "text": "Facebook(@yourname)"
+        }
+      ]
+    },
 
-		"links": [
-			{
-				"href": "/admin/login/",
-				"text": "Login"
-			}		
-		]	
-	}
+    "links": [
+      {
+        "href": "/admin/login/",
+        "text": "Login"
+      }    
+    ]  
+  }
 }

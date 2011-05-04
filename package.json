@@ -1,6 +1,6 @@
 {
 	"name": "looseleaf",
-	"version": "0.2.10",
+	"version": "0.2.11",
 	"description": "Lightweight blog engine on express",
 	"keywords" : ["CMS", "blog", "JSON", "express"],
 	"homepage": "http://looseleafjs.org/",

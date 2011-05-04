@@ -126,8 +126,22 @@ while (args.length) {
 
 if (path) {
   copyDir(join(BASE_DIR, 'skeleton'), path);
-  console.log('\x1b[34mnotice\x1b[39m: Please customize ' + path + '/conf.json');
-  console.log('done');
+  console.log('"' + path + '" created successfully');  
+  require('child_process').exec('npm link looseleaf', { cwd: path }, function(err, stdout, stderr) {
+    if (err) {
+      throw err;
+    }
+/*
+    if (stdout) {
+      console.log(stdout);
+    }
+*/
+    if (stderr) {
+      console.log(stderr);
+    }
+    console.log('looseleaf ok');
+    console.log('please customize "' + path + '/conf.json"');
+  });
 } else {
   error(USAGE);
 }
