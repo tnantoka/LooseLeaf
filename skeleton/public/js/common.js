@@ -14,7 +14,7 @@ $(function() {
       },
       errInsertPos: 'after',
       errPosition: 'fixed',
-      firstValidate: true,
+//      firstValidate: true,
       scrollToErr: false,
       errFocus: true
     });
@@ -28,7 +28,7 @@ $(function() {
       },
       errInsertPos: 'after',
       errPosition: 'fixed',
-      firstValidate: true,
+//      firstValidate: true,
       scrollToErr: false,
       errFocus: true
     });
@@ -42,7 +42,7 @@ $(function() {
       },
       errInsertPos: 'after',
       errPosition: 'fixed',
-      firstValidate: true,
+//      firstValidate: true,
       scrollToErr: false,
       errFocus: true
     });
@@ -55,7 +55,7 @@ $(function() {
       },
       errInsertPos: 'after',
       errPosition: 'fixed',
-      firstValidate: true,
+//      firstValidate: true,
       scrollToErr: false,
       errFocus: true
     });
@@ -68,7 +68,7 @@ $(function() {
       },
       errInsertPos: 'after',
       errPosition: 'fixed',
-      firstValidate: true,
+//      firstValidate: true,
       scrollToErr: false,
       errFocus: true
     });

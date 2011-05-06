@@ -3,7 +3,7 @@
 		"name": "yourblog",
 		"href": "http://localhost:3000/",
 		"description": "My looseleaf.",
-		"theme": "w-ninja2"
+		"theme": "w-future2"
 	},
 	"copyright": {
 		"href": "http://localhost/",
@@ -17,6 +17,11 @@
 		{
 			"href": "http://localhost/",
 			"text": "Home"
+		},
+		{
+			"href": "/",
+			"text": "Blog",
+			"current": true
 		}
 	],
 	"sidebar": {

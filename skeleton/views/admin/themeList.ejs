@@ -7,15 +7,9 @@
 	<h1><%= pageTitle %></h1>
 		<div class="section entry">
 			<div class="textBody">
-				<!-- Change theme form -->
 				<form class="post" method="post" action="<%= mapping.uri.admin.theme.edit %>">
 					<fieldset>
 						<legend>Theme Form</legend>
-						<div>
-							<p class="commentModerated">
-								<%- msg %>
-							</p>
-						</div>
 						<dl>
 							<dt>
 								<label for="theme">Theme</label>
@@ -43,7 +37,7 @@
 </div>
 <!-- end main-->
 <%- partial('../partials/admin/utilities') %> 
-<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
 </div>
 <!--end content-->
 <%- partial('../partials/footer') %>

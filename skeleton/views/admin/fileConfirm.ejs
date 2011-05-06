@@ -3,32 +3,32 @@
 <%- partial('../partials/header') %>
 <div id="content">
 <div id="main">
-	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
-	<h1><%= pageTitle %></h1>
-		<div class="section entry">
-			<div class="textBody">
-			<!-- Post Entry form -->
-			<form class="post" method="post" action="/admin/file/remove/">
-				<fieldset>
-					<legend>File Form</legend>
-					<div>
-						<p class="commentModerated">
-							<a href="/file/<%= name %>"><%= name %></a>を削除しますか？
-						</p>
-					</div>
-					<div class="action">
-						<input type="submit" class="submit post" value="Delete" />
-					</div>
-				</fieldset>
-				<input type="hidden" name="name" value="<%= name %>" />
-			</form>
-			</div>
-		</div>
-	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+  <p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+  <h1><%= pageTitle %></h1>
+    <div class="section entry">
+      <div class="textBody">
+      <!-- Post Entry form -->
+      <form class="post" method="post" action="/admin/file/remove/">
+        <fieldset>
+          <legend>File Form</legend>
+          <div>
+            <p class="commentModerated">
+              Are you sure you want to delete "<a href="/file/<%= name %>"><%= name %></a>"?
+            </p>
+          </div>
+          <div class="action">
+            <input type="submit" class="submit post" value="Delete" />
+          </div>
+        </fieldset>
+        <input type="hidden" name="name" value="<%= name %>" />
+      </form>
+      </div>
+    </div>
+  <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
 </div>
 <!-- end main-->
 <%- partial('../partials/admin/utilities') %> 
-<p class="return"><a href="#header" title="このページの先頭へ戻る">Page Top</a></p>
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
 </div>
 <!--end content-->
 <%- partial('../partials/footer') %>
