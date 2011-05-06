@@ -5,3 +5,6 @@ span.update {
 	color: red;
 }
 
+input#scope {
+  outline: none;
+}

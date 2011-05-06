@@ -50,6 +50,27 @@
 					<p></p>
 					<dl>
 						<dt>
+							<label for="tags">Tags</label>
+						</dt>
+						<dd>
+							<input type="text" class="inputField" id="tags" name="tags" value="<%= entry.tags %>" />
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
+							Scope
+						</dt>
+						<dd>
+							<input type="checkbox" name="private" id="private"
+							<%= entry.private ? 'checked' : '' %>
+							/>
+							<label for="private">private</input>
+						</dd>
+					</dl>
+					<p></p>
+					<dl>
+						<dt>
 							<label for="tb">TrackBack</label>
 						</dt>
 						<dd>

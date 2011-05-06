@@ -4,10 +4,10 @@
 var fs = require('fs'),
   join = require('path').join;
 
-
 /* Define constants */
 var BASE_DIR = join(__dirname, '..');
 var VERSION = require('../lib/package').version();
+var CODE_NAME = require('../lib/package').codeName();
 var DEFAULT_PATH = 'blog';
 var USAGE = ''
   + '\x1b[1mUsage\x1b[0m: looseleaf [options] [path="' + DEFAULT_PATH + '"]\n'
@@ -113,7 +113,7 @@ while (args.length) {
       break;
     case '-v':
     case '--version':
-      success(VERSION);
+      success(VERSION + ' "' + CODE_NAME + '"');
       break;
     case '-d':
     case '--dir':

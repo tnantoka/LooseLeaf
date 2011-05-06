@@ -1,0 +1,540 @@
+@charset "UTF-8";
+
+/*
+Skin Name: Galaxy Skin - Layout Module
+Author: vicuna.jp
+
+Layout Class: single, double, double-l, multi, multi2, multi2-l
+Eye Cach Class: eye-h, eye-hb, eye-m, eye-c
+SP Class: multi eye-c set1, multi2 eye-c set2
+Fixed Width Class: f800, f850, f900, f950, f1000
+Other Class: gt, al
+*/
+
+body {
+	margin: 0 8px;
+	text-align: center;
+}
+
+div#header,
+div#content,
+div#footer {
+	width: 95%; /*(60%~ | 600px~ | 60em~) etc.*/
+	min-width: 600px;
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+}
+
+/*========================================
+
+	Single Column Layout
+	
+	<body class="single">
+
+	┏━━━┓
+	┃━━━┃
+	┣━┳━┫
+	┗━┻━┛
+
+========================================*/
+
+body.single h1 {
+	border-bottom: none;
+}
+
+body.individual div.entry {
+	margin-top: 0;
+}
+
+/* Utilities
+---------------*/
+
+body.single div#utilities {
+	margin: 10px 10px;
+}
+
+body.single div#utilities dl {
+	margin: 0;
+}
+
+body.single div#utilities dl.navi {
+	margin-left: 2%;
+	border: 1px solid #222;
+	float: left;
+	width: 47%;
+	display: inline; /* for IE6 */
+}
+
+body.single div#utilities dl.others {
+	margin-right: 2%;
+	border: 1px solid #222;
+	float: right;
+	clear: right;
+	width: 47%;
+	display: inline; /* for IE6 */
+}
+
+body.single div#utilities ul.thumb li {
+	width: 20%;
+}
+
+/* clearfix */
+
+body.single div#utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*¥*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+}
+
+body.single div#utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+/*========================================
+
+	Double Column Layout - Sidebar on right
+
+	<body class="double">
+
+	┏━━━┓┏┓
+	┃━━━┃┃┃
+	┗━━━┛┗┛
+
+========================================*/
+
+body.double div#main {
+	width: 75%;
+	float: left;
+	margin-right: -1px;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+}
+
+/* Utilities
+---------------*/
+
+body.double div#utilities {
+	width: 25%;
+	float: left;
+	clear: right;
+}
+
+/*========================================
+
+	Double Column Layout - Sidebar on left
+
+	<body class="double-l">
+
+	┏┓┏━━━┓
+	┃┃┃━━━┃
+	┗┛┗━━━┛
+
+========================================*/
+
+body.double-l div#main {
+	width: 75%;
+	float: right;
+	margin-left: -1px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+}
+
+/* Utilities
+---------------*/
+
+body.double-l div#utilities {
+	width: 25%;
+	float: right;
+	clear: left;
+}
+
+/*========================================
+
+	Multi Column Layout - Wing
+	! Negative Margin Layout
+
+	<body class="multi">
+
+	┏┓┏━━┓┏┓
+	┃┃┃━━┃┃┃
+	┗┛┗━━┛┗┛
+
+========================================*/
+
+body.multi div#main {
+	margin-right: -180px;
+	float: left;
+	width: 100%;
+	background-position: 180px 0; /* for body.eye-c */
+}
+
+body.multi div#main > * {
+	margin-left: 210px;
+	margin-right: 210px;
+}
+
+body.multi div#main p.topicPath,
+body.multi div#main ul#flip1,
+body.multi div#main div.entry,
+body.multi div#main p.archives,
+body.multi div#main div.freeSpace {
+	margin-left: 210px;
+	margin-right: 210px;
+}
+
+body.multi div#main h1 {
+	margin-left: 180px;
+	margin-right: 180px;
+}
+
+/* Utilities
+---------------*/
+
+body.multi div#utilities {
+	float: right;
+	clear: right;
+	width: 180px;
+}
+
+body.multi div#utilities dl.navi {
+	margin: 0;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	width: 180px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #303030;
+}
+
+body.multi div#utilities dl.others {
+	margin-top: 0;
+	padding: 1px 0 5px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+	background-color: #303030;
+}
+
+/*========================================
+
+	Multi Column Layout - Double sidebar R
+
+	<body class="multi2">
+
+	┏━━┓┏┓┏┓
+	┃━━┃┃┃┃┃
+	┗━━┛┗┛┗┛
+
+========================================*/
+
+body.multi2 div#main {
+	margin-right: -1px;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	float: left;
+	width: 55%;
+}
+
+/* Utilities
+---------------*/
+
+body.multi2 div#utilities {
+	float: right;
+	clear: right;
+	width: 45%;
+}
+
+body.multi2 div#utilities dl.navi {
+	margin: 0;
+	float: left;
+	width: 50%;
+}
+
+body.multi2 div#utilities dl.navi dt,
+body.multi2 div#utilities dl.navi dd {
+	margin-right: 0;
+}
+
+body.multi2 div#utilities dl.others {
+	margin: 0;
+	float: left;
+	clear: right;
+	width: 50%;
+	_width: auto; /* for IE6 */
+}
+
+/*========================================
+
+	Multi Column Layout - Double sidebar L
+
+	<body class="multi2-l">
+
+	┏┓┏┓┏━━┓
+	┃┃┃┃┃━━┃
+	┗┛┗┛┗━━┛
+
+========================================*/
+
+body.multi2-l div#main {
+	margin-left: -1px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+	float: right;
+	width: 55%;
+}
+
+/* Utilities
+---------------*/
+
+body.multi2-l div#utilities {
+	float: left;
+	clear: left; 
+	width: 45%;
+}
+
+body.multi2-l div#utilities dl.navi {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+}
+
+body.multi2-l div#utilities dl.navi dt,
+body.multi2-l div#utilities dl.navi dd {
+	margin-right: 0;
+}
+
+body.multi2-l div#utilities dl.others {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+	clear: right;
+	_width: auto; /* for IE6 */
+}
+
+/*========================================
+
+	Eye Catch
+
+========================================*/
+
+/* Header - <body class="eye-h">
+---------------*/
+
+body.eye-h div#header {
+	height: 180px;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-h div#header p.siteName {
+	margin: 0;
+	position: absolute;
+	top: 50px;
+	left: 30px;
+}
+
+body.eye-h div#header p.siteName {
+
+}
+
+body.eye-h div#header p.description {
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	left: 30px;
+}
+
+body.eye-h ul#globalNavi {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/* Header Banner - <body class="eye-hb">
+---------------*/
+
+body.eye-hb div#header {
+	padding-top: 0;
+}
+
+body.eye-hb div#header p.siteName {
+	margin: 0;
+}
+
+body.eye-hb div#header p.siteName a {
+	height: 180px;
+	display: block;
+	text-indent: -9999px;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+
+body.eye-hb div#header p.description {
+	display: none;
+}
+
+/* Content - <body class="eye-c">
+---------------*/
+
+body.eye-c div#content {
+	padding-top: 180px;
+	border-top: none;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-c div#utilities dl.navi {
+	top: auto;
+}
+
+/* Main - <body class="eye-m">
+---------------*/
+
+body.eye-m div#content {
+	border-top: none;
+}
+
+body.eye-m div#main {
+	padding-top: 180px;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+/*========================================
+
+	Special Layout set
+
+========================================*/
+
+/* <body class="multi eye-c set1">
+---------------*/
+
+body.set1 div#utilities dl.navi {
+	top: 0;
+}
+
+body.set1 div#content {
+	background-position: 180px 0;
+}
+
+/* <body class="multi2 eye-c set2">
+---------------*/
+
+body.set2 div#utilities {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+body.set2 div#utilities dl.navi {
+	float: right;
+	background-color: #303030;
+}
+
+body.set2 div#utilities dl.navi dt,
+body.set2 div#utilities dl.navi dd {
+	margin-right: 5px;
+}
+
+body.set2 div#utilities dl.others {
+	margin-top: 180px;
+	float: left;
+	clear: left;
+}
+
+body.set2 div#utilities dl.others dt,
+body.set2 div#utilities dl.others dd {
+	margin-right: 0;
+}
+
+/*========================================
+
+	Others
+
+========================================*/
+
+/* Navi on top <body class="gt">
+---------------*/
+
+body.gt div#header {
+	padding-top: 30px;
+	background-position: left bottom;
+}
+
+body.gt ul#globalNavi {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+}
+/* No Centering - <body class="al">
+---------------*/
+
+body.al {
+	margin: 0;
+	text-align: left;
+}
+
+body.al div#header,
+body.al div#content,
+body.al div#footer {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Fixed 800px - <body class="f800">
+---------------*/
+
+body.f800 div#header,
+body.f800 div#content,
+body.f800 div#footer {
+	width: 800px;
+}
+
+/* Fixed 850px - <body class="f850">
+---------------*/
+
+body.f850 div#header,
+body.f850 div#content,
+body.f850 div#footer {
+	width: 850px;
+}
+
+/* Fixed 900px - <body class="f900">
+---------------*/
+
+body.f900 div#header,
+body.f900 div#content,
+body.f900 div#footer {
+	width: 900px;
+}
+
+/* Fixed 950px - <body class="f950">
+---------------*/
+
+body.f950 div#header,
+body.f950 div#content,
+body.f950 div#footer {
+	width: 950px;
+}
+
+/* Fixed 1000px - <body class="f1000">
+---------------*/
+
+body.f1000 div#header,
+body.f1000 div#content,
+body.f1000 div#footer {
+	width: 1000px;
+}

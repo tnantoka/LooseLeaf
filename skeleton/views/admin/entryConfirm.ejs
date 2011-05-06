@@ -45,6 +45,30 @@
 							<%- entry.body %>
 						</dd>
 					</dl>
+					<dl>
+						<dt>
+							Tags
+						</dt>
+						<dd>
+							<%- entry.tags.join(', ') %>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							Scope
+						</dt>
+						<dd>
+							<%- entry.private ? 'privale' : 'public' %>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							Trackback
+						</dt>
+						<dd>
+							<%- entry.trackback_to %>
+						</dd>
+					</dl>
 					<div class="action">
 						<input type="submit" class="submit post" value="Delete" />
 					</div>

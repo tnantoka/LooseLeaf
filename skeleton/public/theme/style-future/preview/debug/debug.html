@@ -1,0 +1,106 @@
+<script type="text/javascript">
+//<![CDATA[
+					 
+	$("html").css("margin-right", "120px");
+	
+	var layoutClass ="single double double-l multi multi2 multi2-l set1 set2 set3";
+	var eyeCatchClass ="eye-h eye-hb eye-m eye-u eye-c set1 set2 set3";	
+	var widthClass ="f800 f850 f900 f950 f1000";
+	var otherClass ="al gt gh";
+	
+	function setLayout(type) {
+		$("body").removeClass(layoutClass).addClass(type);
+	};
+
+// Eye Catch
+	
+	function setEye(type) {
+		$("body").removeClass(eyeCatchClass).addClass(type);
+	};
+	
+// Width
+	
+	function setWidth(type) {
+		$("body").removeClass(widthClass).addClass(type);
+	};
+
+// Set
+
+	function setSet(type) {
+		$("body").removeClass(layoutClass).removeClass(eyeCatchClass);
+		$("body").addClass(type);
+	};
+	
+// Others
+
+	function setOthers(type) {
+		$("body").removeClass(otherClass).addClass(type);
+	};
+
+	$("div.debug-tool .view").toggle(
+	function(){
+		$("div.debug-tool div").hide();
+		$("html").css("margin-right", "auto");
+	},
+	function(){
+		$("div.debug-tool div").show();
+		$("html").css("margin-right", "120px");
+	});
+
+//]]>
+</script>
+
+<div class="class">
+ <h2>Debug mode</h2>
+ <div class="layout">
+  <h3>Layout</h3>
+  <ul>
+   <li><a class="single" onclick="setLayout('single');">single</a></li>
+   <li><a class="double" onclick="setLayout('double');">double</a></li>
+  </ul>
+ </div>
+ <div class="eye-catch">
+  <h3>Eye Catch</h3>
+  <ul>
+   <li><a class="eye-h" onclick="setEye('eye-h');">eye-h</a></li>
+   <li><a class="eye-hb" onclick="setEye('eye-hb');">eye-hb</a></li>
+   <li><a class="eye-c" onclick="setEye('eye-c');setLayout('double');">eye-c double</a></li>
+   <li><a class="eye-u" onclick="setEye('eye-u');setLayout('double');">eye-u double</a></li>
+   <li><a class="e-clear" onclick="setEye('e-clear');">none</a></li>
+  </ul>
+ </div>
+ <div class="width">
+  <h3>Width</h3>
+  <ul>
+   <li><a class="f800" onclick="setWidth('f800');">f800</a></li>
+   <li><a class="f900" onclick="setWidth('f900');">f900</a></li>
+   <li><a class="f1000" onclick="setWidth('f1000');">f1000</a></li>
+   <li><a class="w-clear" onclick="setWidth('w-clear');">none</a></li>
+  </ul>
+ </div>
+ <div class="others">
+  <h3>Others</h3>
+  <ul>
+   <li><a class="gh" onclick="setOthers('gh');">hidden Navi</a></li>
+   <li><a class="o-clear" onclick="setOthers('o-clear');">none</a></li>
+  </ul>
+ </div>
+</div>
+<div class="pages">
+ <h2>Page Link</h2>
+ <ul>
+  <li><a class="mainIndex" href="index.html" accesskey="1">Index</a></li>
+  <li><a class="category" href="category.html" accesskey="2">Category</a></li>
+  <li><a class="individual" href="individual.html" accesskey="3">Individual</a></li>
+  <li><a class="archives" href="archives.html" accesskey="4">Archive</a></li>
+ </ul>
+</div>
+<div class="pages">
+ <h2>Link</h2>
+ <ul>
+  <li><a href="http://vicuna.jp/customize/help/">Help</a></li>
+  <li><a href="http://vicuna.jp/">Vicuna</a></li>
+  <li><a href="http://vicuna.jp/feedback/">Feedback</a></li>
+ </ul>
+</div>
+<p class="view"><a class="view"> - </a></p>

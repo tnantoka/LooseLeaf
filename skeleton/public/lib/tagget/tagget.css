@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/* reset */
+div.tagget_wrapper p {
+	margin: 0;
+	padding: 0;
+}
+
+/* wrapper */
+div.tagget_wrapper {
+	text-align: center;
+}
+
+/* menu */
+div.tagget_toolbar p {
+	padding: 2px 4px;
+	float: left;
+	height: 100%;
+	border-right: 1px solid #aaaaaa;
+}
+
+/* selectの誤差調整 */
+div.tagget_toolbar p.tagget_encode,
+div.tagget_toolbar p.tagget_cookie,
+div.tagget_toolbar p.tagget_intelli,
+div.tagget_toolbar p.tagget_type {
+	padding-top: 4px;
+	padding-bottom: 3px;
+}
+
+/* selectラベルのフォント調整 */
+div.tagget_toolbar p.tagget_intelli,
+div.tagget_toolbar p.tagget_cookie {
+	border-right: none;
+}
+div.tagget_toolbar p.tagget_intelli label,
+div.tagget_toolbar p.tagget_cookie label {
+	font-weight: normal;
+	vertical-align: top;
+}
+
+/* status */
+div.tagget_wrapper p.tagget_status span {
+	font-weight: normal;
+	vertical-align: top;
+	font-style: italic;
+	margin-left: 10px;
+}
+
+div.tagget_wrapper p.tagget_status {
+	text-align: right;
+	padding-right: 5px;
+}
+
+/* inputの余白調整 */
+div.tagget_toolbar p.tagget_replace input {
+	margin: 0px 3px;
+	width: 8em;
+}
+
+div.tagget_toolbar p.tagget_replace img {
+	vertical-align: baseline;
+}
+
+/* main */
+p.tagget_main textarea {
+	font-family: monospace;
+	width: 99%;
+	height: 100%;
+	overflow: scroll;
+	padding: 0 3px;
+	margin: 0;
+}
+
+/* popup */
+ul.tagget_popup {
+	padding: 0;
+	margin: 1em 0 0 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	z-index: 1;
+	list-style-type: none;
+	border: 1px solid #ccc;
+	/*font-size: 88%;*/
+	font-family: monospace;
+	background-color: #fcfcfc;
+	text-align: left;
+}
+
+ul.tagget_popup li {
+	padding: 0 3px;
+	margin: 0;
+}
+
+ul.tagget_popup li.tagget_current {
+	background-color: #789;
+	color: #fff;
+}
+
+/* dummy */
+pre.tagget_dummy {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	visibility: hidden;
+	text-align: left;
+}

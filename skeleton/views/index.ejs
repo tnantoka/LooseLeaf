@@ -16,7 +16,7 @@
 			<li class="category"><a href="/category/<%= entries[i].category %>/" title="<%= categories[entries[i].category].name %> Index"><%= categories[entries[i].category].name %></a></li>
 			<li class="tag">
 			<% for (var j = 0; j < entries[i].tags.length; j++) { %>
-				<a href="./" rel="nofollow"><%= tags[entries[i].tags[j]].name %></a><% if (entries[i].tags[j + 1] != undefined) { %>, <% } %>
+				<a href="/tag/<%= entries[i].tags[j] %>/" rel="nofollow"><%= entries[i].tags[j] %></a><% if (entries[i].tags[j + 1] != undefined) { %>, <% } %>
 				<% } %>
 			</li>
 		</ul>

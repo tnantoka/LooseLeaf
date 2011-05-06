@@ -1,6 +1,6 @@
 {
 	"name": "looseleaf",
-	"version": "0.2.11",
+	"version": "0.3.0",
 	"description": "Lightweight blog engine on express",
 	"keywords" : ["CMS", "blog", "JSON", "express"],
 	"homepage": "http://looseleafjs.org/",
@@ -17,6 +17,8 @@
 		"express": ">=2.0.0",
 		"ejs": ">=0.3.1",
 		"connect-form": ">=0.2.0",
+		"node-uuid": ">=1.1.0",
+		"validator": ">=0.2.0",
 		"daemon": ">=0.3.0"
    	},
 	"engines": {"node": ">= 0.4.0"}
