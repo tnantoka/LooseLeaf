@@ -1,0 +1,1768 @@
+/*
+Skin Name: Vega Skin - Fc2 Wikuna Style
+Author: vicuna.jp
+Customize: Wikuna
+Customize: Black vicuna
+Licence: MIT Licence
+*/
+
+
+/*
+Yahoo fonts.css 2.7.0
+http://developer.yahoo.net/yui/license.txt
+Font size Adjustment.
+http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
+*/
+
+ body{
+	font:13px/1.231 arial,helvetica,clean,sans-serif;
+	*font-size:small;
+	*font:x-small;
+}
+
+select,
+input,
+button,
+textarea{
+	font:99% arial,helvetica,clean,sans-serif;
+}
+
+table{
+	font-size:inherit;
+	font:100%;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt{
+	font-family:monospace;
+	*font-size:108%;
+	line-height:100%;
+}
+
+/*========================================
+
+  Elements
+
+========================================*/
+
+body {
+	color: #555;
+	background-color: #666;
+	font-family : "Myriad Web Pro", "Myriad Pro", "Gill Sans", Arial, Helvetica, sans-serif;
+}
+
+/* Link
+---------------*/
+
+a:link {
+	color: #005585;
+}
+
+a:visited {
+	color: #818f98;
+}
+
+a:hover {
+	color: #01b0f0;
+}
+
+a:focus,
+textarea:focus,
+input:focus {
+	outline: 1px solid #2091da;
+}
+
+/* Text
+---------------*/
+
+h1 {
+	margin: 0;
+	padding: 15px 30px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	line-height: 1.5;
+	font-size: 167%;
+	color: #333;
+	background-color: #f5f5f5;
+}
+
+body.mainIndex h1 {
+	display: none;
+}
+
+h2 {
+	margin: 1em 0;
+	font-size: 123.1%;
+}
+
+h3 {
+	margin-top: 2em;
+	padding-bottom: 0.4em;
+	border-bottom: 4px solid #eee;
+	font-size: 116%;
+}
+
+p {
+	margin: 1em 0;
+}
+
+blockquote {
+	margin: 1em 0 1em 20px;
+	padding: 8px 10px 5px 40px;
+	border: 1px solid #eee;
+	color: #95561b;
+	background-image: url(img/vega_quote.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+blockquote  p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+pre,
+code {
+	font-family: Monaco, "Courier New", monospace;
+}
+
+pre {
+	padding: 15px 20px;
+	border-top: 1px solid #cfe4e8;
+	border-left: 1px solid #cfe4e8;
+	color: #086dac;
+	background-color: #ebf1f2;
+	overflow: auto;
+	width: 90%;
+	_width: 95%; /* for IE6 */
+	
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+em {
+	font-weight: normal;
+	font-style: normal;
+	white-space: nowrap;
+	border: 1px solid #ccc;
+	padding: 0.1em 0.6em;
+	background: #f9f9f9;
+
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+strong {
+	color: #ff3200;
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/* List
+---------------*/
+
+ul,
+ol {
+	margin: 1em 30px;
+	padding: 0;
+	list-style-position: outside;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+	margin: 0.3em 0 0.3em 15px;
+}
+
+/* form
+---------------*/
+
+form {
+	margin: 1em 0;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f5f5;
+
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+fieldset {
+	padding: 1px 0;
+	border: none;
+}
+
+legend {
+	padding: 0 10px;
+	background-color: #fff;
+}
+
+input,
+textarea {
+	padding: 0.2em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ddd #eee #eee #ddd;
+	background-color: #fff;
+}
+
+input:hover,
+textarea:hover {
+	border-color: #00a0dd;
+}
+
+textarea {
+	padding: 0.5em 10px;
+}
+
+input.submit {
+	padding: 5px 10px;
+	border: none;
+	font-size: 85%;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #01b0f0;
+}
+
+input.submit:hover {
+	background-color: #000;
+}
+
+input.radio {
+	border: none;
+	background-color: transparent;
+	background-image: none;
+}
+
+/* Table
+---------------*/
+
+table {
+	margin: 1em 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ddd #ccc #ccc #ddd;
+	background-color: #fff;
+}
+
+caption {
+	padding-bottom: 0.3em;
+}
+
+th,
+td {
+	padding: 0.3em 10px;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+th {
+	border-right: 1px solid #ddd;
+	color: #333;
+	background-color: #f5f5f5;
+}
+
+td {
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+}
+
+/* Others
+---------------*/
+
+hr {
+	margin: 1.5em 0;
+	border: none;
+	border-top: 1px dotted #ccc;
+}
+
+/*========================================
+
+  div#header
+
+========================================*/
+
+div#header {
+	padding: 1px 0;
+	background-color: #fff;
+	font-family: "Lucida Sans", "Trebuchet MS";
+}
+
+/* Website Title
+---------------*/
+
+div#header p.siteName {
+	margin: 25px 30px 10px;
+	line-height: 1;
+	font-size: 144%;
+	font-weight: bold;
+}
+
+div#header p.siteName a {
+	text-decoration: none;
+	color: #01b0f0;
+}
+
+div#header p.siteName a:hover {
+	color: #000;
+}
+
+div#header p.description {
+	margin: 0 30px 25px;
+	font-size: 92%;
+	color: #999;
+}
+
+/* ul#globalNavi
+---------------*/
+
+ul#globalNavi {
+	margin: 0 0 -1px 0;
+	padding: 0;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	line-height: 1;
+	background-color: #888;
+	list-style-type: none;
+}
+
+ul#globalNavi li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 110px;
+	text-align: center;
+}
+
+ul#globalNavi li a {
+	border-right: 1px solid #888;
+	padding: 9px 20px;
+	display: block;
+	position: relative; /* for IE6 */
+	color: #fff;
+	background-color: #555;
+	text-decoration: none;
+}
+
+ul#globalNavi li a:hover,
+ul#globalNavi li.current a {
+	color: #333;
+	background-color: #eee;
+}
+
+/*========================================
+
+  div#content
+
+========================================*/
+
+div#content {
+	padding-bottom: 1px;
+	border-top: 0px solid #888;
+	background-color: #fff;
+}
+
+p.topicPath {
+	margin: 0 30px 10px;
+	padding-top: 8px;
+	line-height: 1.6;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+p.topicPath a {
+	text-decoration: none;
+}
+
+p.topicPath span.current {
+	padding: 1px 10px;
+	border: 1px solid #ddd;
+	background-color: #f5f5f5;
+}
+
+/*=========================
+ > div#main
+=========================*/
+
+/* > div.entry
+---------------*/
+
+div.entry {
+	margin: 1em 30px;
+	padding: 1px 0;
+	_height: 1px; /* for IE6 */
+	*min-height: 1px; /* for IE7 */
+}
+
+/* body.archives */
+
+body.archives div.entry {
+	margin-top: 0;
+}
+
+/* Entry Title
+---------------*/
+
+div.entry h2 {
+	margin-bottom: 0;
+	padding: 0.2em 13px 0.4em;
+	border-left: 5px solid #666;
+	border-bottom: 1px dotted #ccc;
+}
+
+div.entry h2 a {
+	text-decoration: none!important;
+}
+
+div.entry h2 a:link {
+	color: #333;
+}
+
+div.entry h2 a:visited {
+	color: #444;
+}
+
+div.entry h2 a:hover {
+	color: #2091da;
+	text-decoration: underline;
+}
+
+/* ul.info
+---------------*/
+
+div.entry ul.info {
+	margin: 0 0 1em 0;
+	padding: 0.3em 0;
+	border-left: 5px solid #ccc;
+	border-bottom: 1px solid #eee;
+	list-style-type: none;
+	background-color: #f5f5f5;
+}
+
+div.entry ul.info li {
+	margin: 0.3em 0;
+	padding: 0 15px;
+	border-right: 1px solid #ddd;
+	color: #444;
+	float: left;
+	font-size: 85%;
+}
+
+div.entry ul.info li a {
+	text-decoration: none;
+}
+
+/*body.individual ul.info */
+
+body.individual div.entry ul.info,
+body.archives div.entry ul.info {
+	margin: 0 -30px 1.5em;
+	padding: 0.3em 30px;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+	top: -1px;
+	background-color: #eee;
+}
+
+body.individual div.entry ul.info li,
+body.archives div.entry ul.info li{
+	border-right: none;
+	border-left: 1px solid #ccc;
+}
+
+/* Text Style
+---------------*/
+
+div.textBody p,
+div.textBody li {
+	line-height: 1.7;
+	letter-spacing: 1px;
+}
+
+div.textBody h2 {
+	margin-top: 2em;
+}
+
+div.textBody dl {
+	padding: 0.5em 20px;
+	border: 1px solid #eee;
+
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+div.textBody dt {
+	margin: 0.7em 0;
+	padding-bottom: 0.3em;
+	border-bottom: 1px dotted #ccc;
+	font-weight: bold;
+	color: #0066CC;
+}
+
+div.textBody dd {
+	margin: 0.5em 0;
+}
+
+/* Link img
+---------------*/
+
+div.textBody a img {
+	border: 3px solid #ccc;
+}
+
+div.textBody a:hover img {
+	border: 3px solid #000;
+}
+
+/* p.continue
+---------------*/
+
+p.continue {
+	margin-top: 1em;
+	margin-bottom: 2em;
+	padding-left: 20px;
+	clear: both;
+	background-image: url(img/future_arrow03.gif);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+p.continue a:link,
+p.continue a:visited {
+	padding: 1px 20px 1px 8px;
+	color: #fff;
+	border-left: 5px solid #005585;
+	background-color: #555;
+	background-image: url(img/future_arrow01.gif);
+	background-repeat: no-repeat;
+	background-position: 96% center;
+	text-decoration: none;
+}
+
+p.continue a:hover {
+	border-color: #01b0f0;
+	color: #333;
+	background-color: #eee;
+}
+
+/* ul.reaction
+---------------*/
+
+div.entry ul.reaction {
+	margin: 1em 0;
+	border-top: 1px solid #eee;
+	list-style-type: none;
+}
+
+div.entry ul.reaction li {
+	margin: 0 10px 0 0;
+	padding: 5px 10px 0 0;
+	border-right: 1px solid #eee;
+	float: left;
+}
+
+/* page navi
+---------------*/
+
+p.archives {
+	margin: 1em 30px;
+}
+
+p.return {
+	margin: 0 30px;
+	padding: 0.7em 0;
+	text-align: right;
+	clear: both;
+}
+
+/* Newer | Older */
+
+ul#flip1 {
+	margin: 0 0 0 30px;
+	list-style-type: none;
+	position: relative;
+	top: 1px;
+}
+
+ul#flip1 li {
+	float: left;
+	width: 60px;
+	font-size: 92%;
+	text-align: center;
+	line-height: 1;
+}
+
+ul#flip1 li a {
+	margin-right: 2px;
+	padding: 4px 0 3px;
+	border: 1px solid #eee;
+	border-right: 1px solid #ddd;
+	border-bottom: none;
+	display: block;
+	text-decoration: none;
+	color: #666;
+	background-color: #f5f5f5;
+}
+
+ul#flip1 li a:hover {
+	color: #333;
+	background-color: #fff;
+}
+
+ul#flip2 {
+	line-height: 1.7;
+	margin: 1em 0;
+	padding: 0.8em 15px;
+	border: 1px solid #eee;
+	list-style-position: inside;
+}
+
+/*=========================
+  div#Comments, 
+  div#Trackbacks
+=========================*/
+
+div#comments,
+div#trackback {
+	margin: 2em 0;
+	_height: 1px; /* for IE6 */
+}
+
+div#comments h2,
+div#trackback h2 {
+	padding: 0.3em 15px;
+	font-size: 116%;
+	color: #fff;
+	background-color: #999;
+}
+
+div#comments dl.log dt,
+div#trackback dl.log dt {
+	margin: 0.8em 0 0;
+	font-weight: bold;
+}
+
+div#comments dl.log dt span.name,
+div#trackback dl.log dt span.name {
+	color: #2091da;
+}
+
+div#comments dl.log dt span.date,
+div#trackback dl.log dt span.date {
+	margin-left: 10px;
+	color: #666;
+	font-weight: normal;
+}
+
+div#comments dl.log dd,
+div#trackback dl.log dd {
+	margin: 0;
+	padding: 0.8em 0 1em;
+	border-bottom: 1px dotted #ddd;
+}
+
+div#comments dl.log dd p,
+div#trackback dl.log dd p {
+	margin: 0;
+}
+
+/* Comment form
+---------------*/
+
+form.post dl {
+	margin: 0.5em 20px;
+}
+
+form.post p {
+	margin: 1em 20px;
+}
+
+form.post dl dt {
+	margin: 0.5em 0;
+}
+
+form.post dl dd {
+	margin: 0;
+}
+
+form.post div.action {
+	margin: 0.5em 20px 1em;
+}
+
+form.post div.action input {
+	margin: 0 5px 0 0;
+}
+
+form.post textarea {
+	width: 80%;
+	max-width: 85%;
+}
+
+/* Trackback info
+---------------*/
+
+div#trackback dl.info {
+	padding: 0.8em 15px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f5f5;
+}
+
+div#trackback dl.info dd {
+	margin: 0.3em 20px;
+}
+
+div#trackback dl.info dd.URL {
+	margin: 0.5em 0;
+	padding: 0.5em 10px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	background-color: #fff;
+	color: #01b0f0;
+}
+
+/*=========================
+  div#utilities
+=========================*/
+
+div#utilities p {
+	margin: 0.2em 10px;
+	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+}
+
+div#utilities dl {
+	margin: 5px 0;
+	padding-bottom: 5px;
+}
+
+div#utilities dl dt {
+	margin: 5px 5px;
+	padding: 0.4em 13px;
+	color: #fff;
+	background-color: #777;
+}
+
+div#utilities dl.others dt {
+	background-color: #aaa;
+}
+
+div#utilities dl dd {
+	margin: 0 5px;
+	padding: 1px 0;
+	background-color: #f5f5f5;
+}
+
+div#utilities dl dd ul {
+	margin: 5px 10px 5px 25px;
+}
+
+div#utilities dl dd ul li {
+	margin: 0.5em 0;
+}
+
+div#utilities dl dd ul li a {
+	text-decoration: none;
+}
+
+div#utilities dd p.profImg,
+div#utilities dd p.plugin-myimage {
+	text-align: center;
+}
+
+/* Feeds
+---------------*/
+
+div#utilities dl dd ul.feed {
+	margin-left: 10px;
+	list-style-type: none;
+	list-style-position: outside;
+}
+
+div#utilities dl dd ul.feed li {
+	margin-left: 0;
+}
+
+div#utilities dl dd ul.feed li a {
+	padding-left: 20px;
+	background: url(img/vega_icon_feed.gif) no-repeat;
+}
+
+/* div#utilities dl dd >  
+---------------*/
+
+div#utilities dl dd ul ul {
+	margin-left: 15px;
+}
+
+div#utilities dl dd dl dt {
+	background-color: #ddd!important;
+}
+
+div#utilities dl dd form {
+	margin: 0;
+	padding: 1px 5px;
+	border: none;
+}
+
+div#utilities dl dd form legend {
+	display: none;
+}
+
+div#utilities dl dd form input.inputField {
+	width: 45%;
+}
+
+div#utilities dl dd form input.submit {
+	padding: 0.2em 2px;
+	font-size: 11px;
+}
+
+/*========================================
+
+  div#footer
+
+========================================*/
+
+div#footer {
+	padding: 1px 0 1em;
+}
+
+div#footer a {
+	color: #aaa;
+	text-decoration: none;
+}
+
+div#footer a:hover {
+	color: #fff;
+}
+
+div#footer ul {
+	margin: 0.7em 0;
+	text-align: right;
+	color: #aaa;
+	font-size: 85%;
+}
+
+div#footer ul li {
+	margin-left: 5px;
+	display: inline;
+}
+
+div#footer address {
+	text-align: right;
+	font-style: normal;
+	color: #ddd;
+	font-family: "Lucida Sans", "Trebuchet MS";
+}
+
+div#footer address a {
+	color: #ddd;
+}
+
+div#footer address a:hover {
+	color: #fff;
+}
+
+/*========================================
+
+  Class
+
+========================================*/
+
+.image a img {
+	border: none;
+}
+
+/* Headline
+---------------*/
+
+dl.headline {
+	margin: 0.5em 0;
+}
+
+dl.headline dt span.date {
+	font-size: 85%;
+}
+
+dl.headline dd {
+	margin: 0.5em 0 1.2em;
+	padding-bottom: 1.2em;
+	border-bottom: 3px solid #eee;
+}
+
+dl.headline dd ul {
+	margin: 0;
+	list-style-type: none;
+}
+
+dl.headline dd ul li {
+	margin: 0.3em 5px 0.3em 0;
+	display: inline;
+	font-size: 92%;
+}
+
+dl.headline dd ul li.textBody {
+	display: block;
+	font-size: 100%;
+}
+
+/* ul.thumb
+---------------*/
+
+ul.thumb,
+div#utilities ul.thumb {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.thumb li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 33%;
+	overflow: hidden;
+	font-size: 0;
+}
+
+ul.thumb li a img {
+	border: none;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+ul.thumb li a:hover img {
+	border-bottom: 1px solid #01b0f0;
+}
+
+/* Tag cloud
+---------------*/
+
+ul.tagCloud {
+	margin: 0.5em 0;
+	padding: 1px 0;
+	line-height: 1;
+	_height: 1px; /* for IE6 */
+	font-size: 13px;
+	text-align: center;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+div#content div#utilities dl dd ul.tagCloud {
+	margin: 0 8px 0 7px;
+}
+
+ul.tagCloud li {
+	margin: 0;
+	padding: 10px 5px;
+	display: inline;
+	font-size: 100%;
+}
+
+div#utilities dl dd ul.tagCloud li {
+	margin: 0!important;
+}
+
+ul.tagCloud li a {
+	padding: 1px 3px;
+	white-space: nowrap;
+	border: 1px solid #ddd;
+	text-decoration: none;
+	position: relative;
+}
+
+/* Tag level 20 > 1 */
+
+li.levelover a {
+	font-size: 167%;
+	font-weight: bold;
+	color: #3e5b71;
+	z-index: 6;
+}
+
+li.level19 a,
+li.level18 a,
+li.level17 a,
+li.level16 a,
+li.level15 a {
+	font-size: 136%;
+	color: #668eac;
+	z-index: 5;
+}
+
+li.level14 a,
+li.level13 a,
+li.level12 a,
+li.level11 a,
+li.level10 a {
+	font-size: 122%;
+	color: #668eac;
+	z-index: 4;
+}
+
+li.level9 a,
+li.level8 a,
+li.level7 a,
+li.level6 a,
+li.level5 a {
+	font-size: 114%;
+	font-weight: normal;
+	color: #87a6be;
+	z-index: 3;
+}
+
+li.level4 a,
+li.level3 a {
+	font-size: 92%;
+	font-weight: normal;
+	color: #a7becf;
+	z-index: 2;
+}
+
+li.level2 a,
+li.level1 a {
+	font-size: 77%;
+	font-weight: normal;
+	color: #c7d5e0;
+	z-index: 1;
+}
+
+/* On Mouse */
+ul.tagCloud li a:hover {
+	color: #000;
+	background-color: #fff;
+	z-index: 10;
+}
+
+/* Calendar
+---------------*/
+
+table.calendar {
+	margin: 0 auto 5px;
+	width: 95%;
+}
+
+table.calendar th,
+table.calendar td {
+	padding: 0;
+	line-height: 1.8;
+	font-size: 85%;
+	text-align: center;
+}
+
+table.calendar th {
+	line-height: 2;
+	font-weight: normal;
+}
+
+table.calendar th.sat {
+	font-weight: bold;
+	background-color: #e5e5e5;
+}
+
+table.calendar th.sun {
+	font-weight: bold;
+	background-color: #e5e5e5;
+}
+
+table.calendar td {
+	color: #888;
+	padding: 0;
+	width: 14%;
+}
+
+table.calendar td a {
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+	color: #2799d1;
+}
+
+table.calendar td a:visited {
+	color: #333;
+	background-color: #eee;
+}
+
+table.calendar td a:hover {
+	border-color: #84dafe;
+	color: #fff;
+	background-color: #2799d1;
+}
+
+/* Option
+---------------*/
+
+.option {
+	margin: 1em 30px;
+	padding: 1px 10px;
+	border: 1px solid #eee;
+}
+
+/* Clearfix
+---------------*/
+
+ul#globalNavi,
+div#content,
+div.entry ul.info,
+div.entry div.textBody,
+ul.reaction,
+ul.thumb,
+ul.flip,
+body.multi2 div#utilities,
+body.multi2-l div#utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*\*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+}
+
+ul#globalNavi:after,
+div#content:after,
+div.entry ul.info:after,
+div.entry div.textBody:after,
+div.entry ul.reaction:after,
+ul.thumb:after,
+ul.flip:after,
+body.multi2 div#utilities:after,
+body.multi2-l div#utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+/* IE6 - なにがあってもカラム落ちを防ぐ
+---------------*/
+
+div#main,
+div#utilities dl.navi,
+div#utilities dl.others {
+	_overflow: hidden;
+}
+
+/*
+Skin Name: Vega Skin - Layout Module
+Author: vicuna.jp
+
+Layout Class: single, double, double-l, multi, multi2, multi2-l
+Eye Cach Class: eye-h, eye-hb, eye-m, eye-c
+SP Class: multi eye-c set1, multi2 eye-c set2
+Fixed Width Class: f800, f850, f900, f950, f1000
+Other Class: gt, al
+*/
+
+body {
+	margin: 0 8px;
+	text-align: center;
+}
+
+div#header,
+div#content,
+div#footer {
+	width: 95%; /*(60%~ | 600px~ | 60em~) etc.*/
+	min-width: 600px;
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+}
+
+/* Side Border
+---------------*/
+
+div#header,
+div#content {
+	border-left: 6px solid #555;
+	border-right: 6px solid #555;
+}
+
+/*========================================
+
+	Single Column Layout
+	
+	<body class="single">
+
+	┏━━━┓
+	┃━━━┃
+	┣━┳━┫
+	┗━┻━┛
+
+========================================*/
+
+body.single h1 {
+	border-bottom: none;
+}
+
+body.individual div.entry {
+	margin-top: 0;
+}
+
+/* Utilities
+---------------*/
+
+body.single div#utilities {
+	margin: 10px 10px;
+}
+
+body.single div#utilities dl {
+	margin: 0;
+}
+
+body.single div#utilities dl.navi {
+	margin-left: 2%;
+	border: 1px solid #eee;
+	float: left;
+	width: 47%;
+	display: inline; /* for IE6 */
+}
+
+body.single div#utilities dl.others {
+	margin-right: 2%;
+	border: 1px solid #eee;
+	float: right;
+	clear: right;
+	width: 47%;
+	display: inline; /* for IE6 */
+}
+
+body.single div#utilities ul.thumb li {
+	width: 20%;
+}
+
+/* clearfix */
+
+body.single div#utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*\*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+}
+
+body.single div#utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+/*========================================
+
+	Double Column Layout - Sidebar on right
+
+	<body class="double">
+
+	┏━━━┓┏┓
+	┃━━━┃┃┃
+	┗━━━┛┗┛
+
+========================================*/
+
+body.double div#main {
+	width: 75%;
+	float: left;
+	margin-right: -1px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+/* Utilities
+---------------*/
+
+body.double div#utilities {
+	width: 25%;
+	float: left;
+	clear: right;
+}
+
+/*========================================
+
+	Double Column Layout - Sidebar on left
+
+	<body class="double-l">
+
+	┏┓┏━━━┓
+	┃┃┃━━━┃
+	┗┛┗━━━┛
+
+========================================*/
+
+body.double-l div#main {
+	width: 75%;
+	float: right;
+	margin-left: -1px;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+/* Utilities
+---------------*/
+
+body.double-l div#utilities {
+	width: 25%;
+	float: right;
+	clear: left;
+}
+
+/*========================================
+
+	Multi Column Layout - Wing
+	! Negative Margin Layout
+
+	<body class="multi">
+
+	┏┓┏━━┓┏┓
+	┃┃┃━━┃┃┃
+	┗┛┗━━┛┗┛
+
+========================================*/
+
+body.multi div#main {
+	margin-right: -180px;
+	float: left;
+	width: 100%;
+	background-position: 180px 0; /* for body.eye-c */
+}
+
+body.multi div#main > * {
+	margin-left: 210px;
+	margin-right: 210px;
+}
+
+body.multi div#main p.topicPath,
+body.multi div#main ul#flip1,
+body.multi div#main div.entry,
+body.multi div#main p.archives,
+body.multi div#main div.freeSpace {
+	margin-left: 210px;
+	margin-right: 210px;
+}
+
+body.multi div#main h1 {
+	margin-left: 180px;
+	margin-right: 180px;
+}
+
+/* Utilities
+---------------*/
+
+body.multi div#utilities {
+	float: right;
+	clear: right;
+	width: 180px;
+}
+
+body.multi div#utilities dl.navi {
+	margin: 0;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	width: 180px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+body.multi div#utilities dl.others {
+	margin-top: 0;
+	padding: 1px 0 5px;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background-color: #fff;
+}
+
+/*========================================
+
+	Multi Column Layout - Double sidebar R
+
+	<body class="multi2">
+
+	┏━━┓┏┓┏┓
+	┃━━┃┃┃┃┃
+	┗━━┛┗┛┗┛
+
+========================================*/
+
+body.multi2 div#main {
+	margin-right: -1px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	float: left;
+	width: 55%;
+}
+
+/* Utilities
+---------------*/
+
+body.multi2 div#utilities {
+	float: right;
+	clear: right;
+	width: 45%;
+}
+
+body.multi2 div#utilities dl.navi {
+	margin: 0;
+	float: left;
+	width: 50%;
+}
+
+body.multi2 div#utilities dl.navi dt,
+body.multi2 div#utilities dl.navi dd {
+	margin-right: 0;
+}
+
+body.multi2 div#utilities dl.others {
+	margin: 0;
+	float: left;
+	clear: right;
+	width: 50%;
+	_width: auto; /* for IE6 */
+}
+
+/*========================================
+
+	Multi Column Layout - Double sidebar L
+
+	<body class="multi2-l">
+
+	┏┓┏┓┏━━┓
+	┃┃┃┃┃━━┃
+	┗┛┗┛┗━━┛
+
+========================================*/
+
+body.multi2-l div#main {
+	margin-left: -1px;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	float: right;
+	width: 55%;
+}
+
+/* Utilities
+---------------*/
+
+body.multi2-l div#utilities {
+	float: left;
+	clear: left; 
+	width: 45%;
+}
+
+body.multi2-l div#utilities dl.navi {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+}
+
+body.multi2-l div#utilities dl.navi dt,
+body.multi2-l div#utilities dl.navi dd {
+	margin-right: 0;
+}
+
+body.multi2-l div#utilities dl.others {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+	clear: right;
+	_width: auto; /* for IE6 */
+}
+
+/*========================================
+
+	Eye Catch
+
+========================================*/
+
+/* Header - <body class="eye-h">
+---------------*/
+
+body.eye-h div#header {
+	height: 180px;
+	background-image: url(img/vega_image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-h div#header p.siteName {
+	margin: 0;
+	position: absolute;
+	top: 50px;
+	left: 40px;
+}
+
+body.eye-h div#header p.siteName a {
+	color: #fff;
+}
+
+body.eye-h div#header p.description {
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	left: 40px;
+	color: #fff;
+}
+
+body.eye-h ul#globalNavi {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/* Header Banner - <body class="eye-hb">
+---------------*/
+
+body.eye-hb div#header {
+	padding-top: 0;
+}
+
+body.eye-hb div#header p.siteName {
+	margin: 0;
+}
+
+body.eye-hb div#header p.siteName a {
+	height: 180px;
+	display: block;
+	text-indent: -9999px;
+	background-image: url(img/vega_image1.png);
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+
+body.eye-hb div#header p.description {
+	display: none;
+}
+
+/* Content - <body class="eye-c">
+---------------*/
+
+body.eye-c div#content {
+	padding-top: 180px;
+	border-top: none;
+	background-image: url(img/vega_image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-c div#utilities dl.navi {
+	top: auto;
+}
+
+/* Main - <body class="eye-m">
+---------------*/
+
+body.eye-m div#content {
+	border-top: none;
+}
+
+body.eye-m div#main {
+	padding-top: 180px;
+	background-image: url(img/vega_image1.png);
+	background-repeat: no-repeat;
+}
+
+/*========================================
+
+	Special Layout set
+
+========================================*/
+
+/* <body class="multi eye-c set1">
+---------------*/
+
+body.set1 div#utilities dl.navi {
+	top: 0;
+}
+
+body.set1 div#content {
+	background-position: 180px 0;
+}
+
+/* <body class="multi2 eye-c set2">
+---------------*/
+
+body.set2 div#utilities {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+body.set2 div#utilities dl.navi {
+	float: right;
+	background-color: #fff;
+}
+
+body.set2 div#utilities dl.navi dt,
+body.set2 div#utilities dl.navi dd {
+	margin-right: 5px;
+}
+
+body.set2 div#utilities dl.others {
+	margin-top: 180px;
+	float: left;
+	clear: left;
+}
+
+body.set2 div#utilities dl.others dt,
+body.set2 div#utilities dl.others dd {
+	margin-right: 0;
+}
+
+/*========================================
+
+	Others
+
+========================================*/
+
+/* Navi on top <body class="gt">
+---------------*/
+
+body.gt div#header {
+	padding-top: 30px;
+	background-position: left bottom;
+}
+
+body.gt ul#globalNavi {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+}
+
+/* No Centering - <body class="al">
+---------------*/
+
+body.al {
+	margin: 0;
+	text-align: left;
+}
+
+body.al div#header,
+body.al div#content,
+body.al div#footer {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Fixed 800px - <body class="f800">
+---------------*/
+
+body.f800 div#header,
+body.f800 div#content,
+body.f800 div#footer {
+	width: 800px;
+}
+
+/* Fixed 850px - <body class="f850">
+---------------*/
+
+body.f850 div#header,
+body.f850 div#content,
+body.f850 div#footer {
+	width: 850px;
+}
+
+/* Fixed 900px - <body class="f900">
+---------------*/
+
+body.f900 div#header,
+body.f900 div#content,
+body.f900 div#footer {
+	width: 900px;
+}
+
+/* Fixed 950px - <body class="f950">
+---------------*/
+
+body.f950 div#header,
+body.f950 div#content,
+body.f950 div#footer {
+	width: 950px;
+}
+
+/* Fixed 1000px - <body class="f1000">
+---------------*/
+
+body.f1000 div#header,
+body.f1000 div#content,
+body.f1000 div#footer {
+	width: 1000px;
+}
+
+
+/*========================================
+
+  Title: FC2特殊
+
+========================================*/
+
+
+/*flot
+-----------------------*/
+
+.img_L {
+	margin-right: 1em!important;
+	margin-top: 1em!important;
+	float: left;
+}
+
+.img_R {
+	margin-left: 1em!important;
+	margin-top: 1em!important;
+	float: right;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+/*ul.pager (Newer|Older)
+-----------------------*/
+
+ul.pager {
+	text-align: center;
+}
+
+ul.pager li {
+	display: inline;
+}
+
+ul.pager li.newer:before {
+	content: "<< ";
+}
+
+ul.pager li.older:after {
+	content: " >>";
+}
+
+
+/*Profile
+-----------------------*/
+
+div#utilities dd .profImg {
+	text-align: center;
+}
