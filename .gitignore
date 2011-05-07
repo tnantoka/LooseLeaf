@@ -1,6 +1,0 @@
-.DS_Store
-skeleton/data/entry/*.*
-skeleton/logs/*.*
-skeleton/pids/*.*
-skeleton/public/file/*.*
-skeleton/public/atom.xml
