@@ -88,8 +88,6 @@ function copyDir(srcPath, dstPath) {
       } catch (e) {
         // File NOT exists
         if (e.errno = 2) {
-//          var data = fs.readFileSync(srcFile, 'UTF-8');
-//          fs.writeFileSync(dstFile, data, 'UTF-8');
           var data = fs.readFileSync(srcFile);
           fs.writeFileSync(dstFile, data);
           create(dstFile)
@@ -131,11 +129,6 @@ if (path) {
     if (err) {
       throw err;
     }
-/*
-    if (stdout) {
-      console.log(stdout);
-    }
-*/
     if (stderr) {
       console.log(stderr);
     }
