@@ -11,10 +11,11 @@
         <fieldset>
           <legend>Category Form</legend>
           <div>
-            <p class="commentModerated">
+            <p>
               Are you sure you want to delete this category?<br />
               （Entries are in this category will be moved to "<%= categories[0].name %>"）
             </p>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
           </div>
           <dl>
             <dt>

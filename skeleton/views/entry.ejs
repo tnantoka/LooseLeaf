@@ -54,6 +54,7 @@
         <fieldset>
           <legend>Comment Form</legend>
           <div>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
           </div>
           <dl id="name-email">
             <dt>
@@ -81,7 +82,7 @@
               <label for="comment-body">Comment</label>
             </dt>
             <dd>
-              <textarea id="comment-body" name="body" rows="5" cols="50" onfocus="if (this.value == 'Add Your Comment') this.value = '';" onblur="if (this.value == '') this.value = 'Add Your Comment';" accesskey="e" tabindex="4"></textarea>
+              <textarea id="comment-body" name="body" rows="5" cols="50" accesskey="e" tabindex="4"></textarea>
             </dd>
           </dl>
           <div class="action">

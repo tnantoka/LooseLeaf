@@ -10,6 +10,9 @@
         <h2>Category List</h2>
         <!-- TODO: External css -->
         <form method="post" action="/admin/category/edit/" style="background: none;" id="editForm">
+          <div>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+          </div>
           <table cellspacing="0" cellpadding="0">
             <tr>
               <th>ID</th>
@@ -42,6 +45,9 @@
         <form class="post" method="post" action="/admin/category/add/" id="addForm">
           <fieldset>
             <legend>Category Form</legend>
+            <div>
+              <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+            </div>
             <dl>
               <dt>
                 <label for="name">Name</label>

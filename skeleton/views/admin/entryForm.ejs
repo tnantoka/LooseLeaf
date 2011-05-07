@@ -11,6 +11,9 @@
       <form class="post" method="post" action="<%= action %>">
         <fieldset>
           <legend>Entry Form</legend>
+          <div>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+          </div>
           <dl>
             <dt>
               <label for="title">Title</label>

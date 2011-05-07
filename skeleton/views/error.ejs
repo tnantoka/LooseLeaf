@@ -6,7 +6,9 @@
   <p class="topicPath"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %></span></p>
   <h1><%= pageTitle %></h1>
   <div class="section entry">
+    <% if (stack) { %>
     <pre><%= stack %></pre>
+    <% } %>
   </div>
   <!-- end div.entry -->
   <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %></span></p>

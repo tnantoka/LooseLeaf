@@ -10,6 +10,9 @@
 				<form class="post" method="post" action="<%= mapping.uri.admin.theme.edit %>">
 					<fieldset>
 						<legend>Theme Form</legend>
+            <div>
+              <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+            </div>
 						<dl>
 							<dt>
 								<label for="theme">Theme</label>

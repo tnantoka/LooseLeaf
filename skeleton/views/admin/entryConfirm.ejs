@@ -12,9 +12,10 @@
         <fieldset>
           <legend>Login Form</legend>
           <div>
-            <p class="commentModerated">
+            <p>
               Are you sure you want to delete this entry?
             </p>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
           </div>
           <dl>
             <dt>
