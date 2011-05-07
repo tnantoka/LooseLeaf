@@ -1,3 +1,4 @@
+  <link rel="stylesheet" href="/lib/tagget/tagget.css" />
 </head>
 <body class="category double">
 <%- partial('../partials/header') %>
@@ -90,3 +91,10 @@
 </div>
 <!--end content-->
 <%- partial('../partials/footer') %>
+<script src="/lib/tagget/jquery.tagget.js"></script>
+<script>
+$(function() {
+  $('#body').tagget();
+});
+</script>
+
