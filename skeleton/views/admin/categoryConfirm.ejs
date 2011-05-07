@@ -1,0 +1,60 @@
+</head>
+<body class="category double">
+<%- partial('../partials/header') %>
+<div id="content">
+<div id="main">
+  <p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+  <h1><%= pageTitle %></h1>
+    <div class="section entry">
+      <div class="textBody">
+      <form class="post" method="post" action="/admin/category/remove/<%= id %>/">
+        <fieldset>
+          <legend>Category Form</legend>
+          <div>
+            <p>
+              Are you sure you want to delete this category?<br />
+              （Entries are in this category will be moved to "<%= categories[0].name %>"）
+            </p>
+            <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+          </div>
+          <dl>
+            <dt>
+              ID
+            </dt>
+            <dd>
+              <%= id %>
+            </dd>
+            <dt>
+              Name
+            </dt>
+            <dd>
+              <%= categories[id].name %>
+            </dd>
+            <dt>
+              Entries
+            </dt>
+            <dd>
+              <a href="/category/<%= id %>/" target="_blank">Entries</a>
+            </dd>
+            <dt>
+              Count
+            </dt>
+            <dd>
+              <%= categories[id].entries.length %>
+            </dd>
+          </dl>
+          <div class="action">
+            <input type="submit" class="submit post" value="Delete" />
+          </div>
+        </fieldset>
+      </form>
+      </div>
+    </div>
+  <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('../partials/admin/utilities') %> 
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('../partials/footer') %>

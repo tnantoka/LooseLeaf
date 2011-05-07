@@ -1,0 +1,49 @@
+</head>
+<body class="category double">
+<%- partial('partials/header') %>
+<div id="content">
+<div id="main">
+  <p class="topicPath"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %> Arichive</span></p>
+  <h1><%= pageTitle %> Archives</h1>
+  <% for (var i = 0; i < entries.length; i++) { %>
+  <div class="section entry">
+    <h2><a href="/entry/<%= entries[i].id %>/"><%= entries[i].title %></a></h2>
+    <ul class="info">
+      <!--li class="author">Posted by: <span class="name"><%= sidebar.author.name %></span></li-->
+      <li class="date"><%= entries[i].date %></li>
+      <% if (entries[i].update) { %>
+      <li class="date update">Update: <%= entries[i].update %></li>
+      <% } %>
+      <li class="category"><a href="/category/<%= entries[i].category %>/" title="<%= categories[entries[i].category].name %> Index"><%= categories[entries[i].category].name %></a></li>
+      <li class="tag">
+      <% for (var j = 0; j < entries[i].tags.length; j++) { %>
+        <a href="/tag/<%= entries[i].tags[j] %>/" rel="nofollow"><%= entries[i].tags[j] %></a><% if (entries[i].tags[j + 1] != undefined) { %>, <% } %>
+      <% } %>
+      </li>
+    </ul>
+    <div class="textBody">
+      <p><%- entries[i].opening %></p>
+      <p class="continue"><a href="/entry/<%= entries[i].id %>/" title="<%= entries[i].title %>" rel="nofollow">Continue reading</a></p>
+    </div>
+    <ul class="reaction">
+      <li class="comment"><a href="/entry/<%= entries[i].id %>/#comments" title="Movable Type Template Vicuna" rel="nofollow">Comment</a>: <span class="count"><%= entries[i].comments %></span></li>
+      <li class="trackback"><a href="/entry/<%= entries[i].id %>/#trackback" title="Movable Type Template Vicuna" rel="nofollow">TrackBack</a>: <span class="count"><%= entries[i].trackbacks %></span></li>
+      <!--
+      <li>Comments (Close): <span class="count"><%= entries[i].comments %></li>
+      <li>TrackBack (Close): <span class="count"><%= entries[i].trackbacks %></span></li>
+      -->
+    </ul>
+  </div>
+  <% } %>
+  <!-- end div.entry -->
+  <!--
+  <p class="archives"><a href="/archives">Index of all entries</a></p>
+  -->
+  <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %> Arichive</span></p>
+</div>
+<!-- end main-->
+<%- partial('partials/utilities') %> 
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('partials/footer') %>

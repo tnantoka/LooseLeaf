@@ -1,0 +1,50 @@
+{
+	"site": {
+		"name": "yourblog",
+		"href": "http://localhost:3000/",
+		"description": "My looseleaf.",
+		"theme": "w-future2"
+	},
+	"copyright": {
+		"href": "http://localhost/",
+		"text": "yoursite"
+	},
+	"admin": {
+		"id": "admin",
+		"pass": "pass"
+	},
+	"globalNavi": [
+		{
+			"href": "http://localhost/",
+			"text": "Home"
+		},
+		{
+			"href": "/",
+			"text": "Blog",
+			"current": true
+		}
+	],
+	"sidebar": {
+		"about": "This is my blog.",
+		"author": {
+			"name": "yourname",
+			"img": "/file/author.png",
+			"links": [
+				{
+					"href": "http://twitter.com/#!/yourname",
+					"text": "Twitter(@yourname)"
+				},
+				{
+					"href": "http://www.facebook.com/yourname",
+					"text": "Facebook(yourname)"
+				}
+			]
+		},
+		"links": [
+			{
+				"href": "/admin/login/",
+				"text": "Login"
+			}
+		]
+	}
+}

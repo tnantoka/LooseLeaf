@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+div.entry ul.info li.update, 
+span.update {
+	color: red;
+}
+
+input#scope {
+  outline: none;
+}
+
+/* For admin edit(entry, category, file) */
+#editForm {
+  background: none;
+}

@@ -1,0 +1,62 @@
+</head>
+<body class="category double">
+<%- partial('../partials/header') %>
+<div id="content">
+<div id="main">
+  <p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+  <h1><%= pageTitle %></h1>
+    <div class="section entry">
+      <div class="textBody">
+        <h2>Category List</h2>
+        <form method="post" action="/admin/file/edit/" id="editForm">
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Name</th>
+              <th>Last Update</th>
+              <th>Size</th>
+              <th>Delete</th>
+            </tr>
+            <% for (var i = 0; i < files.length; i++) { %>
+            <tr>
+              <td><a href="/file/<%= files[i].name %>"><%= files[i].name %></a></td>
+              <td><%= files[i].date %></td>
+              <td><%= files[i].size %></td>
+              <td>
+                <input type="submit" class="submit post" value="Delete" onclick="document.getElementById('name').value='<%= files[i].name %>'; document.getElementById('editForm').action = '/admin/file/confirm/';" />
+              </td>
+            </tr>
+            <% } %>
+          </table>
+        <input type="hidden" id="name" name="name" />
+        </form>
+        
+        <h2>Add File</h2>
+        <form class="post" method="post" action="/admin/file/add/" enctype="multipart/form-data" id="addForm">
+          <fieldset>
+            <legend>File Form</legend>
+            <div>
+              <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+            </div>
+            <dl>
+              <dt>
+                <label for="file">Name</label>
+              </dt>
+              <dd>
+                <input type="file" class="inputField" id="file" name="file" />
+              </dd>
+            </dl>
+            <div class="action">
+              <input type="submit" class="submit post" value="Add" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('../partials/admin/utilities') %> 
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('../partials/footer') %>

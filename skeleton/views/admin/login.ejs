@@ -1,0 +1,50 @@
+</head>
+<body class="individual single">
+<%- partial('../partials/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+	<div class="section entry">
+		<div class="textBody">
+			<!-- Login form -->
+			<form class="post" method="post" action="<%= mapping.uri.admin.login %>">
+				<fieldset>
+					<legend>Login Form</legend>
+					<div>
+						<p>
+							<%- msg %>
+						</p>
+						<% if (ref != null) { %>
+							<input type="hidden" name="ref" value="<%= ref %>" />
+						<% } %>
+					</div>
+					<dl>
+						<dt>
+							<label for="userId">User ID</label>
+						</dt>
+						<dd>
+							<input type="text" class="inputField" id="userId" name="userId" />
+						</dd>
+						<dt>
+							<label for="password">Password</label>
+						</dt>
+						<dd>
+							<input type="password" class="inputField" id="password" name="password" value="" />
+						</dd>
+					</dl>
+					<div class="action">
+						<input type="submit" class="submit post" value="Login" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- end div.entry -->
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('../partials/footer') %>

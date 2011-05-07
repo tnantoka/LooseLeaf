@@ -1,0 +1,146 @@
+<div id="utilities">
+  <dl class="navi">
+    <dt>About</dt>
+    <dd>
+      <p><%- sidebar.about %></p>
+    </dd>
+    <dt>Author</dt>
+    <dd>
+      <p>
+        <%= sidebar.author.name %><br />
+        <img src="<%= sidebar.author.img %>" alt="my avatar" />
+      </p>
+      <ul>
+      <% for (var i = 0; i < sidebar.author.links.length; i++) { %>
+        <li>
+          <a href="<%= sidebar.author.links[i].href %>" target="_blank"><%= sidebar.author.links[i].text %></a>
+        </li>
+      <% } %>
+      </ul>
+    </dd>
+    <dt>Calendar</dt>
+    <dd>
+      <table class="calendar" cellpadding="0" cellspacing="0" summary="Monthly calendar">
+      </table>
+    </dd>
+    <dt>Recent Entries</dt>
+    <dd>
+      <ul>
+      <% for (var i = 0; i < recent.length; i++) { %>
+        <li>
+          <a href="/entry/<%= recent[i].id %>/"><%= recent[i].title %></a>
+          <br />(<%= recent[i].date %>)
+        </li>
+      <% } %>
+      </ul>
+    </dd>
+    <dt>Recent Comments</dt>
+    <dd>
+      <ul>
+      <% for (var i = 0; i < recentComments.length; i++) { %>
+        <li>
+          <a href="/entry/<%= recentComments[i].id %>/#comments"><%= blog.entry.getTitle(recentComments[i].id) %> by <%= recentComments[i].author %></a>
+          <br />(<%= recentComments[i].date %>)
+        </li>
+      <% } %>
+      </ul>
+    </dd>
+    <dt>Recent Trackbacks</dt>
+    <dd>
+      <ul>
+      <% for (var i = 0; i < recentTrackbacks.length; i++) { %>
+        <li>
+          <a href="/entry/<%= recentTrackbacks[i].id %>/#trackback"><%= blog.entry.getTitle(recentTrackbacks[i].id) %> by <%= recentTrackbacks[i].blog_name %></a>
+          <br />(<%= recentTrackbacks[i].date %>)
+        </li>
+      <% } %>
+      </ul>
+    </dd>
+    <dt>Categories</dt>
+    <dd>
+      <ul>
+      <% for (var i in categories) { %>
+        <li><a href="/category/<%= i %>/"><%= categories[i].name %></a> (<%= categories[i].entries.length %>)</li>
+      <% } %>
+      </ul>
+    </dd>    
+    <dt>Archives</dt>
+    <dd>
+      <ul>
+        <% for (var y in calendar) { %>
+          <% for (var m in calendar[y]) { %>
+            <% var count = 0; %>
+            <% for (var d in calendar[y][m]) { %>
+              <% count += calendar[y][m][d].length; %>              
+            <% } %>
+            <li><a href="/archive/<%= y %>/<%= m %>/" rel="nofollow"><%= y %>-<%= m %></a>(<%= count %>)</li>
+          <% } %>
+        <% } %>
+      </ul>
+    </dd>
+  </dl>
+  <!--end navi-->
+  <dl class="others">
+    <dt>Search</dt>
+    <dd>
+      <form method="get" action="/search/">
+        <fieldset>
+          <legend>
+            <label for="searchKeyword">Search</label>
+          </legend>
+          <div>
+            <input type="text" class="inputField" id="searchKeyword"  name="q" size="10" onfocus="if (this.value == 'Keyword(s)') this.value = '';" onblur="if (this.value == '') this.value = 'Keyword(s)';" value="Keyword(s)" />
+            <input type="submit" class="submit" id="submit" value="Search" />
+          </div>
+        </fieldset>
+      </form>
+    </dd>
+    <dt>Feeds</dt>
+    <dd>
+      <ul class="feed">
+        <li class="atom"><a href="/atom.xml">ATOM</a></li>
+      </ul>
+    </dd>
+    <dt>Tag Cloud</dt>
+    <dd>
+      <ul class="tagCloud">
+      <% for (var i in tags) { %>
+        <%
+          var level = 'level'; 
+          if (tags[i].length <= 10) {
+            level = '6';
+          }
+          else if (tags[i].length <= 20) {
+            level = '5';
+          }
+          else if (tags[i].length <= 30) {
+            level = '4';
+          }
+          else if (tags[i].length <= 40) {
+            level = '3';
+          }
+          else if (tags[i].length <= 50) {
+            level = '2';
+          }
+          else {
+            level = '1';
+          }
+        %>
+        <li class="<%= level %>"><a href="/tag/<%= i %>/" title="<%= tags[i].length %> Entries"><%= i %></a></li>
+      <% } %>
+      </ul>
+    </dd>
+    <dt>Links</dt>
+    <dd>
+      <ul>
+      <% for (var i = 0; i < sidebar.links.length; i++) { %>
+        <li>
+          <a href="<%= sidebar.links[i].href %>" target="_blank"><%= sidebar.links[i].text %></a>
+        </li>
+      <% } %>
+    </ul>
+    </dd>
+  </dl>
+  <!--end others-->
+</div>
+<!--end utilities-->

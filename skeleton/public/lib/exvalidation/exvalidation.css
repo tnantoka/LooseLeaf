@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+.errMsg {
+	margin-left: 1em;
+	padding-bottom: 1px;
+	display: block;
+	line-height: 1.4;
+	text-indent: -.9em;
+}
+
+.formError {
+	padding-bottom: 13px;
+	display: block;
+}
+.fixed {
+	padding-bottom: 0;
+}
+
+	.formError .formErrorClose {
+		border: solid #252525 2px;
+		border-radius: 9px 9px 9px 9px;
+		-moz-border-radius: 9px 9px 9px 9px;
+		-webkit-border-radius: 9px 9px 9px 9px;
+		display: block;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: -4px;
+		right: -4px;
+		color: #efefef;
+		background: #333;
+		font-weight: bold;
+		text-align: center;
+		line-height: middle;
+		cursor: pointer;
+		box-shadow: 1px -1px 3px #888;
+		-moz-box-shadow: 1px -1px 3px #888;
+		-webkit-box-shadow: 1px -1px 3px #888;
+    _z-index:2;
+	}
+	.formError .formErrorClose:hover {
+		background: #666;
+	}
+	.fixed .formErrorClose {
+		display: none;
+	}
+	
+	.formError .formErrorContent {
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		padding: 6px 10px;
+		width: 180px;
+    position:relative;
+		color: #fff;
+		background: #252525;
+		font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3","メイリオ",Meiryo,Osaka,sans-serif;
+		font-size: 11px;
+		box-shadow: 0px 0px 6px #888;
+		-moz-box-shadow: 0px 0px 6px #888;
+		-webkit-box-shadow: 0px 0px 6px #888;
+    _z-index:1;
+	}
+	.fixed .formErrorContent {
+		margin-top: .5em;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		background: #f60;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+	.fadeOut {
+		opacity: .2;
+		filter: alpha(opacity=20);
+	}
+	
+	.formError .formErrorArrow {
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		bottom: 0;
+		left: 20px;
+    _z-index:0;
+	}
+	.fixed .formErrorArrow {
+		display: none;
+	}
+	.formError .formErrorArrowBottom {
+		margin: -6px;
+		top: 0;
+	}
+	.fixed .formErrorArrowBottom {
+		display: none;
+	}
+	
+		.formError .formErrorArrow div {
+			margin: 0 auto;
+			display: block;
+			height: 1px;
+			background: #252525;
+			line-height: 0px;
+			font-size: 0px;
+			box-shadow: 0px 2px 3px #888;
+			-moz-box-shadow: 0px 2px 3px #888;
+			-webkit-box-shadow: 0px 2px 3px #888;
+		}
+			.formError .formErrorArrowBottom div{
+				box-shadow: none;
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+			}
+			
+		.formError .formErrorArrow .line10 {
+			width: 19px;
+		} 
+		.formError .formErrorArrow .line9 {
+			width: 17px;
+		} 
+		.formError .formErrorArrow .line8 {
+			width: 15px;
+		} 
+		.formError .formErrorArrow .line7 {
+			width: 13px;
+		} 
+		.formError .formErrorArrow .line6 {
+			width: 11px;
+		} 
+		.formError .formErrorArrow .line5 {
+			width: 9px;
+		} 
+		.formError .formErrorArrow .line4 {
+			width: 7px;
+		} 
+		.formError .formErrorArrow .line3 {
+			width: 5px;
+		} 
+		.formError .formErrorArrow .line2 {
+			width: 3px;
+		}
+		.formError .formErrorArrow .line1{
+			width: 1px;
+		}  

@@ -1,0 +1,88 @@
+</head>
+<body class="category double">
+<%- partial('../partials/header') %>
+<div id="content">
+<div id="main">
+  <p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+  <h1><%= pageTitle %></h1>
+    <div class="section entry">
+      <div class="textBody">
+        <form class="post" method="post" action="#">
+          <fieldset>
+            <legend>Entry Form</legend>
+            <div>
+              <p>
+                Your entry has been successfully saved.<br />
+                <a href="/admin/entry/list/">List of all entries</a>
+              </p>
+            </div>
+            <dl>
+              <dt>
+                ID
+              </dt>
+              <dd>
+                <%= entry.id %>
+              </dd>
+              <dt>
+                Title
+              </dt>
+              <dd>
+                <%= entry.title %>
+              </dd>
+              <dt>
+                Category
+              </dt>
+              <dd>
+                <%= categories[entry.category].name %>
+              </dd>
+            </dl>
+            <p></p>
+            <dl>
+              <dt>
+                Body
+              </dt>
+              <dd>
+                <%- entry.body || entry.opening %>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Tags
+              </dt>
+              <dd>
+                <%- entry.tags.join(', ') %>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Scope
+              </dt>
+              <dd>
+                <%- entry.private ? 'privale' : 'public' %>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Trackback
+              </dt>
+              <dd>
+                <%- entry.trackback_to %>
+              </dd>
+            </dl>
+            <div class="action">
+              <input type="button" class="submit post" value="Edit" onclick="location.href='/admin/entry/edit/<%= entry.id %>/';" />
+              <input type="button" class="submit post" value="Show" onclick="location.href='/entry/<%= entry.id %>/';" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  <p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('../partials/admin/utilities') %> 
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('../partials/footer') %>
+

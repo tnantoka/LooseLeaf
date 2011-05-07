@@ -1,0 +1,50 @@
+  <caption>
+<%
+  var lastMonth = new Date(year, month - 2, 1);
+  var nextMonth = new Date(year, month, 1);
+%>
+<a href="javascript:getCalendar(<%= lastMonth.getFullYear() %>, <%= lastMonth.getMonth() + 1 %>)" title="Newer" rel="nofollow">&laquo;</a> <%= pageTitle %> <a href="javascript:getCalendar(<%= nextMonth.getFullYear() %>, <%= nextMonth.getMonth() + 1 %>)" title="Older" rel="nofollow">&raquo;</a>
+  </caption>
+  <tr>
+    <th class="sun" title="Sunday">S</th>
+    <th title="Monday">M</th>
+    <th title="Tuesday">T</th>
+    <th title="Wednesday">W</th>
+    <th title="Thursday">T</th>
+    <th title="Friday">F</th>
+    <th class="sat" title="Saturday">S</th>
+  </tr>
+  <tr>
+  <%
+var firstDay = new Date(year, month - 1, 1).getDay();
+var lastDate = new Date(year, month, 0).getDate();
+var today = new Date();
+var blank = true;
+var date = 1;
+for (var row = 0; row < 6; row++){
+  %>
+  <tr>
+  <%
+  for (var col = 0; col < 7; col++) {
+    if (row == 0 && firstDay == col){
+      blank = false;
+    }
+    if (date > lastDate) {
+      blank = true;
+    }
+    var href = (calendar[year] && calendar[year][month] && calendar[year][month][date]) ? '/archive/' + year + '/' + month + '/' + date + '/': '';
+    %>
+    <td
+    <%- year == today.getFullYear() && month == today.getMonth() + 1 && date == today.getDate() ? ' class="today"' : '' %>    
+    >
+    <%- href ? '<a href="' + href + '">' : '' %>    
+    <%= blank ? '&nbsp;' : date++ %>
+    <%- href ? '</a>' : '' %>    
+    </td>
+    <%
+  }
+  %>
+  </tr>
+  <%
+}
+  %>  

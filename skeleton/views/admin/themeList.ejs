@@ -1,0 +1,46 @@
+</head>
+<body class="category double">
+<%- partial('../partials/header') %>
+<div id="content">
+<div id="main">
+	<p class="topicPath"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+	<h1><%= pageTitle %></h1>
+		<div class="section entry">
+			<div class="textBody">
+				<form class="post" method="post" action="<%= mapping.uri.admin.theme.edit %>">
+					<fieldset>
+						<legend>Theme Form</legend>
+            <div>
+              <p><script>document.write('<input type="hidden" name="token" value="<%= req.session.id %>" />');</script></p>
+            </div>
+						<dl>
+							<dt>
+								<label for="theme">Theme</label>
+							</dt>
+							<dd>
+								<select name="theme" id="theme">
+                <% for (var i = 0; i < themes.length; i++) { %>
+                  <option 
+                  <% if (site.theme == themes[i]) { %>
+                    selected
+                  <% } %>                  
+                  ><%= themes[i] %></option>
+                <% } %>
+                </select>
+							</dd>
+						</dl>
+						<div class="action">
+							<input type="submit" class="submit post" value="Change" />
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	<p class="topicPath" id="path2"><a href="/">Home</a> &gt; <a href="/admin/index/">Admin</a> &gt; <span class="current"><%= pageTitle %></span></p>
+</div>
+<!-- end main-->
+<%- partial('../partials/admin/utilities') %> 
+<p class="return"><a href="#header" title="Return to top of page">Page Top</a></p>
+</div>
+<!--end content-->
+<%- partial('../partials/footer') %>
