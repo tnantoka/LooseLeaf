@@ -8,3 +8,8 @@ span.update {
 input#scope {
   outline: none;
 }
+
+/* For admin edit(entry, category, file) */
+#editForm {
+  background: none;
+}

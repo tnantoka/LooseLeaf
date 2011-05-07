@@ -21,6 +21,7 @@ $(function() {
   }
 
   if (/^\/admin\/login/.test(location.pathname)) {
+    $('#userId').focus();
     $("form").exValidation({
       rules: {
         'userId': 'chkrequired chknochar',
