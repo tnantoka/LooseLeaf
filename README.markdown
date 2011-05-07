@@ -2,7 +2,7 @@
 
 JSON based blog engine running on [node.js][] and [express][].
 
-	$ looseleaf yourblog -g
+	$ looseleaf yourblog
 	$ node ./yourblog/app.js
 	"yourblog" server listening on port 3000
 
@@ -11,7 +11,7 @@ JSON based blog engine running on [node.js][] and [express][].
 
 ## Installation
 
-	$ npm install looseleaf
+	$ npm install looseleaf -g
 
 ## Demo
 
