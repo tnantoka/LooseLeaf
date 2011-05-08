@@ -1,7 +1,7 @@
 .DS_Store
 skeleton/data/entry/*.json
-skeleton/logs/*.pid
-skeleton/pids/*.log
+skeleton/logs/*.log
+skeleton/pids/*.pid
 skeleton/public/file/*.*
-skeleton/public/file/!.gitkeep
+!skeleton/public/file/.gitkeep
 skeleton/public/atom.xml
