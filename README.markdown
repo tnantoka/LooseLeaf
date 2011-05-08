@@ -11,6 +11,8 @@ JSON based blog engine running on [node.js][] and [express][].
 
 ## Installation
 
+Please globally.
+
 	$ npm install looseleaf -g
 
 ## Demo

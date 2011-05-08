@@ -13,7 +13,7 @@
     <% } %>
   </ul>
   <h1><%= pageTitle %></h1>
-  <div class="section entry">
+  <div class="section entry">  
     <ul class="info">
       <!--li class="author">Posted by: <span class="name"><%= sidebar.author.name %></span></li-->
       <li class="date"><%= entry.date %></li>
@@ -27,6 +27,13 @@
       <% } %>
       </li>
     </ul>
+    <p>
+      <!-- http://twitter.com/goodies/tweetbutton -->
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      
+      <!-- -->
+      <iframe src="http://www.facebook.com/plugins/like.php?href&amp;send=true&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+    <p>
     <div class="textBody">
       <%- entry.body %>
     </div>
