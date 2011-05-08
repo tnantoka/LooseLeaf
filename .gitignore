@@ -3,4 +3,5 @@ skeleton/data/entry/*.json
 skeleton/logs/*.pid
 skeleton/pids/*.log
 skeleton/public/file/*.*
+skeleton/public/file/!.gitkeep
 skeleton/public/atom.xml
