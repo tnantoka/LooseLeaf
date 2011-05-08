@@ -124,6 +124,7 @@ while (args.length) {
 
 if (path) {
   copyDir(join(BASE_DIR, 'skeleton'), path);
+  fs.mkdirSync(path + '/data/entry', fs.statSync(join(BASE_DIR, 'skeleton')).mode);
   console.log('"' + path + '" created successfully');  
   require('child_process').exec('npm link looseleaf', { cwd: path }, function(err, stdout, stderr) {
     if (err) {
