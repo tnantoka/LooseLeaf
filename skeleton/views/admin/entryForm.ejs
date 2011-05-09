@@ -20,7 +20,7 @@
               <label for="title">Title</label>
             </dt>
             <dd>
-              <input type="text" class="inputField" id="title" name="title" value="<%= entry.title %>" />
+              <input type="text" class="inputField" id="title" name="title" value="<%= entry.title %>" size="50" />
             </dd>
             <dt>
               <label for="category">Category</label>
@@ -43,16 +43,16 @@
               <label for="body">Body</label>
             </dt>
             <dd>
-              <textarea id="body" name="body" rows="10" cols="50"><%- entry.body %></textarea>
+              <textarea id="body" name="body" rows="15" cols="50"><%- entry.body %></textarea>
             </dd>
           </dl>
           <p></p>
           <dl>
             <dt>
-              <label for="tags">Tags</label>
+              <label for="tags">Tags</label> (Comma-separated)
             </dt>
             <dd>
-              <input type="text" class="inputField" id="tags" name="tags" value="<%= entry.tags %>" />
+              <input type="text" class="inputField" id="tags" name="tags" value="<%= entry.tags %>" size="30" />
             </dd>
           </dl>
           <p></p>
@@ -70,7 +70,7 @@
           <p></p>
           <dl>
             <dt>
-              <label for="tb">TrackBack</label>
+              <label for="tb">TrackBack</label> (Linebreak-separated)
             </dt>
             <dd>
               <textarea id="tb" name="tb" rows="3" cols="50"><%- entry.trackback_to %></textarea>
