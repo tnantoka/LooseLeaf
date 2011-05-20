@@ -1,5 +1,7 @@
 # LooseLeaf
 
+<img src="http://looseleafjs.org/img/logo.png" alt="LooseLeaf.JS" style="border: 0;" />
+
 JSON based blog engine running on [node.js][] and [express][].
 
 	$ looseleaf yourblog
