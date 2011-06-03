@@ -30,10 +30,14 @@
     <p>
       <!-- http://twitter.com/goodies/tweetbutton -->
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+      <!-- http://www.google.com/webmasters/+1/button/index.html -->
+      <!-- Place this tag where you want the +1 button to render -->
+      <g:plusone size="medium"></g:plusone>
       
-      <!-- -->
+      <!-- http://developers.facebook.com/docs/reference/plugins/like/ -->
       <iframe src="http://www.facebook.com/plugins/like.php?href&amp;send=true&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
-    <p>
+    </p>
     <div class="textBody">
       <%- entry.body %>
     </div>
@@ -125,3 +129,7 @@
 </div>
 <!--end content-->
 <%- partial('partials/footer') %>
+
+<!-- http://www.google.com/webmasters/+1/button/index.html -->
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
