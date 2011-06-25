@@ -1,7 +1,13 @@
+# Mac OS X automatic create files
 .DS_Store
+# Vim automatic create files
+*~
+.*.sw*
+# LooseLeaf static & temporary & content files
 skeleton/data/entry/*.json
 skeleton/logs/*.log
 skeleton/pids/*.pid
 skeleton/public/file/*.*
 !skeleton/public/file/.gitkeep
 skeleton/public/atom.xml
+
