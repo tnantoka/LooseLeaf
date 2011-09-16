@@ -11,3 +11,6 @@ skeleton/public/file/*.*
 !skeleton/public/file/.gitkeep
 skeleton/public/atom.xml
 
+# npm modules
+npm_modules
+
