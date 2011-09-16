@@ -3,7 +3,7 @@
   var lastMonth = new Date(year, month - 2, 1);
   var nextMonth = new Date(year, month, 1);
 %>
-<a href="javascript:getCalendar(<%= lastMonth.getFullYear() %>, <%= lastMonth.getMonth() + 1 %>)" title="Newer" rel="nofollow">&laquo;</a> <%= pageTitle %> <a href="javascript:getCalendar(<%= nextMonth.getFullYear() %>, <%= nextMonth.getMonth() + 1 %>)" title="Older" rel="nofollow">&raquo;</a>
+<a href="javascript:getCalendar(<%= lastMonth.getFullYear() %>, <%= lastMonth.getMonth() + 1 %>)" title="Older" rel="nofollow">&laquo;</a> <%= pageTitle %> <a href="javascript:getCalendar(<%= nextMonth.getFullYear() %>, <%= nextMonth.getMonth() + 1 %>)" title="Newer" rel="nofollow">&raquo;</a>
   </caption>
   <tr>
     <th class="sun" title="Sunday">S</th>
