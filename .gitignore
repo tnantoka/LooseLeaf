@@ -12,5 +12,5 @@ skeleton/public/file/*.*
 skeleton/public/atom.xml
 
 # npm modules
-npm_modules
+node_modules
 
