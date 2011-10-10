@@ -32,16 +32,21 @@ for (var row = 0; row < 6; row++){
     if (date > lastDate) {
       blank = true;
     }
+    if (!blank) {
     var href = (calendar[year] && calendar[year][month] && calendar[year][month][date]) ? '/archive/' + year + '/' + month + '/' + date + '/': '';
-    %>
+  %>
     <td
     <%- year == today.getFullYear() && month == today.getMonth() + 1 && date == today.getDate() ? ' class="today"' : '' %>    
     >
     <%- href ? '<a href="' + href + '">' : '' %>    
-    <%= blank ? '&nbsp;' : date++ %>
+    <%= date++ %>
     <%- href ? '</a>' : '' %>    
+    <% } else { %>
+    <td>
+    <%= '&nbsp;' %>
+    <% } %>
     </td>
-    <%
+  <%
   }
   %>
   </tr>
