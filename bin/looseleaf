@@ -34,7 +34,7 @@ function error(msg) {
 
 // Show message when create 
 function create(path) {
-//  console.log('\x1b[32mcreate\x1b[0m: ' + path);
+  console.log('\x1b[32mcreate\x1b[0m: ' + path);
 }
 
 // Warning messsage

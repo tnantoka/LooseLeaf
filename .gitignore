@@ -10,6 +10,7 @@ skeleton/pids/*.pid
 skeleton/public/file/*.*
 !skeleton/public/file/.gitkeep
 skeleton/public/atom.xml
+test
 
 # npm modules
 node_modules
