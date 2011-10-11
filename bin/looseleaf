@@ -133,7 +133,7 @@ if (path) {
       console.log(stderr);
     }
     console.log('looseleaf ok');
-    console.log('please customize "' + join(path, '/conf.json') + '"');
+    console.log('please customize "' + join(path, '/config.json') + '"');
   });
 } else {
   error(USAGE);
