@@ -3,7 +3,8 @@
     "name": "yourblog",
     "href": "http://localhost:3000/",
     "description": "My looseleaf.",
-    "theme": "w-future2"
+    "theme": "w-future2",
+    "port": "3000"
   },
   "copyright": {
     "href": "http://localhost/",

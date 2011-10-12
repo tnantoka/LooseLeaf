@@ -6,10 +6,7 @@ var fs = require('fs'),
   uuid = require('node-uuid'),
   mapping = require('./mapping').get(),
   atom = require('./ext/atom'),
-  Deferred = require('./ext/jsdeferred').Deferred,
   segmenter = require('./ext/tinysegmenter').segmenter;
-  
-Deferred.define();
 
 // Constants
 var LIMIT = 5;
