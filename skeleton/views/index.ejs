@@ -1,0 +1,94 @@
+  <link rel="stylesheet" href="/javascripts/google-code-prettify/prettify.css" />
+</head>
+<body>
+
+<div class="topbar" data-dropdown="dropdown">
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="/"><%= config.site.title %></a>
+
+      <p class="pull-right" id="loginLink">
+      <% if (req.session.user) { %>
+        Logged in as <a href="#">username</a></p>
+      <% } else {%>
+        <a href="#">Log in</a>
+      <% } %>
+      </p>
+
+      <form action="" class="pull-right" id="loginForm">
+        <input class="input-small" type="text" placeholder="Username">
+        <input class="input-small" type="password" placeholder="Password">
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="hero-unit">
+    <h1>New LooseLeaf.JS</h1>
+    <p>
+      #looseleafjs is lightweight blog engine on Node.js.<br />
+      v0.4 is powered by Bootstrap, Socket.IO, SQLite.<br />
+      Do you see demo? This site is!
+    </p>
+    <p><a class="btn primary large">Learn more &raquo;</a></p>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <h1>Page name <small>Supporting text or <a href="#">tagline</a></small></h1>
+      <div class="row">
+        <div class="span3">author</div>
+        <div class="span3">posted</div>
+        <div class="span3">updated</div>
+        <div class="span3">updated</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span10">
+      <h2>Main content</h2>
+      </div>
+      <!--
+      <div class="span4">
+        <h3>Secondary content</h3>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <h1>Page name <small>Supporting text or <a href="#">tagline</a></small></h1>
+      <div class="row">
+        <div class="span3">author</div>
+        <div class="span3">posted</div>
+        <div class="span3">updated</div>
+        <div class="span3">updated</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span10">
+      <h2>Main content</h2>
+      </div>
+      <!--
+      <div class="span4">
+        <h3>Secondary content</h3>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <footer>
+    <p><small>powered by <a href="http://looseleafjs.org/">LooseLeaf.JS</a> with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a></small></p>
+  </footer>
+
+</div>
+
+<script src="/javascripts/jquery-1.6.4.min.js"></script>
+<script src="/javascripts/jquery.tablesorter.min.js"></script>
+<script src="/javascripts/google-code-prettify/prettify.js"></script>
+<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/javascripts/script.js"></script>
+

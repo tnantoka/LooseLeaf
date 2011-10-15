@@ -1,0 +1,42 @@
+/* offset top */
+body {
+  padding-top: 65px; 
+}
+
+/* topbar */
+
+/* show when loginLink is clikced */
+#loginForm {
+  display: none; 
+}
+
+#loginLink {
+   
+}
+
+/* hero */
+.hero-unit {
+  display: none;
+}
+
+.content {
+  margin-bottom: 30px;
+}
+
+footer {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* shadow when hover posts */
+.content:hover {
+  -webkit-box-shadow:0px 0px 5px #999;
+  -moz-box-shadow:0px 0px 5px #999;
+  box-shadow:0px 0px 5px #999;
+}
+
+/* post's info */
+.page-header .row .span3 {
+}
+
+
