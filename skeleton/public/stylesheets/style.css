@@ -1,3 +1,9 @@
+/* html5 */
+header,
+footer {
+  display: block;
+}
+
 /* offset top */
 body {
   padding-top: 65px; 
@@ -38,5 +44,15 @@ footer {
 /* post's info */
 .page-header .row .span3 {
 }
+
+/* fix page header */
+/*
+.page-header .fix {
+  position: fixed;
+  margin-top: 0;
+  top: 40px;
+  width: 820px;
+}
+*/
 
 
