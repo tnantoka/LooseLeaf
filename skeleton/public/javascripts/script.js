@@ -11,35 +11,36 @@ $(function () {
     return false;
   });
 
-  // Add post content
-  var $footer = $('footer');
-  function insertContent(post) {
-    var content = generatePost(post);
-    $footer.before(content);
-  }
-
   // Scroll to top clicked topbar
   $('.topbar').dblclick(function() {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   });
 
+  // ejs
+  var ejs = require('ejs');
+  renderPost = ejs.compile(postElement);
+
   // Get next entry when scroll bottom
   var nowLoading;
   var socket = io.connect('/posts');
 
+  // Add post content
+  var $footer = $('footer');
+  function addPost(post) {
+    if (!post) return;
+    $footer.before(renderPost({ post: post }));
+  }
+
+  // spinner
+  var spinner = new Spinner();
+  spinner.spin($footer.find('small').get(0));
+  //spinner.stop();
+  
   socket.on('connect', function() {
 
     socket.on('next', function(post) {
       nowLoading = false;
-      if (post) {
-        var section = [ 
-          '<section>',
-            '<h1>', post.title, '</h1>',
-            '<p>', new Date(post.date), '</p>',
-            '<pre>', post.body, '</pre>',
-          '</section>'].join('');
-        document.body.innerHTML += section;
-      }   
+      addPost(post);
     }); 
 
     onBottom(function() {
@@ -56,4 +57,24 @@ $(function () {
   // syntax highlight
   //prettyPrint();
 })
+
+var postElement = (function() {
+return [
+'<div class="content">',
+  '<div class="page-header">',
+    '<h1><a href=""><%= post.title %></a> <small>Supporting text or <a href="#">tagline</a></small></h1>',
+    '<div class="row">',
+      '<div class="span1">author</div>',
+      '<div class="span2" title="<%= post.created_at %>"><%= $.timeago(post.created_at) %></div>',
+    '</div>',
+  '</div>',
+  '<div class="row">',
+    '<div class="span10">',
+      '<%= post.body %>',
+    '</div>',
+  '</div>',
+'</div>',
+''].join('\n');
+})();
+
 
