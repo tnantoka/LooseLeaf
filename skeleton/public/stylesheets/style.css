@@ -41,18 +41,12 @@ footer {
   box-shadow:0px 0px 5px #999;
 }
 
-/* post's info */
-.page-header .row .span3 {
+.page-header h1 a {
+  color: inherit;
 }
 
-/* fix page header */
-/*
-.page-header .fix {
-  position: fixed;
-  margin-top: 0;
-  top: 40px;
-  width: 820px;
+/* post's info */
+  .page-header .row .span3 {
 }
-*/
 
 
