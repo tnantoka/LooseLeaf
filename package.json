@@ -26,7 +26,9 @@
     "express": "~2.4.7",
     "connect-form": "~0.2.1",
     "sqlite": "~1.0.4",
-    "connect-sqlite": "0.0.1"
+    "connect-sqlite": "0.0.1",
+    "socket.io": "~0.8.5",
+    "connect": "~1.7.1"
   },
   "devDependencies": {}
 }
