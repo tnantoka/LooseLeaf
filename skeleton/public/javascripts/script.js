@@ -31,15 +31,11 @@ $(function () {
     $footer.before(renderPost({ post: post }));
   }
 
-  // spinner
-  var spinner = new Spinner();
-  spinner.spin($footer.find('small').get(0));
-  //spinner.stop();
-  
   socket.on('connect', function() {
 
     socket.on('next', function(post) {
       nowLoading = false;
+      $footer.activity(false);
       addPost(post);
     }); 
 
@@ -48,6 +44,7 @@ $(function () {
       console.log(offset);
       if (!nowLoading) {
         nowLoading = true;
+        $footer.activity();
         socket.emit('next', { offset: offset }); 
       }   
     }); 

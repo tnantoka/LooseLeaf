@@ -20,6 +20,10 @@ body {
    
 }
 
+#searchForm {
+  margin-left: 50px;
+}
+
 /* hero */
 .hero-unit {
   display: none;

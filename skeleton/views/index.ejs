@@ -7,6 +7,10 @@
     <div class="container">
       <a class="brand" href="/"><%= config.site.title %></a>
 
+      <form class="pull-left" action="" id="searchForm">
+        <input type="text" placeholder="Search" />
+      </form>
+
       <p class="pull-right" id="loginLink">
       <% if (req.session.user) { %>
         Logged in as <a href="#">username</a></p>
@@ -20,6 +24,7 @@
         <input class="input-small" type="password" name="user[password]" id="user_password"  placeholder="Password">
         <button class="btn" type="submit">Log in</button>
       </form>
+
     </div>
   </div>
 </div>
@@ -37,7 +42,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/jquery-1.6.4.min.js"></script>
 <script src="/javascripts/jquery.timeago.js"></script>
-<script src="/javascripts/spin.js"></script>
+<script src="/javascripts/activity-indicator.js"></script>
 <script src="/javascripts/bottom.js"></script>
 <script src="/javascripts/ejs.min.js"></script>
 <script src="/javascripts/script.js"></script>
