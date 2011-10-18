@@ -12,6 +12,7 @@
 #skeleton/public/file/*.*
 #!skeleton/public/file/.gitkeep
 #skeleton/public/atom.xml
+looseleaf.db
 
 # npm modules
 node_modules

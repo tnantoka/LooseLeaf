@@ -34,7 +34,7 @@ body {
   width: 750px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
-.content {
+.container .content {
   margin-bottom: 30px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -53,7 +53,7 @@ footer {
 }
 
 /* shadow when hover posts */
-.content:hover {
+.container .content:hover {
   -webkit-box-shadow:0px 0px 5px #999;
   -moz-box-shadow:0px 0px 5px #999;
   box-shadow:0px 0px 5px #999;
@@ -66,5 +66,58 @@ footer {
 /* post's info */
   .page-header .row .span3 {
 }
+
+/* scroll to top*/
+#scrollToTop {
+  position: fixed;
+  top: 0;
+  left: 120px;
+  z-index: 10000;
+}
+
+.popover {
+  position: fixed;
+/*
+  top: 45px !important;
+  left: 5px !important;
+*/
+  top: auto !important;
+  left: auto !important;
+  bottom: 5px !important;
+  left: 5px !important;
+}
+
+.popover .content {
+  display: none;
+}
+
+.popover .title {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.popover .arrow {
+  opacity: 0.4;
+}
+
+.popover .inner {
+  width: 75px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.popover .inner h3 {
+  padding: 0; /* padding to a */
+}
+
+.popover .inner a {
+  font-size: 17px;
+  color: inherit;
+  display: block;
+  width: 45px;
+  padding: 9px 15px;
+}
+
 
 

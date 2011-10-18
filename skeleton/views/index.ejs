@@ -2,7 +2,7 @@
 </head>
 <body>
 
-<div class="topbar" data-dropdown="dropdown" title="Duble click for scroll to top">
+<div class="topbar" data-dropdown="dropdown">
   <div class="fill">
     <div class="container">
       <a class="brand" href="/"><%= config.site.title %></a>
@@ -31,19 +31,31 @@
 
 <div class="container">
 
+  <%- partial('./shared/post', posts) %>
+
   <footer>
     <p><small>powered by <a href="http://looseleafjs.org/">LooseLeaf.JS</a> with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a></small></p>
   </footer>
 
 </div>
 
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/jquery-1.6.4.min.js"></script>
 <script src="/javascripts/jquery.timeago.js"></script>
 <script src="/javascripts/activity-indicator.js"></script>
+<script src="/bootstrap/js/bootstrap-twipsy.js"></script>
+<script src="/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/bootstrap/js/bootstrap-alerts.js"></script>
+<script src="/bootstrap/js/bootstrap-twipsy.js"></script>
+<script src="/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="/bootstrap/js/bootstrap-tabs.js"></script>
 <script src="/javascripts/bottom.js"></script>
 <script src="/javascripts/ejs.min.js"></script>
 <script src="/javascripts/render.js"></script>
 <script src="/javascripts/script.js"></script>
-<script>var posts = <%- JSON.stringify(posts) %>;</script>
+<!--script>var posts = <%- JSON.stringify(posts) %>;</script-->
 
