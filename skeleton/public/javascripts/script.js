@@ -16,10 +16,6 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   });
 
-  // ejs
-  var ejs = require('ejs');
-  renderPost = ejs.compile(postElement);
-
   // Get next entry when scroll bottom
   var nowLoading;
   var socket = io.connect('/posts');
@@ -28,7 +24,11 @@ $(function () {
   var $footer = $('footer');
   function addPost(post) {
     if (!post) return;
-    $footer.before(renderPost({ post: post }));
+    $footer.before(render.post({ post: post }));
+  }
+
+  for (var i = 0; i < posts.length; i++) {
+    addPost(posts[i]);
   }
 
   socket.on('connect', function() {
@@ -54,24 +54,5 @@ $(function () {
   // syntax highlight
   //prettyPrint();
 })
-
-var postElement = (function() {
-return [
-'<div class="content">',
-  '<div class="page-header">',
-    '<h1><a href=""><%= post.title %></a> <small>Supporting text or <a href="#">tagline</a></small></h1>',
-    '<div class="row">',
-      '<div class="span1">author</div>',
-      '<div class="span2" title="<%= post.created_at %>"><%= $.timeago(post.created_at) %></div>',
-    '</div>',
-  '</div>',
-  '<div class="row">',
-    '<div class="span10">',
-      '<%= post.body %>',
-    '</div>',
-  '</div>',
-'</div>',
-''].join('\n');
-})();
 
 

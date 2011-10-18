@@ -2,7 +2,7 @@
 </head>
 <body>
 
-<div class="topbar" data-dropdown="dropdown">
+<div class="topbar" data-dropdown="dropdown" title="Duble click for scroll to top">
   <div class="fill">
     <div class="container">
       <a class="brand" href="/"><%= config.site.title %></a>
@@ -31,8 +31,6 @@
 
 <div class="container">
 
-  <%- partial('./shared/post', posts) %>
-
   <footer>
     <p><small>powered by <a href="http://looseleafjs.org/">LooseLeaf.JS</a> with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a></small></p>
   </footer>
@@ -45,5 +43,7 @@
 <script src="/javascripts/activity-indicator.js"></script>
 <script src="/javascripts/bottom.js"></script>
 <script src="/javascripts/ejs.min.js"></script>
+<script src="/javascripts/render.js"></script>
 <script src="/javascripts/script.js"></script>
+<script>var posts = <%- JSON.stringify(posts) %>;</script>
 
