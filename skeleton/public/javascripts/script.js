@@ -49,9 +49,7 @@ $(function () {
     }
     //$footer.before(render.post({ post: post }));
     $footer.before(post);
-    $('.content .page-header:last').badger('new');
   }
-  $('.content .page-header').badger('new');
 
   /*
   for (var i = 0; i < posts.length; i++) {
