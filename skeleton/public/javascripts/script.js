@@ -23,12 +23,13 @@ $(function () {
   $('.topbar').dblclick(scrollToTop);
 
   var isPopover;
+  var popoverBorder = $('.content:eq(1)').offset().top - 100;
   $(window).scroll(function() {
     var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
-    if (scrollTop != 0 && !isPopover) {
+    if (scrollTop > popoverBorder && !isPopover) {
       $('.topbar').popover('show');
       isPopover = true;
-    } else if (scrollTop == 0) {
+    } else if (scrollTop <= popoverBorder) {
       $('.topbar').popover('hide');
       isPopover = false;
     }
@@ -48,7 +49,9 @@ $(function () {
     }
     //$footer.before(render.post({ post: post }));
     $footer.before(post);
+    $('.content .page-header:last').badger('new');
   }
+  $('.content .page-header').badger('new');
 
   /*
   for (var i = 0; i < posts.length; i++) {
