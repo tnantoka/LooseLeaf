@@ -13,13 +13,13 @@
 
       <p class="pull-right" id="loginLink">
       <% if (req.session.user) { %>
-        Logged in as <a href="#">username</a></p>
+        Logged in as <a href="#"><%= req.session.user.username %></a></p>
       <% } else {%>
         <a href="#">Log in</a>
       <% } %>
       </p>
 
-      <form action="" class="pull-right" id="loginForm">
+      <form action="/auth/login" method="post" class="pull-right" id="loginForm">
         <input class="input-small" type="text" name="user[username]" id="user_username" placeholder="Username">
         <input class="input-small" type="password" name="user[password]" id="user_password"  placeholder="Password">
         <button class="btn" type="submit">Log in</button>

@@ -1,3 +1,46 @@
-* <del>popoverでscrollToTopさせる</del>
+* キャッチフレーズ決める
+「Blogging for yourself」
+全てをブログに
+もう一度ブログを書こう！
+思いを詰め込む
+
+* 多対多
+
+* 複数人編集
+
+* 管理画面レス
+
+できるかぎり管理画面を出したくない
+
+自己紹介一覧ページで、is_adminのユーザがログイン済みの場合は
+×でユーザ追加。
++で新しいユーザ追加。
+adminは全員の記事と紹介とかいじれる。
+
+記事の追加はどっかの+おせば空記事ができてそこを編集
+　
+自分の書いた記事 or is_adminなら編集・削除可能（アイコンが出る、paragraphみたいな感じ）
+
+画像はとりあえず普通で
+
+画像複数ドラッグドロップしたらその分のエントリを書くのもいいかも。
+URLだったらその記事書く
+返信機能で、古文書 yammaer的なUIで。追記機能
+
+mode
+ admin
+ user
+ anonymous
+
+notify-bar使いたい
+
+http://thrivingkings.com/badger/
+これで未読って表示してhoverしたら直す
+
+############ 完了 ##########
+* popoverでscrollToTopさせる
 * userモデル作る
+* ログイン
 * hasMany試す
+
+

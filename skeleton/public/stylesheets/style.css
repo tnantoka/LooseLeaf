@@ -4,24 +4,46 @@ footer {
   display: block;
 }
 
+/* common */
+
 /* offset top */
 body {
   padding-top: 65px; 
 }
 
 /* topbar */
+.topbar {
+  opacity: 0.8;
+}
+
+.topbar a.brand {
+  color: #bfbfbf;
+}
+
+.topbar a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px #ccc;
+}
+
+.topbar a.brand:hover {
+  color: #fff;
+}
 
 /* show when loginLink is clikced */
 #loginForm {
   display: none; 
 }
 
+#loginForm .btn {
+  display: none;
+}
+
 #loginLink {
-   
+  color: #666; 
 }
 
 #searchForm {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 /* hero */
@@ -41,17 +63,6 @@ body {
   border-radius: 6px;
 }
 
-.page-header {
-  -webkit-border-radius: 6px 6px 0 0;
-  -moz-border-radius: 6px 6px 0 0;
-  border-radius: 6px 6px 0 0;
-}
-
-footer {
-  margin-top: 0;
-  padding-top: 0;
-}
-
 /* shadow when hover posts */
 .container .content:hover {
   -webkit-box-shadow:0px 0px 5px #999;
@@ -59,12 +70,42 @@ footer {
   box-shadow:0px 0px 5px #999;
 }
 
+.page-header {
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+}
+
+/* post's info */
 .page-header h1 a {
   color: inherit;
 }
 
-/* post's info */
-  .page-header .row .span3 {
+.page-header .icon img {
+  width: 48px;
+  vertical-align: middle;
+}
+
+.page-header .timeago {
+  line-height: 48px;
+}
+
+.page-header ul.info {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+}
+
+.page-header ul.info li {
+  display: inline-block;
+  /*float: right;*/
+  margin: 0;
+  padding: 0 10px 0 0;
+}
+
+footer {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* scroll to top*/
@@ -117,6 +158,7 @@ footer {
   display: block;
   width: 45px;
   padding: 9px 15px;
+  text-decoration: none;
 }
 
 

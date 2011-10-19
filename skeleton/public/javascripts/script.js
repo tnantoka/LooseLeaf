@@ -35,13 +35,17 @@ $(function () {
   });
 
   // Get next entry when scroll bottom
+  var hasNext = $('.page-header').length == 5 ? true : false;
   var nowLoading;
   var socket = io.connect('/posts');
 
   // Add post content
   var $footer = $('footer');
   function addPost(post) {
-    if (!post) return;
+    if (!post) {
+      hasNext = false;
+      return;
+    }
     //$footer.before(render.post({ post: post }));
     $footer.before(post);
   }
@@ -61,12 +65,13 @@ $(function () {
     }); 
 
     onBottom(function() {
-      var offset = $('.page-header').length;
-      console.log(offset);
-      if (!nowLoading) {
-        nowLoading = true;
-        $footer.activity();
-        socket.emit('next', { offset: offset }); 
+      if (hasNext) {
+        var offset = $('.page-header').length;
+        if (!nowLoading) {
+          nowLoading = true;
+          $footer.activity();
+          socket.emit('next', { offset: offset }); 
+        }   
       }   
     }); 
 
