@@ -1,14 +1,16 @@
-/* html5 */
-header,
-footer {
-  display: block;
-}
-
 /* common */
 
 /* offset top */
 body {
-  padding-top: 65px; 
+  padding-top: 0;  
+}
+
+body > .container {
+  margin-top: 65px;
+}
+
+body > .container-fluid {
+  margin-top: 55px;
 }
 
 /* topbar */
@@ -52,10 +54,18 @@ body {
 }
 
 /* content */
+.container-fluid,
 .container {
   width: 750px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
+.container-fluid {
+  min-width: 750px;
+  margin: auto;
+  padding: 0;
+}
+
+.container-fluid .content,
 .container .content {
   margin-bottom: 30px;
   -webkit-border-radius: 6px;
@@ -63,13 +73,29 @@ body {
   border-radius: 6px;
 }
 
+.container-fluid .content {
+  width: 545px; /* width - padding  */
+  margin-left: 165px;
+}
+
+/* sidebar */
+.container > .sidebar {
+  display: none;
+}
+
+.container-fluid > .sidebar {
+  margin-left: 0;
+  width: 150px;
+  position: fixed;
+}
+
 /* shadow when hover posts */
+.container-fluid .content:hover,
 .container .content:hover {
   -webkit-box-shadow:0px 0px 5px #999;
   -moz-box-shadow:0px 0px 5px #999;
   box-shadow:0px 0px 5px #999;
 }
-
 .page-header {
   -webkit-border-radius: 6px 6px 0 0;
   -moz-border-radius: 6px 6px 0 0;

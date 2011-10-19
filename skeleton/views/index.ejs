@@ -1,4 +1,5 @@
   <link rel="stylesheet" href="/javascripts/google-code-prettify/prettify.css" />
+  <link rel="stylesheet" href="/javascripts/badger/badger.css" />
 </head>
 <body>
 
@@ -13,7 +14,7 @@
 
       <p class="pull-right" id="loginLink">
       <% if (req.session.user) { %>
-        Logged in as <a href="#"><%= req.session.user.username %></a></p>
+        <a href="#"><%= req.session.user.username %></a></p>
       <% } else {%>
         <a href="#">Log in</a>
       <% } %>
@@ -30,6 +31,39 @@
 </div>
 
 <div class="container">
+<!--
+<div class="container-fluid">
+-->
+
+      <div class="sidebar">
+        <div class="well">
+          <h5>Sidebar</h5>
+          <ul>
+
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <h5>Sidebar</h5>
+
+          <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+
+            <li><a href="#">Link</a></li>
+          </ul>
+          <h5>Sidebar</h5>
+          <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+
+        </div>
+      </div>
 
   <%- partial('./shared/post', posts) %>
 
@@ -42,8 +76,14 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/jquery-1.6.4.min.js"></script>
+
+<!-- jquery plugins -->
 <script src="/javascripts/jquery.timeago.js"></script>
 <script src="/javascripts/activity-indicator.js"></script>
+<script src="/javascripts/badger/badger.js"></script>
+
+<!-- bootstarp -->
+<script src="/javascripts/google-code-prettify/prettify.js"></script>
 <script src="/bootstrap/js/bootstrap-twipsy.js"></script>
 <script src="/bootstrap/js/bootstrap-popover.js"></script>
 <script src="/bootstrap/js/bootstrap-modal.js"></script>
@@ -53,8 +93,10 @@
 <script src="/bootstrap/js/bootstrap-dropdown.js"></script>
 <script src="/bootstrap/js/bootstrap-scrollspy.js"></script>
 <script src="/bootstrap/js/bootstrap-tabs.js"></script>
+
+<!-- looseleaf -->
 <script src="/javascripts/bottom.js"></script>
-<script src="/javascripts/ejs.min.js"></script>
+<script src="/javascripts/ejs.js"></script>
 <script src="/javascripts/render.js"></script>
 <script src="/javascripts/script.js"></script>
 <!--script>var posts = <%- JSON.stringify(posts) %>;</script-->

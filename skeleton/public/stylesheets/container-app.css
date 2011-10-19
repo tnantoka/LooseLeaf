@@ -7,6 +7,7 @@ html, body {
 body {
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
+.container-fluid > footer p,
 .container > footer p {
   text-align: center; /* center align it with the container */
 }
@@ -16,10 +17,12 @@ body {
 
 /* The white background content wrapper */
 .container .content {
-/*.content {*/
-  background-color: #fff;
-  padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+}
+.container-fluid .content,
+.container .content {
+  padding: 20px;
+  background-color: #fff;
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;

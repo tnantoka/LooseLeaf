@@ -78,7 +78,7 @@ $(function () {
   }); 
 
   // syntax highlight
-  //prettyPrint();
+  prettyPrint();
 })
 
 // Scroll to top clicked topbar or clicked popover

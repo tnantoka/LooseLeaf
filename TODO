@@ -37,6 +37,9 @@ notify-bar使いたい
 http://thrivingkings.com/badger/
 これで未読って表示してhoverしたら直す
 
+tagも検索の1ビューとして
+usersだけつくるしかないか。
+
 ############ 完了 ##########
 * popoverでscrollToTopさせる
 * userモデル作る
