@@ -20,6 +20,7 @@ body > .container-fluid {
 
 .topbar a.brand {
   color: #bfbfbf;
+  padding-left: 10px;
 }
 
 .topbar a:hover {
@@ -29,6 +30,10 @@ body > .container-fluid {
 
 .topbar a.brand:hover {
   color: #fff;
+}
+
+.topbar .pull-right {
+  margin-right: -10px;
 }
 
 /* show when loginLink is clikced */
@@ -42,6 +47,16 @@ body > .container-fluid {
 
 #loginLink {
   color: #666; 
+}
+
+#loginLink a.user {
+  border-right: 2px solid #666;
+  padding-right: 5px;
+}
+
+#loginLink a.logout {
+  margin-left: 2px;
+  margin-right: 4px;
 }
 
 #searchForm {

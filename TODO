@@ -3,17 +3,36 @@
 全てをブログに
 もう一度ブログを書こう！
 思いを詰め込む
+あなたのブログはあなたの者
+You Articles in Your Blog
+Facebook, tumblrじゃない
+
+ Your Articles in Your Hands.
+ 
+ Your Think, Diary, etc. is whose?
+ Facebook? Twitter? 
+ communication is everyone's.
+ No, It's only yours.
+ Let's blogging with looseleaf, yeah! 
+ さぁもう一度ブログを始めましょう。
+ 
+* screnncastt取る
+ （動かすところまで）
+
+* confにtwitter key入れると記事書いた時とかつぶやく？
+  (discusでいいか）
 
 * 多対多
 
 * 複数人編集
+* CSS編集
 
 * 管理画面レス
 
 できるかぎり管理画面を出したくない
 
 自己紹介一覧ページで、is_adminのユーザがログイン済みの場合は
-×でユーザ追加。
+×でユーザ削除。
 +で新しいユーザ追加。
 adminは全員の記事と紹介とかいじれる。
 
@@ -33,10 +52,6 @@ mode
  anonymous
 
 notify-bar使いたい
-
-http://thrivingkings.com/badger/
-これで未読って表示してhoverしたら直す
-
 tagも検索の1ビューとして
 usersだけつくるしかないか。
 
@@ -45,5 +60,10 @@ usersだけつくるしかないか。
 * userモデル作る
 * ログイン
 * hasMany試す
+
+http://thrivingkings.com/badger/
+これで未読って表示してhoverしたら直す
+* いまいちだった。そもそも最下部に行った次表示されるから未読にならんし
+
 
 

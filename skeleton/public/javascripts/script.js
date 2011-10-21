@@ -1,7 +1,7 @@
 $(function () {
 
   // Show login form
-  $('#loginLink a').click(function() {
+  $('#loginLink a.login').click(function() {
     $('#loginLink').hide();
     $('#loginForm').fadeIn('fast', function() {
       setTimeout(function() {
@@ -22,6 +22,22 @@ $(function () {
 
   $('.topbar').dblclick(scrollToTop);
 
+  // Add post content
+  var $footer = $('footer');
+  function addPost(post) {
+    if (!post) {
+      hasNext = false;
+      return;
+    }
+    $footer.before(render.post({ post: post }));
+    //$footer.before(post);
+  }
+
+  // Add initial post by clientside
+  for (var i = 0; i < posts.length; i++) {
+    addPost(posts[i]);
+  }
+
   var isPopover;
   var popoverBorder = $('.content:eq(1)').offset().top - 100;
   $(window).scroll(function() {
@@ -39,23 +55,6 @@ $(function () {
   var hasNext = $('.page-header').length == 5 ? true : false;
   var nowLoading;
   var socket = io.connect('/posts');
-
-  // Add post content
-  var $footer = $('footer');
-  function addPost(post) {
-    if (!post) {
-      hasNext = false;
-      return;
-    }
-    //$footer.before(render.post({ post: post }));
-    $footer.before(post);
-  }
-
-  /*
-  for (var i = 0; i < posts.length; i++) {
-    addPost(posts[i]);
-  }
-  */
 
   socket.on('connect', function() {
 

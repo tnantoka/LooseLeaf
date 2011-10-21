@@ -2,6 +2,9 @@
   "site" : {
     "title" : "My LooseLeaf"
   },
+  "db" : {
+    "name" : "data"
+  },
   "session" : {
     "secret" : "Unique string"
   },
