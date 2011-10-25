@@ -15,7 +15,9 @@ Facebook, tumblrじゃない
  No, It's only yours.
  Let's blogging with looseleaf, yeah! 
  さぁもう一度ブログを始めましょう。
- 
+
+-----------------------------------------
+
 * screnncastt取る
  （動かすところまで）
 
@@ -25,19 +27,14 @@ Facebook, tumblrじゃない
 * 多対多
 
 * 複数人編集
-* CSS編集
-
-* 管理画面レス
-
-できるかぎり管理画面を出したくない
+* CSS編集(topbarの色をとりあえず)
 
 自己紹介一覧ページで、is_adminのユーザがログイン済みの場合は
 ×でユーザ削除。
 +で新しいユーザ追加。
 adminは全員の記事と紹介とかいじれる。
+空ユーザをはじめから表示しとく
 
-記事の追加はどっかの+おせば空記事ができてそこを編集
-　
 自分の書いた記事 or is_adminなら編集・削除可能（アイコンが出る、paragraphみたいな感じ）
 
 画像はとりあえず普通で
@@ -65,5 +62,15 @@ http://thrivingkings.com/badger/
 これで未読って表示してhoverしたら直す
 * いまいちだった。そもそも最下部に行った次表示されるから未読にならんし
 
+// data属性はこれで取れる
+idをこれでとってこよう
+http://api.jquery.com/data/
 
+https://sites.google.com/a/bornneet.com/im/jquery-style
+スタイルのコピー
+ 
+* 管理画面レス
+できるかぎり管理画面を出したくない
+
+記事の追加はどっかの+おせば空記事ができてそこを編集
 

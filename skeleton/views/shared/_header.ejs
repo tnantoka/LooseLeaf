@@ -1,0 +1,31 @@
+<div class="topbar" data-dropdown="dropdown">
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="/"><%= config.site.title %></a>
+
+      <form class="pull-left" action="/search/" id="searchForm">
+        <input type="text" placeholder="keyword" name="keyword" class="keyword" value="<%= req.params.keyword || '' %>" />
+        <button class="btn" type="submit">search</button>
+      </form>
+
+      <p class="pull-right" id="loginLink">
+      <% if (req.session.user) { %>
+        <a href="/author/<%= req.session.user.username %>"><img src="<%= req.session.user.icon %>" alt="<%= req.session.user.username %>" /></a>
+        <a href="#" class="user"><%= req.session.user.username %></a>
+        <a href="/auth/logout" class="logout">logout</a>
+        <button class="btn" type="button" class="new">＋</button>
+      <% } else {%>
+        <a href="#" class="login">Log in</a>
+      <% } %>
+      </p>
+
+      <form action="/auth/login" method="post" class="pull-right" id="loginForm">
+        <input class="input-small" type="text" name="user[username]" id="user_username" placeholder="Username">
+        <input class="input-small" type="password" name="user[password]" id="user_password"  placeholder="Password">
+        <button class="btn" type="submit">Log in</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+

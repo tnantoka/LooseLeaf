@@ -1,14 +1,18 @@
-<div class="content">
-  <div class="page-header clearfix">
-    <h1><a href=""><%= post.title %></a> <small>Supporting text or <a href="#">tagline</a></small></h1>
-    <ul class="info">
-      <li class="icon"><img src="<%= post.user.icon %>" alt="<%= post.user.username %>" /></li>
-      <li class="timeago" title="<%= post.created_at %>"><%= timeago(post.created_at) %></li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="span10">
-      <%= post.body %>
+<div class="content" data-post-id="<%= post.id %>">
+  <div class="show">
+    <div class="page-header clearfix">
+      <h1><a href="/posts/<%= post.id %>"><%= post.title %></a></h1>
+      <ul class="info">
+        <li class="icon"><a href="/author/<%= post.user.username %>"><img src="<%= post.user.icon %>" alt="<%= post.user.username %>" /></a></li>
+        <li class="timeago" title="<%= post.created_at %>"><%= timeago(post.created_at) %></li>
+        <li class="tag"><%- tag(post.tag) %></li>
+        <% if (post.is_private) { %>
+        <li class="private"><span class="label warning">private</span></li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="span10"><%- post.body %></div>
     </div>
   </div>
 </div>
