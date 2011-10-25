@@ -1,0 +1,14 @@
+      <div class="content" data-user-id="<%= user.id %>">
+        <div class="show">
+          <div class="page-header clearfix">
+            <p>
+              <a href="/author/<%= user.username %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a>
+              <span><%= user.fullname %></span>
+            </p>
+          </div>
+          <div class="row">
+            <div class="span5"><%= user.intro %></div>
+          </div>
+        </div>
+      </div>
+

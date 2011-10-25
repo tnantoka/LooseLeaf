@@ -58,11 +58,47 @@ function getRenderer() {
 '</div>',
 ''
   ].join('\n');
+  
+  var user = {};
 
-   var ejs = require('ejs');
+  user.edit = [
+'  <form class="edit" method="post" action="<%= action %>">',
+'    <div class="page-header clearfix">',
+'      <p>',
+'        <a href="/author/<%= user.username %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a>',
+'        <span><input type="text" name="user[fullname]" class="user_fullname" placeholder="fullname" value="<%= user.fullname %>" /></span>',
+'      </p>',
+'    </div>',
+'    <div class="row">',
+'      <textarea name="user[intro]" class="user_intro"><%= user.intro %></textarea>',
+'    </div>',
+'    <p>color</p>',
+'    <p>password</p>',
+'  </form>',
+''
+  ].join('\n');
+
+  user.control = [
+'<div class="control">',
+'  <ul class="action">',
+'    <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
+'    <li><button type="button" class="btn delete">×</button></li>',
+'  </ul>',
+'  <ul class="submit">',
+'    <li><button type="button" class="btn save">save</button></li>',
+'    <li><button type="button" class="btn cancel">cancel</button></li>',
+'  </ul>',
+'</div>',
+''
+  ].join('\n');
+ 
+  var ejs = require('ejs');
   renderer.post = ejs.compile(post);
   renderer.editPost = ejs.compile(editPost);
   renderer.control = ejs.compile(control);
+  renderer.user = {};
+  renderer.user.control = ejs.compile(user.control);
+  renderer.user.edit = ejs.compile(user.edit);
 
   return renderer;
 

@@ -19,7 +19,7 @@ $(function () {
   // Show new post form
   function showNewPost() {
     var locals = {
-      post : {
+      post: {
         id: '',
         title: '',
         body: '',
@@ -87,7 +87,7 @@ $(function () {
     if (username != user.username) return;
 
     if ($(this).find('.control').length == 0) {
-      $(this).prepend(renderer.control);
+      $(this).prepend(renderer.control({}));
     } else {
       $(this).find('.control').show();
     }
@@ -100,7 +100,7 @@ $(function () {
     var $content = $(this).parents('.content'); 
     if ($content.find('from.edit').length == 0) {
       var locals = {
-        post : {
+        post: {
           id: $content.data('postId'),
           title: $content.find('h1 > a').html(),
           tag: $content.find('.tag').text(),

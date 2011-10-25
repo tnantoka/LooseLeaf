@@ -318,5 +318,59 @@ footer {
   text-decoration: none;
 }
 
+/* authors/index */
+#authorsIndex {
+}
+
+#authorsIndex .container {
+  width: 750px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+}
+
+#authorsIndex .row {
+/*  width: 750px; */
+  margin: auto;
+}
+
+#authorsIndex .row .span6 {
+  width: 375px;
+  margin: 0;
+}
+
+#authorsIndex .content {
+  width: 310px;
+  margin: auto;
+}
+
+#authorsIndex .content .page-header img {
+  width: 48px; 
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#authorsIndex .content .page-header p {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+#authorsIndex .content .span5 {
+  min-height: 400px;
+  margin-left: 0;
+}
+
+#authorsIndex .content .row {
+}
+
+#authorsIndex .container {
+  margin-bottom: 30px;
+}
+
+#authorsIndex form.edit {
+  margin: 0;
+}
+
+#authorsIndex form.edit .row {
+  margin-top: -18px;
+  margin-left: -20px;
+}
 
 
