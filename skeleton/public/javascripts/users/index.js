@@ -6,7 +6,7 @@ $(function() {
     icon: $('#loginLink img').attr('src'),
     is_admin: $('#loginLink .user').data('userIsAdmin'),
   };
-  console.log(user);
+  //console.log(user);
 
   /* config cleidtor  */
   $.cleditor.defaultOptions.width = 788;

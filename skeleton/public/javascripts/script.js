@@ -153,7 +153,6 @@ $(function () {
         cache: false,
         success: function(data) {
           //$content.activity(false);
-          console.log(data);
           $content.replaceWith(data);        
         }
       });
