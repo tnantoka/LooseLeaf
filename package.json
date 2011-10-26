@@ -28,7 +28,9 @@
     "sqlite": "~1.0.4",
     "connect-sqlite": "0.0.1",
     "socket.io": "~0.8.5",
-    "connect": "~1.7.1"
+    "connect": "~1.7.1",
+    "async": "~0.1.12"
   },
   "devDependencies": {}
 }
+

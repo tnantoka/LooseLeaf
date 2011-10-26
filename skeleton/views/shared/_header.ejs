@@ -10,8 +10,8 @@
 
       <p class="pull-right" id="loginLink">
       <% if (req.session.user) { %>
-        <a href="/author/<%= req.session.user.username %>"><img src="<%= req.session.user.icon %>" alt="<%= req.session.user.username %>" /></a>
-        <a href="#" class="user"><%= req.session.user.username %></a>
+        <a href="/users#<%= req.session.user.username %>"><img src="<%= req.session.user.icon %>" alt="<%= req.session.user.username %>" /></a>
+        <a href="#" class="user" data-user-is-admin="<%= req.session.user.is_admin %>"><%= req.session.user.username %></a>
         <a href="/auth/logout" class="logout">logout</a>
         <button class="btn" type="button" class="new">＋</button>
       <% } else {%>

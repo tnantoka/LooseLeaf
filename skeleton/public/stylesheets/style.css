@@ -373,4 +373,29 @@ footer {
   margin-left: -20px;
 }
 
+/* users/index */
+#usersIndex {
+  
+}
+
+#usersIndex .content .page-header ul li input {
+  width: 150px;  
+}
+
+/* edit post form */
+form.edit input.user_fullname {
+  width: 70%;
+  font-size: 30px;
+  height: 35px;
+  font-weight: bold;
+  color: inherit;
+}
+
+form.edit .icon.edit img {
+  border: 2px solid transparent;
+}
+
+form.edit .icon.edit.dragover img {
+  border: 2px solid #777;
+}
 

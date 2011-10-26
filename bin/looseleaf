@@ -133,8 +133,16 @@ if (target) {
     if (stderr) {
       console.log(stderr);
     }
-    console.log('looseleaf ok');
-    console.log('please customize "' + path.join(target, '/config.json') + '"');
+    require('child_process').exec('node ' + BASE_DIR + '/lib/init.js', { cwd: target }, function(err, stdout, stderr) {
+      if (err) {
+        throw err;
+      }
+      if (stderr) {
+        console.log(stderr);
+      }
+      console.log('looseleaf ok');
+      console.log('please customize "' + path.join(target, '/config.json') + '"');
+    });
   });
 } else {
   error(USAGE);

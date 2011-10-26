@@ -28,7 +28,7 @@ $(function () {
         user: user
       }
     };
-    $('.content:eq(0)').before(renderer.post(locals));
+    $('body > .container').prepend(renderer.post(locals));
     $('.content:eq(0)').mouseover();
     $('.content:eq(0) .control .action .edit').click();
   }
@@ -86,8 +86,10 @@ $(function () {
     username = $(this).find('.icon img').attr('alt');
     if (username != user.username) return;
 
+    var isPrivate = $(this).find('li.private').length;
+
     if ($(this).find('.control').length == 0) {
-      $(this).prepend(renderer.control({}));
+      $(this).prepend(renderer.control({ post: { is_private: isPrivate } }));
     } else {
       $(this).find('.control').show();
     }
@@ -143,7 +145,7 @@ $(function () {
   $('.content .control .action .private').live('click', function() {
     var $content = $(this).parents('.content'); 
     var isPrivate = ($content.find('li.private').length > 0);
-    if (confirm('Set private this post?')) {
+    if (confirm('Set ' + (isPrivate ? 'public' : 'private' ) + ' this post?')) {
       $.ajax({
         type: 'POST',
         url: '/posts/' + $content.data('postId'),
@@ -157,7 +159,6 @@ $(function () {
       });
     }
   });
-
 
   // delete post
   $('.content .control .action .delete').live('click', function() {
@@ -223,8 +224,9 @@ $(function () {
   $('.topbar').dblclick(scrollToTop);
 
   var isPopover;
-  var popoverBorder = $('.content:eq(1)').offset().top - 100;
   $(window).scroll(function() {
+    if ($('.content:eq(1)').length == 0) return false;
+    var popoverBorder = $('.content:eq(1)').offset().top - 100;
     var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
     if (scrollTop > popoverBorder && !isPopover) {
       $('.topbar').popover('show');

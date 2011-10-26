@@ -48,7 +48,11 @@ function getRenderer() {
 '<div class="control">',
 '  <ul class="action">',
 '    <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
+'    <% if (post.is_private) { %>',
+'    <li><button type="button" class="btn private"><img src="/images/icons/public.png" alt="private" /></button></li>',
+'    <% } else { %>',
 '    <li><button type="button" class="btn private"><img src="/images/icons/private.png" alt="private" /></button></li>',
+'    <% } %>',
 '    <li><button type="button" class="btn delete">×</button></li>',
 '  </ul>',
 '  <ul class="submit">',
@@ -58,22 +62,46 @@ function getRenderer() {
 '</div>',
 ''
   ].join('\n');
-  
+
   var user = {};
+  
+  user.show = [
+'<div class="content" data-user-id="<%= user.id %>" data-user-color="<%= user.color || \'\' %>" id="<%= user.username %>">',
+'  <div class="show">',
+'    <div class="page-header clearfix">',
+'      <h1><a href="/users/<%= user.id %>"><%= user.fullname %></a></h1>',
+'      <ul class="info">',
+'        <li class="icon"><a href="/users#<%= user.username %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a></li>',
+'        <li><a href="/user/<%= user.username %>"><%= user.posts.length %> posts</a></li>',
+'      </ul>',
+'    </div>',
+'    <div class="row">',
+'      <div class="span10"><%- user.intro %></div>',
+'    </div>',
+'  </div>',
+'</div>',
+''
+  ].join('\n');
+
 
   user.edit = [
 '  <form class="edit" method="post" action="<%= action %>">',
 '    <div class="page-header clearfix">',
-'      <p>',
-'        <a href="/author/<%= user.username %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a>',
-'        <span><input type="text" name="user[fullname]" class="user_fullname" placeholder="fullname" value="<%= user.fullname %>" /></span>',
-'      </p>',
+'      <h1><input type="text" name="user[fullname]" class="user_fullname" placeholder="fullname" value="<%= user.fullname %>" required /></h1>',
+'      <ul class="info">',
+'        <li class="icon edit"><img src="<%= user.icon || \'/images/users/tnantoka.png\' %>" alt="<%= user.username %>" /></li>',
+'        <li><input type="text" name="user[username]" class="user_username" placeholder="username" value="<%= user.username %>" /></li>',
+'        <li><input type="password" name="user[password]" class="user_password" placeholder="password" /></li>',
+'        <li><input type="text" name="user[color]" class="user_color" placeholder="color" value="<%= user.color %>" /></li>',
+'      </ul>',
 '    </div>',
 '    <div class="row">',
+'      <div class="span13">',
 '      <textarea name="user[intro]" class="user_intro"><%= user.intro %></textarea>',
+'      </div>',
 '    </div>',
-'    <p>color</p>',
-'    <p>password</p>',
+'    <input type="hidden" name="_method" value="<%= method %>" >',
+'    <input type="hidden" name="user[icon]" class="user_icon" value="<%= user.icon || \'/images/users/tnantoka.png\' %>" >',
 '  </form>',
 ''
   ].join('\n');
@@ -82,7 +110,6 @@ function getRenderer() {
 '<div class="control">',
 '  <ul class="action">',
 '    <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
-'    <li><button type="button" class="btn delete">×</button></li>',
 '  </ul>',
 '  <ul class="submit">',
 '    <li><button type="button" class="btn save">save</button></li>',
@@ -97,6 +124,7 @@ function getRenderer() {
   renderer.editPost = ejs.compile(editPost);
   renderer.control = ejs.compile(control);
   renderer.user = {};
+  renderer.user.show = ejs.compile(user.show);
   renderer.user.control = ejs.compile(user.control);
   renderer.user.edit = ejs.compile(user.edit);
 
