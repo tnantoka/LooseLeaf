@@ -224,9 +224,10 @@ $(function () {
 
   var isPopover;
   $(window).scroll(function() {
-    if ($('.content:eq(1)').length == 0) return false;
-    var popoverBorder = $('.content:eq(1)').offset().top - 100;
+    if ($('.container .content:eq(1)').length == 0) return false;
+    var popoverBorder = $('.container .content:eq(1)').offset().top - 100;
     var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
+    console.log(popoverBorder + '==' + scrollTop);
     if (scrollTop > popoverBorder && !isPopover) {
       $('.topbar').popover('show');
       isPopover = true;
