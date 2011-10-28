@@ -35,12 +35,12 @@ function error(msg) {
 
 // Show message when create 
 function create(target) {
-  console.log('\x1b[32mcreate\x1b[0m: ' + target);
+  console.log('\033[32mcreate\033[0m: ' + target);
 }
 
 // Warning messsage
 function warning(msg) {
-  console.error('\x1b[31mwarning\x1b[0m: ' + msg);
+  console.error('\033[31mwarning\033[0m: ' + msg);
 }
 
 // Copy directory
@@ -133,16 +133,8 @@ if (target) {
     if (stderr) {
       console.log(stderr);
     }
-    require('child_process').exec('node ' + BASE_DIR + '/lib/init.js', { cwd: target }, function(err, stdout, stderr) {
-      if (err) {
-        throw err;
-      }
-      if (stderr) {
-        console.log(stderr);
-      }
-      console.log('looseleaf ok');
-      console.log('please customize "' + path.join(target, '/config.json') + '"');
-    });
+    console.log('looseleaf ok');
+    console.log('please customize "' + path.join(target, '/config.json') + '"');
   });
 } else {
   error(USAGE);

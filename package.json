@@ -19,16 +19,13 @@
     "looseleaf": "bin/looseleaf"
   },
   "engines": {
-    "node": ">=0.4.0"
+    "node": ">=0.5.0"
   },
   "dependencies": {
     "ejs": "~0.4.3",
-    "express": "~2.4.7",
+    "express": "~2.5.0",
     "connect-form": "~0.2.1",
-    "sqlite": "~1.0.4",
-    "connect-sqlite": "0.0.1",
-    "socket.io": "~0.8.5",
-    "connect": "~1.7.1",
+    "connect-fs": "0.0.1",
     "async": "~0.1.12"
   },
   "devDependencies": {}
