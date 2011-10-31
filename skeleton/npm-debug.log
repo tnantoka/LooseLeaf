@@ -1,0 +1,334 @@
+info it worked if it ends with ok
+verbose cli [ 'node',
+verbose cli   '/home/tnantoka/.nvm/v0.5.10/bin/npm',
+verbose cli   'install',
+verbose cli   'connect-fs',
+verbose cli   '--save' ]
+info using npm@1.0.103
+info using node@v0.5.10
+verbose config file /home/tnantoka/.npmrc
+verbose config file /home/tnantoka/.nvm/v0.5.10/etc/npmrc
+verbose config file /home/tnantoka/.nvm/v0.5.10/lib/node_modules/npm/npmrc
+silly testEngine { author: 
+silly testEngine    { name: 'tnantoka',
+silly testEngine      email: 'bornneet@livedoor.com',
+silly testEngine      url: 'http://blog.bornneet.com/' },
+silly testEngine   name: 'looseleaf',
+silly testEngine   description: 'Lightweight blog engine on express',
+silly testEngine   keywords: [ 'CMS', 'blog', 'JSON', 'express' ],
+silly testEngine   version: '0.4.0',
+silly testEngine   homepage: 'http://looseleafjs.org/',
+silly testEngine   repository: { type: 'git', url: 'git://github.com/tnantoka/LooseLeaf.git' },
+silly testEngine   main: 'lib/looseleaf',
+silly testEngine   bin: { looseleaf: 'bin/looseleaf' },
+silly testEngine   engines: { node: '>=0.5.0' },
+silly testEngine   dependencies: 
+silly testEngine    { ejs: '~0.4.3',
+silly testEngine      express: '~2.5.0',
+silly testEngine      'connect-form': '~0.2.1',
+silly testEngine      'connect-fs': '0.1.0',
+silly testEngine      async: '~0.1.12' },
+silly testEngine   devDependencies: {},
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'looseleaf@0.4.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/package.json
+verbose loadDefaults looseleaf@0.4.0
+silly testEngine { author: 
+silly testEngine    { name: 'tnantoka',
+silly testEngine      email: 'bornneet@livedoor.com',
+silly testEngine      url: 'http://blog.bornneet.com/' },
+silly testEngine   name: 'looseleaf',
+silly testEngine   description: 'Lightweight blog engine on express',
+silly testEngine   keywords: [ 'CMS', 'blog', 'JSON', 'express' ],
+silly testEngine   version: '0.4.0',
+silly testEngine   homepage: 'http://looseleafjs.org/',
+silly testEngine   repository: { type: 'git', url: 'git://github.com/tnantoka/LooseLeaf.git' },
+silly testEngine   main: 'lib/looseleaf',
+silly testEngine   bin: { looseleaf: 'bin/looseleaf' },
+silly testEngine   engines: { node: '>=0.5.0' },
+silly testEngine   dependencies: 
+silly testEngine    { ejs: '~0.4.3',
+silly testEngine      express: '~2.5.0',
+silly testEngine      'connect-form': '~0.2.1',
+silly testEngine      'connect-fs': '0.0.1',
+silly testEngine      async: '~0.1.12' },
+silly testEngine   devDependencies: {},
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'looseleaf@0.4.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/node_modules/looseleaf/package.json
+verbose loadDefaults looseleaf@0.4.0
+silly testEngine { name: 'connect-form',
+silly testEngine   description: 'urlencoded / multipart form parsing middleware for Connect',
+silly testEngine   version: '0.2.1',
+silly testEngine   author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+silly testEngine   dependencies: { formidable: '>= 0.9.3' },
+silly testEngine   main: './index.js',
+silly testEngine   engines: { node: '>= 0.1.98' },
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'connect-form@0.2.1',
+silly testEngine   devDependencies: {},
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/node_modules/connect-form/package.json
+verbose loadDefaults connect-form@0.2.1
+silly testEngine { name: 'ejs',
+silly testEngine   description: 'Embedded JavaScript templates',
+silly testEngine   version: '0.4.3',
+silly testEngine   author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+silly testEngine   keywords: [ 'template', 'engine', 'ejs' ],
+silly testEngine   main: './lib/ejs.js',
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'ejs@0.4.3',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/node_modules/ejs/package.json
+verbose loadDefaults ejs@0.4.3
+silly testEngine { name: 'express',
+silly testEngine   description: 'Sinatra inspired web development framework',
+silly testEngine   version: '2.5.0',
+silly testEngine   author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+silly testEngine   contributors: 
+silly testEngine    [ { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+silly testEngine      { name: 'Aaron Heckmann',
+silly testEngine        email: 'aaron.heckmann+github@gmail.com' },
+silly testEngine      { name: 'Ciaran Jessup', email: 'ciaranj@gmail.com' },
+silly testEngine      { name: 'Guillermo Rauch', email: 'rauchg@gmail.com' } ],
+silly testEngine   dependencies: 
+silly testEngine    { connect: '1.7.x',
+silly testEngine      mime: '>= 0.0.1',
+silly testEngine      qs: '>= 0.3.1',
+silly testEngine      mkdirp: '0.0.7' },
+silly testEngine   devDependencies: 
+silly testEngine    { 'connect-form': '0.2.1',
+silly testEngine      ejs: '0.4.2',
+silly testEngine      expresso: '0.9.2',
+silly testEngine      hamljs: '0.5.1',
+silly testEngine      jade: '0.16.2',
+silly testEngine      stylus: '0.13.0',
+silly testEngine      should: '0.3.2',
+silly testEngine      'express-messages': '0.0.2',
+silly testEngine      'node-markdown': '>= 0.0.1',
+silly testEngine      'connect-redis': '>= 0.0.1' },
+silly testEngine   keywords: [ 'framework', 'sinatra', 'web', 'rest', 'restful' ],
+silly testEngine   repository: { type: 'git', url: 'git://github.com/visionmedia/express.git' },
+silly testEngine   main: 'index',
+silly testEngine   bin: { express: './bin/express' },
+silly testEngine   scripts: { test: 'make test', prepublish: 'npm prune' },
+silly testEngine   engines: { node: '>= 0.4.1 < 0.7.0' },
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'express@2.5.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/node_modules/express/package.json
+verbose loadDefaults express@2.5.0
+silly testEngine { name: 'async',
+silly testEngine   description: 'Higher-order functions and common patterns for asynchronous code',
+silly testEngine   main: './index',
+silly testEngine   author: { name: 'Caolan McMahon' },
+silly testEngine   version: '0.1.14',
+silly testEngine   repository: { type: 'git', url: 'git://github.com/caolan/async.git' },
+silly testEngine   bugs: { url: 'http://github.com/caolan/async/issues' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'MIT',
+silly testEngine        url: 'http://github.com/caolan/async/raw/master/LICENSE' } ],
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'async@0.1.14',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /home/tnantoka/dev/node/looseleaf/node_modules/async/package.json
+verbose loadDefaults async@0.1.14
+verbose from cache /home/tnantoka/dev/node/looseleaf/package.json
+verbose into /home/tnantoka/dev/node/looseleaf [ 'connect-fs' ]
+verbose cache add connect-fs@0.1.0
+verbose cache add [ 'connect-fs@0.1.0', null ]
+silly cache add: name, spec, args [ undefined, 'connect-fs@0.1.0', [ 'connect-fs@0.1.0', null ] ]
+verbose parsed url { pathname: 'connect-fs@0.1.0', href: 'connect-fs@0.1.0' }
+silly cache add: name, spec, args [ 'connect-fs', '0.1.0', [ 'connect-fs', '0.1.0' ] ]
+verbose parsed url { pathname: '0.1.0', href: '0.1.0' }
+info addNamed [ 'connect-fs', '0.1.0' ]
+verbose addNamed [ '0.1.0', '0.1.0' ]
+verbose GET connect-fs/0.1.0
+verbose raw, before any munging connect-fs/0.1.0
+verbose url resolving [ 'https://registry.npmjs.org/', './connect-fs/0.1.0' ]
+verbose url resolved https://registry.npmjs.org/connect-fs/0.1.0
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.1.0 (Erlang OTP/R14B03)',
+silly get cb     etag: '"A4SGH3RTOYK130I3PXJ9GGYVK"',
+silly get cb     date: 'Sun, 30 Oct 2011 15:35:01 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '666' } ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: '2177b2a1e2b5aa926a2728782ea3acc434d1fb16',
+verbose bin dist     tarball: 'http://registry.npmjs.org/connect-fs/-/connect-fs-0.1.0.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/connect-fs/-/connect-fs-0.1.0.tgz',
+verbose addRemoteTarball   '2177b2a1e2b5aa926a2728782ea3acc434d1fb16' ]
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1319789946658'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1319789946658/1319789946658-0.1275418105069548'
+verbose mkdir done: /tmp/npm-1319789946658/1319789946658-0.1275418105069548 755
+info fetch https://registry.npmjs.org/connect-fs/-/connect-fs-0.1.0.tgz
+verbose fetch to /tmp/npm-1319789946658/1319789946658-0.1275418105069548/tmp.tgz
+silly updated sha bytes 2624
+info shasum 2177b2a1e2b5aa926a2728782ea3acc434d1fb16
+info shasum /tmp/npm-1319789946658/1319789946658-0.1275418105069548/tmp.tgz
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm'
+verbose mkdir done: /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly spawning [ 'tar',
+silly spawning   [ '-zmvxpf',
+silly spawning     '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/tmp.tgz',
+silly spawning     '-o' ],
+silly spawning   '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm' ]
+silly tar out package/package.json
+silly tar out package/History.md
+silly tar out package/Readme.md
+silly tar out package/test.js
+silly tar out package/.gitignore
+silly tar out package/lib/connect-fs.js
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/package.json
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/History.md
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/Readme.md
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/test.js
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/.gitignore
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/lib
+silly asyncMap in gTP /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package/lib/connect-fs.js
+verbose gunzed /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package
+verbose rm'ed /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package
+verbose renamed [ '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/___package.npm/package',
+verbose renamed   '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package' ]
+silly testEngine { name: 'connect-fs',
+silly testEngine   description: 'FileSystem session store for Connect',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   main: 'lib/connect-fs',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: { connect: '1.4.x' },
+silly testEngine   engines: { node: '>= 0.1.98' },
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'connect-fs@0.1.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package' }
+verbose caching /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package/package.json
+verbose loadDefaults connect-fs@0.1.0
+verbose tarball contents [ 'package' ]
+verbose from cache /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package/package.json
+verbose pack /tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents/package /home/tnantoka/.npm/connect-fs/0.1.0/package.tgz
+verbose mkdir'ed /home/tnantoka/.npm/connect-fs/0.1.0
+verbose tar about to write tar and gzip it.
+silly tar args [ '-czvf', '-', '-T', '-' ]
+silly spawning [ 'tar',
+silly spawning   [ '-czvf', '-', '-T', '-' ],
+silly spawning   '/tmp/npm-1319789946658/1319789946658-0.1275418105069548/contents' ]
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/tnantoka/.npm/connect-fs/0.1.0/___package.npm'
+verbose mkdir done: /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /home/tnantoka/.npm/connect-fs/0.1.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly spawning [ 'tar',
+silly spawning   [ '-zmvxpf',
+silly spawning     '/home/tnantoka/.npm/connect-fs/0.1.0/package.tgz',
+silly spawning     '-o' ],
+silly spawning   '/home/tnantoka/.npm/connect-fs/0.1.0/___package.npm' ]
+silly tar out package/package.json
+silly tar out package/History.md
+silly tar out package/Readme.md
+silly tar out package/test.js
+silly tar out package/.gitignore
+silly tar out package/lib/connect-fs.js
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/History.md
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/Readme.md
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/test.js
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/.gitignore
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/lib
+silly asyncMap in gTP /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package/lib/connect-fs.js
+verbose gunzed /home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package
+verbose rm'ed /home/tnantoka/.npm/connect-fs/0.1.0/package
+verbose renamed [ '/home/tnantoka/.npm/connect-fs/0.1.0/___package.npm/package',
+verbose renamed   '/home/tnantoka/.npm/connect-fs/0.1.0/package' ]
+silly testEngine { name: 'connect-fs',
+silly testEngine   description: 'FileSystem session store for Connect',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   main: 'lib/connect-fs',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: { connect: '1.4.x' },
+silly testEngine   engines: { node: '>= 0.1.98' },
+silly testEngine   _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly testEngine   _id: 'connect-fs@0.1.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.103',
+silly testEngine   _nodeVersion: 'v0.5.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   dist: { shasum: '9e85678a118ef597b356f91a64fd7ad79b17d8dc' } }
+verbose caching /home/tnantoka/.npm/connect-fs/0.1.0/package/package.json
+verbose loadDefaults connect-fs@0.1.0
+silly updated sha bytes 2624
+info shasum 9e85678a118ef597b356f91a64fd7ad79b17d8dc
+info shasum /home/tnantoka/.npm/connect-fs/0.1.0/package.tgz
+verbose from cache /home/tnantoka/.npm/connect-fs/0.1.0/package/package.json
+verbose chmod /home/tnantoka/.npm/connect-fs/0.1.0/package.tgz 644
+verbose chown [ '/home/tnantoka/.npm/connect-fs/0.1.0/package.tgz',
+verbose chown   1000,
+verbose chown   1000 ]
+silly resolved [ { name: 'connect-fs',
+silly resolved     description: 'FileSystem session store for Connect',
+silly resolved     version: '0.1.0',
+silly resolved     author: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly resolved     main: 'lib/connect-fs',
+silly resolved     dependencies: {},
+silly resolved     devDependencies: { connect: '1.4.x' },
+silly resolved     engines: { node: '>= 0.1.98' },
+silly resolved     _npmUser: { name: 'tnantoka', email: 'bornneet@livedoor.com' },
+silly resolved     _id: 'connect-fs@0.1.0',
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.0.103',
+silly resolved     _nodeVersion: 'v0.5.10',
+silly resolved     _defaultsLoaded: true,
+silly resolved     dist: { shasum: '9e85678a118ef597b356f91a64fd7ad79b17d8dc' } } ]
+info into /home/tnantoka/dev/node/looseleaf connect-fs@0.1.0
+info installOne connect-fs@0.1.0
+verbose installOne cb connect-fs@0.1.0
+ERR! git Appears to be a git repo or submodule.
+ERR! git     /home/tnantoka/dev/node/looseleaf/node_modules/connect-fs
+ERR! git Refusing to remove it. Update manually,
+ERR! git or move it out of the way first.
+ERR! 
+ERR! System Linux 2.6.38-11-generic
+ERR! command "node" "/home/tnantoka/.nvm/v0.5.10/bin/npm" "install" "connect-fs" "--save"
+ERR! cwd /home/tnantoka/dev/node/looseleaf/skeleton
+ERR! node -v v0.5.10
+ERR! npm -v 1.0.103
+ERR! path /home/tnantoka/dev/node/looseleaf/node_modules/connect-fs
+ERR! code EISGIT
+verbose exit [ 1, true ]

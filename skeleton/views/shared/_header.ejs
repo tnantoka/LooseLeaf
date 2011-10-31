@@ -1,5 +1,4 @@
-<div class="topbar" data-dropdown="dropdown">
-  <div class="fill">
+<div class="topbar" data-dropdown="dropdown"> <div class="fill">
     <div class="container">
       <a class="brand" href="/"><%= config.site.title %></a>
 
@@ -11,17 +10,20 @@
       <p class="pull-right" id="loginLink">
       <% if (req.session.user) { %>
         <a href="/users#<%= req.session.user.username %>"><img src="<%= req.session.user.icon %>" alt="<%= req.session.user.username %>" /></a>
-        <a href="#" class="user" data-user-is-admin="<%= req.session.user.is_admin %>"><%= req.session.user.username %></a>
         <a href="/auth/logout" class="logout">logout</a>
-        <button class="btn" type="button" class="new">＋</button>
+        <button class="btn" type="button">×</button>
+        <button class="btn" type="button">＋</button>
+        <% if (req.session.user.isAdmin) { %>
+        <button class="btn newuser" type="button"><img src="/images/icons/newuser.png" alt="newuser" /></button>
+        <% } %>
       <% } else {%>
         <a href="#" class="login">Log in</a>
       <% } %>
       </p>
 
       <form action="/auth/login" method="post" class="pull-right" id="loginForm">
-        <input class="input-small" type="text" name="user[username]" id="user_username" placeholder="Username">
-        <input class="input-small" type="password" name="user[password]" id="user_password"  placeholder="Password">
+        <input class="input-small" type="text" name="user[username]" placeholder="Username">
+        <input class="input-small" type="password" name="user[password]" placeholder="Password">
         <button class="btn" type="submit">Log in</button>
       </form>
 

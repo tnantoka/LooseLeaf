@@ -78,6 +78,11 @@ body > .container-fluid {
   margin-right: 4px;
 }
 
+#loginLink .newuser img {
+  width: 16px;
+  vertical-align: middle;
+}
+
 #searchForm {
   margin-left: 50px;
 }

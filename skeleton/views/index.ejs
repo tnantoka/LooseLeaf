@@ -5,42 +5,7 @@
 
 <%- partial('./shared/header') %>
 
-<div class="container">
-<!--
-<div class="container-fluid">
--->
-
-      <div class="sidebar">
-        <div class="well">
-          <h5>Sidebar</h5>
-          <ul>
-
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-          <h5>Sidebar</h5>
-
-          <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-
-            <li><a href="#">Link</a></li>
-          </ul>
-          <h5>Sidebar</h5>
-          <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-
-        </div>
-      </div>
-
-  <%- partial('./shared/post', posts) %>
+<div class="container" id="main">
 
 </div>
 
@@ -74,5 +39,14 @@
 <script src="/javascripts/bottom.js"></script>
 <script src="/javascripts/ejs.js"></script>
 <script src="/javascripts/renderer.js"></script>
-<script src="/javascripts/script.js"></script>
+<script>
+var posts = <%- JSON.stringify(posts) %>;
+</script>
+<% if (req.session.user) { %>
+<script>
+var user = <%- JSON.stringify(req.session.user) %>;
+</script>
+<% } %>
+<script src="/javascripts/common.js"></script>
+<script src="/javascripts/index.js"></script>
 

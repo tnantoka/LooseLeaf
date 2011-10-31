@@ -1,9 +1,24 @@
-function getRenderer() {
+var Renderer = (function() {
 
   var renderer = {};;
 
   var post = [
 '<div class="content" data-post-id="<%= post.id %>">',
+'  <div class="control">',
+'    <ul class="action">',
+'      <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
+'      <% if (post.is_private) { %>',
+'      <li><button type="button" class="btn private"><img src="/images/icons/public.png" alt="private" /></button></li>',
+'      <% } else { %>',
+'      <li><button type="button" class="btn private"><img src="/images/icons/private.png" alt="private" /></button></li>',
+'      <% } %>',
+'      <li><button type="button" class="btn delete">×</button></li>',
+'    </ul>',
+'    <ul class="submit">',
+'      <li><button type="button" class="btn save">save</button></li>',
+'      <li><button type="button" class="btn cancel">cancel</button></li>',
+'    </ul>',
+'  </div>',
 '  <div class="show">',
 '    <div class="page-header clearfix">',
 '      <h1><a href=""><%= post.title %></a></h1>',
@@ -19,11 +34,6 @@ function getRenderer() {
 '      <div class="span10"><%- post.body %></div>',
 '    </div>',
 '  </div>',
-'</div>',
-''
-  ].join('\n');
-
-  var editPost = [
 '  <form class="edit" method="post" action="<%= action %>">',
 '    <div class="page-header clearfix">',
 '      <h1><input type="text" name="post[title]" class="post_title" placeholder="title" value="<%= post.title %>" required /></h1>',
@@ -41,24 +51,6 @@ function getRenderer() {
 '    <input type="hidden" name="_method" value="<%= method %>" >',
 '    <input type="hidden" name="post[is_private]" value="true" >',
 '  </form>',
-''
-  ].join('\n');
-
-  var control = [
-'<div class="control">',
-'  <ul class="action">',
-'    <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
-'    <% if (post.is_private) { %>',
-'    <li><button type="button" class="btn private"><img src="/images/icons/public.png" alt="private" /></button></li>',
-'    <% } else { %>',
-'    <li><button type="button" class="btn private"><img src="/images/icons/private.png" alt="private" /></button></li>',
-'    <% } %>',
-'    <li><button type="button" class="btn delete">×</button></li>',
-'  </ul>',
-'  <ul class="submit">',
-'    <li><button type="button" class="btn save">save</button></li>',
-'    <li><button type="button" class="btn cancel">cancel</button></li>',
-'  </ul>',
 '</div>',
 ''
   ].join('\n');
@@ -121,8 +113,6 @@ function getRenderer() {
  
   var ejs = require('ejs');
   renderer.post = ejs.compile(post);
-  renderer.editPost = ejs.compile(editPost);
-  renderer.control = ejs.compile(control);
   renderer.user = {};
   renderer.user.show = ejs.compile(user.show);
   renderer.user.control = ejs.compile(user.control);
@@ -130,5 +120,5 @@ function getRenderer() {
 
   return renderer;
 
-}
+})();
 
