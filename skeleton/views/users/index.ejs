@@ -1,0 +1,49 @@
+  <link rel="stylesheet" href="/javascripts/lib/google-code-prettify/prettify.css" />
+  <link rel="stylesheet" href="/javascripts/lib/cleditor/jquery.cleditor.css" />
+</head>
+<body id="usersIndex">
+
+<%- partial('./shared/header') %>
+
+<div class="container" id="main">
+
+</div>
+
+<%- partial('./shared/footer') %>
+
+
+<!-- jquery plugins -->
+<script src="/javascripts/lib/jquery.timeago.js"></script>
+<script src="/javascripts/lib/activity-indicator.js"></script>
+<script src="/javascripts/lib/jquery.copycss.js"></script>
+<script src="/javascripts/lib/cleditor/jquery.cleditor.js"></script>
+<script src="/javascripts/lib/cleditor/plugins/jquery.cleditor.xhtml.js"></script>
+<script src="/javascripts/lib/cleditor/plugins/jquery.cleditor.advancedtable.js"></script>
+<!--script src="/javascripts/lib/cleditor/plugins/jquery.cleditor.table.js"></script-->
+<script src="/javascripts/lib/cleditor/plugins/jquery.cleditor.icon.js"></script>
+
+<!-- bootstarp -->
+<script src="/javascripts/lib/google-code-prettify/prettify.js"></script>
+<script src="/bootstrap/js/bootstrap-twipsy.js"></script>
+<script src="/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/bootstrap/js/bootstrap-alerts.js"></script>
+<script src="/bootstrap/js/bootstrap-twipsy.js"></script>
+<script src="/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="/bootstrap/js/bootstrap-tabs.js"></script>
+
+<!-- looseleaf -->
+<script src="/javascripts/lib/ejs.min.js"></script>
+<script>
+var users = <%- JSON.stringify(users) %>;
+</script>
+<% if (req.session.user) { %>
+<script>
+var user = <%- JSON.stringify(req.session.user) %>;
+</script>
+<% } %>
+<script src="/javascripts/common.js"></script>
+<script src="/javascripts/users.js"></script>
+

@@ -1,0 +1,12 @@
+{
+  "site" : {
+    "title" : "My LooseLeaf"
+  },
+  "session" : {
+    "secret" : "Unique string"
+  },
+  "process" : {
+    "port" : "3000"
+  }
+}
+

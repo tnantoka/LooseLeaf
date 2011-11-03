@@ -1,0 +1,37 @@
+<div class="topbar">
+  <div class="fill">
+    <div class="container">
+
+      <a class="brand" href="/"><%= config.site.title %></a>
+
+      <form action="/search/" id="searchForm">
+        <input type="text" placeholder="keyword" name="keyword" id="keyword" value="<%= req.params.keyword || '' %>" />
+        <button class="btn" type="submit">search</button>
+      </form>
+
+      <ul class="nav secondary-nav" id="loginLink">
+        <li><a href="/users">users</a></li>
+        <% if (req.session.user) { %>
+        <li><a href="/users/<%= req.session.user.id %>"><%= req.session.user.username %></a></li>
+        <% if (!/^\/users/.test(req.url)) { %>
+        <li><a href="#" id="newpost">+post</a></li>
+        <% } %>
+        <% if (req.session.user.isAdmin && /^\/users/.test(req.url)) { %>
+          <li><a href="#" id="newuser">+user</a></li>
+        <% } %>
+        <li><a href="/auth/logout">logout</a></li>
+        <% } else {%>
+        <li><a href="#" id="loginButton">login</a></li>
+        <% } %>
+      </ul>
+
+      <form action="/auth/login" method="post" class="pull-right" id="loginForm">
+        <input class="input-small" type="text" name="user[username]" id="username" placeholder="Username">
+        <input class="input-small" type="password" name="user[password]" placeholder="Password">
+        <button class="btn" type="submit">login</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,232 @@
+/* common */
+a {
+  outline: none !important;
+}
+
+/* topbar */
+.topbar {
+  opacity: 0.8;
+}
+.topbar a.brand {
+  color: #bfbfbf;
+  padding-left: 10px;
+}
+.topbar a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px #ccc;
+}
+.topbar a.brand:hover {
+  color: #fff;
+}
+
+/* login form */
+#loginForm {
+  display: none; 
+}
+#loginForm .btn {
+  position: absolute;
+  visibility: hidden;
+}
+
+/* login links */
+#loginLink {
+  color: #666; 
+}
+
+/* search */
+#searchForm {
+  margin-left: 50px;
+}
+#searchForm .btn {
+  position: absolute;
+  visibility: hidden;
+}
+
+/* 
+ * content
+ */
+/* post's info */
+.page-header h1 a {
+  color: inherit;
+}
+
+.page-header .icon img {
+  width: 48px;
+  vertical-align: middle;
+}
+.page-header .timeago {
+  line-height: 48px;
+}
+.page-header ul.info {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+}
+.page-header ul.info li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 10px 0 0;
+}
+.page-header ul.info li.tag {
+  color: #808080;
+}
+
+/* box-shadow when hover posts */
+#main .content {
+  margin-bottom: 30px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding-bottom: 0;
+}
+#main .content:hover {
+  -webkit-box-shadow:0px 0px 5px #999;
+  -moz-box-shadow:0px 0px 5px #999;
+  box-shadow:0px 0px 5px #999;
+}
+.page-header {
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+}
+
+/* control buttons */
+ul.control {
+  list-style: none;
+  float: right;
+  margin-top: 20px;
+  display: none;
+}
+.editable ul.control {
+  display: block;
+}
+ul.control li {
+  display: inline;
+  margin-left: 5px;
+}
+ul.action li button {
+  padding: 5px;
+  vertical-align: middle;
+}
+ul.action li img {
+  width: 18px; 
+  vertical-align: middle;
+}
+
+/* edit form */
+.editForm {
+  display: none;
+}
+.editForm .cleditorMain {
+  border: none;
+}
+.editForm input.userFullname,
+.editForm input.postTitle {
+  width: 70%;
+  font-size: 30px;
+  line-height: 35px;
+  height: 35px;
+  font-weight: bold;
+  color: inherit;
+}
+/*
+.editForm input.postTag {
+  color: #808080;
+}
+*/
+.editForm ul li input {
+  width: 150px;
+}
+
+.editForm .page-header {
+  margin-bottom: 0;
+}
+.editForm .span14 {
+  margin: 0;
+}
+
+/*
+ * footer
+ */
+footer {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* cleditor */
+.cleditorPrompt table {
+  font-size: 8.5pt;
+  margin-bottom: 0;
+}
+
+.cleditorPrompt td {
+  border: none;
+  padding: 0;
+}
+
+/* 
+ * scroll to top popover
+ */
+#scrollToTop {
+  position: fixed;
+  top: 0;
+  left: 120px;
+  z-index: 10000;
+}
+
+.popover {
+  position: fixed;
+/*
+  top: 45px !important;
+  left: 5px !important;
+*/
+  top: auto !important;
+  left: auto !important;
+  bottom: 5px !important;
+  left: 5px !important;
+}
+
+.popover .content {
+  display: none;
+}
+
+.popover .title {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.popover .arrow {
+  opacity: 0.4;
+}
+
+.popover .inner {
+  width: 75px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.popover .inner h3 {
+  padding: 0;
+}
+
+.popover .inner a {
+  font-size: 17px;
+  color: inherit;
+  display: block;
+  width: 45px;
+  padding: 9px 15px;
+  text-decoration: none;
+}
+
+/* edit user form */
+.editForm .icon img {
+  border: 2px solid transparent;
+}
+.editForm .icon.dragover img {
+  border: 2px solid #777;
+}
+
+
+
