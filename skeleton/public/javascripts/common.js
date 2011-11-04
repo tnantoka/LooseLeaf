@@ -106,6 +106,15 @@ $(function () {
     }
   });
 
+  // files
+  $('#openFiles').click(function() {
+    $('#files').modal({
+      backdrop: true
+    });
+    return false;
+  });
+  $('table.zebra-striped').tablesorter();
+
   // syntax highlight
   prettyPrint();
 })

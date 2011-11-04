@@ -1,0 +1,43 @@
+<%
+var files = [];
+
+for (var i = 0; i < 20; i++) {
+  files.push({
+    name: 'file' + i,
+    by: 'user ' + i,
+    createdAt: new Date(new Date().getTime() + (i * 1000))
+  });
+}
+
+%>
+<div id="files" class="modal hide fade">
+  <div class="modal-header">
+    <a href="#" class="close">&times;</a>
+    <h3>Files</h3>
+  </div>
+  <div class="modal-body">
+    <table class="zebra-striped">
+      <thead>
+        <tr>
+          <th class="yellow">Name</th>
+          <th class="blue">By</th>
+          <th class="green">Uploaded</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < files.length; i++) { %>
+        <tr>
+          <td><a href=""><%= files[i].name %></a></td>
+          <td><a href=""><%= files[i].by %></a></td>
+          <td><%= files[i].createdAt %></td>
+        </tr>
+      <% } %>
+      </tbody>
+    </table>
+  </div>
+  <!--div class="modal-footer">
+    <a href="#" class="btn primary">Primary</a>
+    <a href="#" class="btn secondary">Secondary</a>
+  </div-->
+</div>
+

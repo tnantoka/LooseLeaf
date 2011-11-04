@@ -229,4 +229,21 @@ footer {
 }
 
 
+/* modal of files */
+.modal {
+  width: 800px;
+  margin-left: -400px;
+  height: 85%;
+}
+.modal-body {
+  overflow: auto;
+  height: 80%;
+}
+.modal-body table {
+  width: 700px;
+  margin: 0 auto;
+}
+
+
+
 
