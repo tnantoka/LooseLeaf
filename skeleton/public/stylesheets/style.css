@@ -129,11 +129,9 @@ ul.action li img {
   font-weight: bold;
   color: inherit;
 }
-/*
 .editForm input.postTag {
-  color: #808080;
+  color: #333;
 }
-*/
 .editForm ul li input {
   width: 150px;
 }
