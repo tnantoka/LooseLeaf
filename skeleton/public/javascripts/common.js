@@ -30,7 +30,8 @@ $(function () {
       },
       action: '/posts',
       method: 'POST',
-      editable: ' editable'
+      editable: ' editable',
+      isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
     }));
     edit($('#main').find('.content:eq(0)'));
     $('#main').find('.content:eq(0) .submit .cancel').attr('disabled', true);
