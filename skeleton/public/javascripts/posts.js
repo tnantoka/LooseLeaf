@@ -9,7 +9,8 @@ $(function () {
       post: post,
       editable: typeof user != 'undefined' && user.username == post.user.username ? ' editable': '',
       action: '/posts/' + post.id,
-      method: 'PUT'
+      method: 'PUT',
+      isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
     }));
   }
 
@@ -30,7 +31,8 @@ $(function () {
             post: post,
             editable: ' editable',
             action: '/posts/' + post.id,
-            method: 'PUT'
+            method: 'PUT',
+            isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
           }));
         }
       });
@@ -69,7 +71,8 @@ $(function () {
           post: post,
           editable: ' editable',
           action: '/posts/' + post.id,
-          method: 'put'
+          method: 'put',
+          isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
         }));
       }
     });
@@ -100,7 +103,8 @@ $(function () {
               post: post,
               editable: typeof user != 'undefined' && user.username == post.user.username ? ' editable': '',
               action: '/posts/' + post.id,
-              method: 'PUT'
+              method: 'PUT',
+              isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
             }));
             $footer.activity(false);
             nowLoading = false;
@@ -141,6 +145,19 @@ var Renderer = (function() {
 '    </div>',
 '    <div class="row body">',
 '      <div class="span14"><%- post.body %></div>',
+'      <% if (isFeedbacks && config.disqus_shortname) { %>',
+'      <div id="disqus_thread"></div>',
+'      <script>',
+'        var disqus_shortname = \'<%= config.disqus_shortname %>\';',
+'        var disqus_identifier = \'/posts/<%= post.id %>\';',
+'        //var disqus_developer = 1;',
+'        (function() {',
+'          var dsq = document.createElement(\'script\'); dsq.type = \'text/javascript\'; dsq.async = true;',
+'          dsq.src = \'http://\' + disqus_shortname + \'.disqus.com/embed.js\';',
+'          (document.getElementsByTagName(\'head\')[0] || document.getElementsByTagName(\'body\')[0]).appendChild(dsq);',
+'        })();',
+'      </script>',
+'      <% } %>',
 '    </div>',
 '  </div>',
 '  <form class="editForm" method="post" action="<%= action %>">',
@@ -171,6 +188,7 @@ var Renderer = (function() {
 
   var ejs = require('ejs');
   renderer.post = ejs.compile(post);
+  console.log(post);
 
   return renderer;
 

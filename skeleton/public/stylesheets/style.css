@@ -71,6 +71,11 @@ a {
   color: #808080;
 }
 
+#main .content .row.body .span14 {
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
 /* box-shadow when hover posts */
 #main .content {
   margin-bottom: 30px;
@@ -242,6 +247,10 @@ footer {
   margin: 0 auto;
 }
 
-
+/* disqus */
+#disqus_thread {
+  margin-left: 20px !important;
+  margin-bottom: 20px !important;
+}
 
 
