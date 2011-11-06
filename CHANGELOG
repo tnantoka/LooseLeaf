@@ -1,0 +1,12 @@
+v0.4.0
+ * source code is all replaced.
+ * new design single column.
+ * remove comments/trackbacks, use DISQUS.
+ * remove admin view, dynamic edit only.
+
+ if you loved prev design, plese use v0.3.x
+ ex) npm install -g looseleaf@0.3.6
+ I'll continue supporting v0.3.x.
+
+ 
+
