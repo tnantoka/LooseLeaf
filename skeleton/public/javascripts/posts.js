@@ -150,7 +150,6 @@ var Renderer = (function() {
 '      <script>',
 '        var disqus_shortname = \'<%= config.disqus_shortname %>\';',
 '        var disqus_identifier = \'/posts/<%= post.id %>\';',
-'        //var disqus_developer = 1;',
 '        (function() {',
 '          var dsq = document.createElement(\'script\'); dsq.type = \'text/javascript\'; dsq.async = true;',
 '          dsq.src = \'http://\' + disqus_shortname + \'.disqus.com/embed.js\';',
