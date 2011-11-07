@@ -2,6 +2,10 @@
   "site" : {
     "title" : "My LooseLeaf"
   },
+  "copyright" : {
+    "title" : "Your site",
+    "uri" : "http://example.com/"
+  },
   "session" : {
     "secret" : "Unique string"
   },
