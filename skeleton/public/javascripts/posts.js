@@ -83,7 +83,6 @@ $(function () {
   var nowLoading;
   var $footer = $('footer');
   onBottom(function() {
-    console.log('bottom');
     if (hasNext) {
       if (!nowLoading) {
         var offset = $main.find('.content').length;
