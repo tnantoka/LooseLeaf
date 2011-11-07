@@ -188,7 +188,6 @@ var Renderer = (function() {
 
   var ejs = require('ejs');
   renderer.post = ejs.compile(post);
-  console.log(post);
 
   return renderer;
 

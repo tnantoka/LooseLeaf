@@ -113,7 +113,7 @@ ul.action li button {
   padding: 5px;
   vertical-align: middle;
 }
-ul.action li img {
+ul.action li button img {
   width: 18px; 
   vertical-align: middle;
 }
@@ -231,7 +231,6 @@ footer {
   border: 2px solid #777;
 }
 
-
 /* modal of files */
 .modal {
   width: 800px;
@@ -245,6 +244,20 @@ footer {
 .modal-body table {
   width: 700px;
   margin: 0 auto;
+}
+#files table.dragover {
+  border: 2px solid #777;
+}
+#files table form {
+  margin: 0;
+}
+#files table form button {
+  padding: 5px;
+  vertical-align: middle;
+}
+#files table form button img {
+  width: 18px; 
+  vertical-align: middle;
 }
 
 /* disqus */

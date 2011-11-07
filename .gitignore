@@ -12,7 +12,7 @@ node_modules
 skeleton/data/posts/*.json
 skeleton/data/users/*.json
 !skeleton/data/users/1.json
-skeleton/public/files/*.*
+skeleton/public/files/*
 !skeleton/public/files/.gitkeep
 TODO
 test/*

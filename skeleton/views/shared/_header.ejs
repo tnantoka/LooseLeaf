@@ -11,8 +11,8 @@
 
       <ul class="nav secondary-nav" id="loginLink">
         <li><a href="/users">users</a></li>
-        <li><a href="#" id="openFiles">files</a></li>
         <% if (req.session.user) { %>
+        <li><a href="#" id="openFiles">files</a></li>
         <li><a href="/users/<%= req.session.user.id %>"><%= req.session.user.username %></a></li>
         <% if (!/^\/users/.test(req.url)) { %>
         <li><a href="#" id="newpost">+post</a></li>
