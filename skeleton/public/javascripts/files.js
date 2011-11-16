@@ -19,7 +19,7 @@ $(function () {
         for (var i = 0; i < files.length; i++) {
           $tbody.append(Renderer.file({ 
             file: files[i],
-            disabled: user.username == files[i].user.username ? '' : ' disabled'
+            disabled: user.id == files[i].user.id ? '' : ' disabled'
           })); 
         }
         $files.activity(false);
@@ -65,7 +65,7 @@ $(function () {
         for (var i = 0; i < files.length; i++) {
           $tbody.append(Renderer.file({ 
             file: files[i],
-            disabled: user.username == files[i].user.username ? '' : ' disabled'
+            disabled: user.id == files[i].user.id ? '' : ' disabled'
           })); 
         }
 

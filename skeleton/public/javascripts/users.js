@@ -6,7 +6,7 @@ $(function () {
   for (var i = 0; i < users.length; i++) {
     $main.append(Renderer.user({ 
       user: users[i],
-      editable: typeof user != 'undefined' && (user.username == users[i].username || user.isAdmin) ? ' editable': '',
+      editable: typeof user != 'undefined' && (user.id == users[i].id || user.isAdmin) ? ' editable': '',
       action: '/users/' + users[i].id,
       method: 'PUT'
     }));
