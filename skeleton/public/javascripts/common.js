@@ -93,7 +93,6 @@ $(function () {
     var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
     var clientHeight = /*document.body.clientHeight ||*/ document.documentElement.clientHeight;
     if (scrollTop > usersNavHeight - clientHeight) {
-      console.log('fix!'); 
       if ($usersNav.css('position') != 'fixed') {
         $usersNav.css('position', 'fixed');
         $usersNav.css('top', 'auto');
