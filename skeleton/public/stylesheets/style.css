@@ -303,7 +303,7 @@ footer {
 }
 
 #usersNav ul li#scrollToTop2 a {
-  background: url(/images/users/top.png);
+  background-image: url(/images/users/top.png);
   opacity: 0.7;
 }
 
