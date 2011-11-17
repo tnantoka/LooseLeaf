@@ -36,9 +36,7 @@ $(function () {
 
 });
 
-var Renderer = (function() {
-
-  var renderer = {};;
+Renderer.user = (function() {
 
   var user = [
 '<div class="content<%= editable %>" data-user-id="<%= user.id %>" data-user-color="<%= user.color || \'\' %>" id="<%= user.username %>">',
@@ -84,9 +82,7 @@ var Renderer = (function() {
   ].join('\n');
 
   var ejs = require('ejs');
-  renderer.user = ejs.compile(user);
-
-  return renderer;
+  return ejs.compile(user);
 
 })();
 

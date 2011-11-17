@@ -93,19 +93,29 @@ $(function () {
   });
   $('.topbar').dblclick(scrollToTop);
 
+  var $scrollToTop2 = $('#scrollToTop2');
+  $scrollToTop2.click(scrollToTop);
+
   var isPopover;
   $(window).scroll(function() {
     if ($('#main .content:eq(1)').length == 0) return false;
     var popoverBorder = $('#main .content:eq(1)').offset().top - 100;
     var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
     if (scrollTop > popoverBorder && !isPopover) {
-      $('.topbar').popover('show');
+      //$('.topbar').popover('show');
+      $scrollToTop2.fadeIn('fast');
+      //$scrollToTop2.show();
       isPopover = true;
     } else if (scrollTop <= popoverBorder) {
-      $('.topbar').popover('hide');
+      //$('.topbar').popover('hide');
+      $scrollToTop2.fadeOut('fast');
+      //$scrollToTop2.hide();
       isPopover = false;
     }
   });
+
+  // Users navigation
+
 
   // syntax highlight
   prettyPrint();
@@ -140,4 +150,7 @@ function scrollToTop(e) {
   $('html, body').animate({ scrollTop: 0 }, 'fast');
   return false;
 }
+
+var Renderer = {};
+
 

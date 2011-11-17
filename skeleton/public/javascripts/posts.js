@@ -115,9 +115,7 @@ $(function () {
 
 });
 
-var Renderer = (function() {
-
-  var renderer = {};;
+Renderer.post = (function() {
 
   var post = [
 '<div class="content<%= editable %>" data-post-id="<%= post.id %>">',
@@ -186,9 +184,7 @@ var Renderer = (function() {
   ].join('\n');
 
   var ejs = require('ejs');
-  renderer.post = ejs.compile(post);
-
-  return renderer;
+  return ejs.compile(post);
 
 })();
 

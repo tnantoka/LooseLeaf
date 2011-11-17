@@ -266,4 +266,44 @@ footer {
   margin-bottom: 20px !important;
 }
 
+#usersNav {
+  position: fixed;
+  right: 0px;
+  top: 60px;
+}
+
+#usersNav ul {
+  list-style: none;
+}
+
+#usersNav ul li a {
+  background: url(/images/users/back.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  width: 66px;
+  height: 61px;
+  display: block;
+  opacity: 0.3;
+}
+
+#usersNav ul li a:hover {
+  opacity: 1 !important;
+}
+
+#usersNav ul li a img {
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#usersNav ul li#scrollToTop2 {
+  display: none;
+}
+
+#usersNav ul li#scrollToTop2 a {
+  background: url(/images/users/top.png);
+  opacity: 0.7;
+}
 
