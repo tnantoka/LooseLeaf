@@ -267,7 +267,7 @@ footer {
 }
 
 #usersNav {
-  position: fixed;
+  position: absolute;
   right: 0px;
   top: 60px;
 }
@@ -299,11 +299,12 @@ footer {
 }
 
 #usersNav ul li#scrollToTop2 {
-  display: none;
+  /*display: none;*/
 }
 
 #usersNav ul li#scrollToTop2 a {
   background: url(/images/users/top.png);
   opacity: 0.7;
 }
+
 

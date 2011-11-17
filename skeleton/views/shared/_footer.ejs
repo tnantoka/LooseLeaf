@@ -1,7 +1,7 @@
 <nav id="usersNav">
   <ul>
-    <% for (var i = 0; i < users.length; i++) { %>
-      <li><a href="/user/<%= users[i].username %>"><img src="<%= users[i].icon %>" alt="<%= users[i].username %>" /></a></li>
+    <% for (var i = 0; i < navUsers.length; i++) { %>
+      <li><a href="/user/<%= navUsers[i].username %>"><img src="<%= navUsers[i].icon %>" alt="<%= navUsers[i].username %>" /></a></li>
     <% } %>
     <li id="scrollToTop2"><a href="#" title="Scroll to Top"></a></li>
   </ul>
