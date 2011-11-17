@@ -29,7 +29,8 @@ $(function () {
   });
 
   // Add by drag and drop
-  $table.bind('drop', function (e) {
+  //$table.bind('drop', function (e) {
+  $files.bind('drop', function (e) {
     $(this).removeClass('dragover');
     $files.activity();
 

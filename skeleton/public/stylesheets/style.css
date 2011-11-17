@@ -245,8 +245,16 @@ footer {
   width: 700px;
   margin: 0 auto;
 }
+
+#files {
+}
+/*
 #files table.dragover {
   border: 2px solid #777;
+}
+*/
+#files.dragover table {
+  border: 3px solid #999;
 }
 #files table form {
   margin: 0;
