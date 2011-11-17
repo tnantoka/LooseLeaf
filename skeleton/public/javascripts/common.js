@@ -139,6 +139,13 @@ $(function () {
   });
   */
 
+  // Alert unload while editting
+  $(window).bind('beforeunload', function(e){
+    if ($('.cleditorMain:visible').length != 0) {
+      return '';
+    }
+  });
+
   // syntax highlight
   prettyPrint();
 })
