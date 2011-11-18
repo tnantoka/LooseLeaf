@@ -3,11 +3,12 @@ $(function () {
   var $files = $('#files');
   var $table = $('#files table');
   var $tbody = $table.find('tbody');
-  //$table.tablesorter();
+  $table.tablesorter({ headers: { 3: { sorter: false } } });
 
   // files
   $('#openFiles').click(function() {
     $files.modal({
+      show: true,
       backdrop: true
     });
     $files.activity();
@@ -22,6 +23,7 @@ $(function () {
             disabled: user.id == files[i].user.id ? '' : ' disabled'
           })); 
         }
+        $table.trigger('update');
         $files.activity(false);
       }
     });
@@ -70,6 +72,7 @@ $(function () {
           })); 
         }
 
+        $table.trigger('update');
         $files.activity(false);
       }
     });
