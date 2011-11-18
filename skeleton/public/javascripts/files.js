@@ -4,13 +4,13 @@ $(function () {
   var $table = $('#files table');
   var $tbody = $table.find('tbody');
   $table.tablesorter({ headers: { 3: { sorter: false } } });
+  $files.modal({
+    backdrop: true
+  });
 
   // files
   $('#openFiles').click(function() {
-    $files.modal({
-      show: true,
-      backdrop: true
-    });
+    $files.modal('show');
     $files.activity();
     $.ajax({
       url: '/files',
