@@ -7,7 +7,7 @@ $(function () {
     var post = posts[i];
     $main.append(Renderer.post({ 
       post: post,
-      editable: typeof user != 'undefined' && user.id == post.user.id ? ' editable': '',
+      editable: typeof user != 'undefined' && (user.id == post.user.id || user.isAdmin) ? ' editable': '',
       action: '/posts/' + post.id,
       method: 'PUT',
       isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
@@ -99,8 +99,8 @@ $(function () {
               return;
             }
             $main.append(Renderer.post({ 
-              post: post,
-              editable: typeof user != 'undefined' && user.id == post.user.id ? ' editable': '',
+              post: post && user.isAdmin,
+              editable: typeof user != 'undefined' && (user.id == post.user.id || user.isAdmin) ? ' editable': '',
               action: '/posts/' + post.id,
               method: 'PUT',
               isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
