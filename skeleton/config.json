@@ -14,6 +14,9 @@
   },
   "analytics_id" : "",
   "disqus_shortname" : "",
-  "usersNav": false
+  "usersNav": {
+    "enable" : false,
+    "lead" : []
+  }
 }
 
