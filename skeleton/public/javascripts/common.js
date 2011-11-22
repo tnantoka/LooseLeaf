@@ -151,7 +151,7 @@ $(function () {
 })
 
 function tag(tags) {
-  tags = tags.split(/,\s*/);
+  tags = tags.split(/[,、，]\s*/);
   var html = [];
   tags.forEach(function(tag) {
     html.push('<a href="/tag/' + encodeURIComponent(tag) + '">' + tag + '</a>');
