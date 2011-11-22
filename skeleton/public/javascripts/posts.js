@@ -99,7 +99,7 @@ $(function () {
               return;
             }
             $main.append(Renderer.post({ 
-              post: post && user.isAdmin,
+              post: post,
               editable: typeof user != 'undefined' && (user.id == post.user.id || user.isAdmin) ? ' editable': '',
               action: '/posts/' + post.id,
               method: 'PUT',
