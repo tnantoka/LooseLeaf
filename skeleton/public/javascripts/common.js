@@ -3,6 +3,8 @@ $.cleditor.defaultOptions.width = '858';
 
 $(function () {
 
+  $('footer').activity();
+
   var $main = $('#main');
 
   // Show login form

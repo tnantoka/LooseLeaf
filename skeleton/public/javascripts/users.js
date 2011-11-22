@@ -34,6 +34,7 @@ $(function () {
     });
   });
 
+  $('footer').activity(false);
 });
 
 Renderer.user = (function() {

@@ -113,6 +113,7 @@ $(function () {
     }   
   }); 
 
+  $('footer').activity(false);
 });
 
 Renderer.post = (function() {
