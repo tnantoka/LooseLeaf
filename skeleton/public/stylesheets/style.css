@@ -69,6 +69,13 @@ a {
 }
 .page-header ul.info li.tag {
   color: #808080;
+  margin-right: 15px;
+}
+.page-header ul.info li.comment {
+  margin-right: 15px;
+}
+.page-header ul.info li.social iframe {
+  vertical-align: middle;
 }
 
 #main .content .row.body .span14 {
@@ -283,7 +290,6 @@ footer {
 #usersNav ul {
   list-style: none;
 }
-
 #usersNav ul li a {
   background: url(/images/users/back.png);
   background-position: top left;
@@ -293,11 +299,9 @@ footer {
   display: block;
   opacity: 0.3;
 }
-
 #usersNav ul li a:hover {
   opacity: 1 !important;
 }
-
 #usersNav ul li a img {
   vertical-align: middle;
   width: 48px;
@@ -305,14 +309,129 @@ footer {
   margin-top: 6px;
   margin-left: 6px;
 }
-
 #usersNav ul li#scrollToTop2 {
   /*display: none;*/
 }
-
 #usersNav ul li#scrollToTop2 a {
   background-image: url(/images/users/top.png);
   opacity: 0.7;
 }
 
+#comments {
+  clear: both;
+}
+
+.comments {
+  margin-left: 20px;
+}
+
+.comments h2 {
+  margin-bottom: 10px;
+}
+
+.comments p {
+  font-size: 14px;
+}
+
+.comments dt {
+  margin-left: 10px;
+  float: left;
+  clear: left;
+  width: 50px;
+  text-align: center;
+}
+
+.comments dt img {
+  background: #f0f0f0;
+  width: 32px;
+  border-radius: 3px;
+  vertical-align: top;
+}
+
+.comments dt.mouseover,
+.comments dd.mouseover {
+  color: #9d261d;
+  /*
+  background: #eee;
+  -webkit-box-shadow:0px 0px 5px #999;
+  -moz-box-shadow:0px 0px 5px #999;
+  box-shadow:0px 0px 5px #999;
+  */
+}
+
+.comments dd.editable:hover {
+  color: #9d261d;
+}
+
+.comments dd:last-child {
+  color: inherit !important;
+}
+
+.comments dd {
+  padding-left: 10px;
+  margin: 0;
+  float: left;
+  padding-bottom: 10px;
+  min-height: 50px;
+  width: 750px;
+  position: relative;
+}
+
+.comments dd .input-prepend {
+  margin-bottom: 10px;
+}
+
+.comments dd .commentUsername {
+  font-weight: bold; 
+  font-size: 16px;
+}
+
+.comments dd .commentCreatedAt {
+  margin-left: 10px;
+}
+
+.comments dd form input[type=text] {
+  background: -moz-linear-gradient(top, #f9f9f9, #fff);  
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#fff));
+}
+
+.comments dd form textarea {
+  width: 674px;
+  height: 100px;
+  border: 1px solid #C1C1C1;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16) inset;
+  background: -moz-linear-gradient(top, #f9f9f9, #fff);  
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#fff));
+  /* TODO: standard syntacs */
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+.comments dd form input:focus, 
+.comments dd form textarea:focus {
+  outline: 0;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.comments dd form.control {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.comments dd form.control .delete {
+  padding: 5px;
+  vertical-align: middle;
+}
+.comments dd form.control .delete img {
+  vertical-align: middle;
+  width: 18px;
+}
+.comments dd.editable:hover form.control {
+  display: block;
+}
 

@@ -10,7 +10,8 @@
     "secret" : "Unique string"
   },
   "process" : {
-    "port" : "3000"
+    "port" : "3000",
+    "logging" : true
   },
   "analytics_id" : "",
   "disqus_shortname" : "",

@@ -49,7 +49,7 @@ Renderer.user = (function() {
 '      <h1><a href="/users/<%= user.id %>"><%= user.fullname %></a></h1>',
 '      <ul class="info">',
 '        <li class="icon"><a href="/users/<%= user.id %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a></li>',
-'        <li><a href="/user/<%= user.username %>"><%= user.posts %> posts</a></li>',
+'        <li><a href="/users/<%= user.username %>/posts"><%= user.posts %> posts</a></li>',
 '      </ul>',
 '    </div>',
 '    <div class="row body">',

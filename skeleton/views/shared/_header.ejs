@@ -13,14 +13,20 @@
         <li><a href="/users">users</a></li>
         <% if (req.session.user) { %>
         <li><a href="#" id="openFiles">files</a></li>
-        <li><a href="/users/<%= req.session.user.id %>"><%= req.session.user.username %></a></li>
         <% if (!/^\/users/.test(req.url)) { %>
-        <li><a href="#" id="newpost">+post</a></li>
+        <li><a href="#" id="newpost">new post</a></li>
         <% } %>
         <% if (req.session.user.isAdmin && /^\/users/.test(req.url)) { %>
-          <li><a href="#" id="newuser">+user</a></li>
+          <li><a href="#" id="newuser">new user</a></li>
         <% } %>
-        <li><a href="/auth/logout">logout</a></li>
+        <li class="dropdown" data-dropdown="dropdown" >
+          <a href="#" class="dropdown-toggle"><%= req.session.user.username %></a>
+          <ul class="dropdown-menu">
+            <li><a href="/users/<%= req.session.user.id %>">profile</a></li>
+            <li class="divider"></li>
+            <li><a href="/auth/logout">logout</a></li>
+          </ul>
+        </li>
         <% } else {%>
         <li><a href="#" id="loginButton">login</a></li>
         <% } %>

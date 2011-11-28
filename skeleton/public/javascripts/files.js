@@ -97,7 +97,7 @@ $(function () {
       $files.activity();
       var $form = $(this); 
       $.ajax({
-        type: 'POST',
+        type: $form.attr('method'),
         url: $form.attr('action'),
         data: $form.serialize(),
         success: function(data) {
@@ -120,7 +120,7 @@ Renderer.file = (function() {
 '          <td><a href="/users/<%= file.user.id %>"><%= file.user.username %></a></td>',
 '          <td><%= file.ctime %></td>',
 '          <td>',
-'            <form action="/files/<%= file.filename %>">',
+'            <form action="/files/<%= file.filename %>" method="POST">',
 '              <input type="hidden" name="_method" value="DELETE" />',
 '              <button type="submit" method="POST" class="btn delete"<%= disabled %>><img src="/images/icons/delete.png" alt="delete" /></button>',
 '            </form>',

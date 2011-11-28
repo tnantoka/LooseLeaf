@@ -85,61 +85,68 @@ $(function () {
     return false; 
   });
 
-  // Fixed users navigation when show scrollToTop
-  var $scrollToTop2 = $('#scrollToTop2');
-  $scrollToTop2.click(scrollToTop);
-  var $usersNav = $('#usersNav'); 
-  var usersNavHeight = $usersNav.height() + 48; 
+  if (config.usersNav.enable) {
 
-  $(window).scroll(function() {
-    var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
-    var clientHeight = /*document.body.clientHeight ||*/ document.documentElement.clientHeight;
-    if (scrollTop > usersNavHeight - clientHeight) {
-      if ($usersNav.css('position') != 'fixed') {
-        $usersNav.css('position', 'fixed');
-        $usersNav.css('top', 'auto');
-        $usersNav.css('bottom', '0px');
+    // Fixed users navigation when show scrollToTop
+    var $scrollToTop2 = $('#scrollToTop2');
+    $scrollToTop2.click(scrollToTop);
+    var $usersNav = $('#usersNav'); 
+    var usersNavHeight = $usersNav.height() + 48; 
+
+    $(window).scroll(function() {
+      var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
+      var clientHeight = /*document.body.clientHeight ||*/ document.documentElement.clientHeight;
+      if (scrollTop > usersNavHeight - clientHeight) {
+        if ($usersNav.css('position') != 'fixed') {
+          $usersNav.css('position', 'fixed');
+          $usersNav.css('top', 'auto');
+          $usersNav.css('bottom', '0px');
+        }
+      } else {
+        if ($usersNav.css('position') == 'fixed') {
+          $usersNav.css('position', 'absolute');
+          $usersNav.css('top', '60px');
+          $usersNav.css('bottom', 'auto');
+        }
       }
-    } else {
-      if ($usersNav.css('position') == 'fixed') {
-        $usersNav.css('position', 'absolute');
-        $usersNav.css('top', '60px');
-        $usersNav.css('bottom', 'auto');
+    });
+
+  } else {
+    var isPopover;
+    $(window).scroll(function() {
+      if ($('#main .content:eq(1)').length > 0) { 
+        var popoverBorder = $('#main .content:eq(1)').offset().top - 100;
+        var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop > popoverBorder && !isPopover) {
+          $('.topbar').popover('show');
+          isPopover = true;
+        } else if (scrollTop <= popoverBorder) {
+          $('.topbar').popover('hide');
+          isPopover = false;
+        }
+      } else {
+        var popoverBorder = 200;
+        var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop > popoverBorder && !isPopover) {
+          $('.topbar').popover('show');
+          isPopover = true;
+        } else if (scrollTop <= popoverBorder) {
+          $('.topbar').popover('hide');
+          isPopover = false;
+        }
       }
-    }
-  });
+    });
+    $('.topbar').popover({
+      //placement: 'below',
+      placement: 'above',
+      trigger: 'manual',
+      html: true
+    });
+  }
 
   // Show popover to scroll top below topbar
   $('.topbar').attr('title', '<a href="#" onclick="return scrollToTop();">Scroll<br />to Top</a>');
-  /*
-  $('.topbar').popover({
-    //placement: 'below',
-    placement: 'above',
-    trigger: 'manual',
-    html: true
-  });
-  */
   $('.topbar').dblclick(scrollToTop);
-
-  /*
-  var isPopover;
-  $(window).scroll(function() {
-    if ($('#main .content:eq(1)').length == 0) return false;
-    var popoverBorder = $('#main .content:eq(1)').offset().top - 100;
-    var scrollTop  = document.body.scrollTop || document.documentElement.scrollTop;
-    if (scrollTop > popoverBorder && !isPopover) {
-      //$('.topbar').popover('show');
-      //$scrollToTop2.fadeIn('fast');
-      //$scrollToTop2.show();
-      isPopover = true;
-    } else if (scrollTop <= popoverBorder) {
-      //$('.topbar').popover('hide');
-      //$scrollToTop2.fadeOut('fast');
-      //$scrollToTop2.hide();
-      isPopover = false;
-    }
-  });
-  */
 
   // Alert unload while editting
   $(window).bind('beforeunload', function(e){
@@ -156,7 +163,7 @@ function tag(tags) {
   tags = tags.split(/[,、，]\s*/);
   var html = [];
   tags.forEach(function(tag) {
-    html.push('<a href="/tag/' + encodeURIComponent(tag) + '">' + tag + '</a>');
+    html.push('<a href="/tags/' + encodeURIComponent(tag) + '">' + tag + '</a>');
   });
   return html.join(', ');
 }

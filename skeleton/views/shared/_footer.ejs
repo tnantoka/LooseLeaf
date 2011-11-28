@@ -1,21 +1,21 @@
 <% if (config.usersNav.enable) { %>
 <nav id="usersNav">
   <ul>
-    <% var tempUsers = navUsers.slice(0); %>
+    <% var tempUsers = navUsers.slice(); %>
     <% if (config.usersNav.lead && config.usersNav.lead.length > 0) { %>
       <% for (var i = 0; i < config.usersNav.lead.length; i++) { %>
         <% for (var j = 0; j < tempUsers.length; j++) { %>
           <% if (tempUsers[j].id == config.usersNav.lead[i]) { %>
             <% var user = tempUsers[j]; %>
             <% tempUsers.splice(j, 1); %>
-            <li><a href="/user/<%= user.username %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a></li>
+            <li><a href="/users/<%= user.username %>/posts"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a></li>
           <% } %>
         <% } %>
       <% } %>
     <% } %>
     <% for (var i = 0; i < tempUsers.length; i++) { %>
       <% var user = tempUsers[i]; %>
-      <li><a href="/user/<%= tempUsers[i].username %>"><img src="<%= tempUsers[i].icon %>" alt="<%= tempUsers[i].username %>" /></a></li>
+      <li><a href="/users/<%= tempUsers[i].username %>/posts"><img src="<%= tempUsers[i].icon %>" alt="<%= tempUsers[i].username %>" /></a></li>
     <% } %>
     <li id="scrollToTop2"><a href="#" title="Scroll to Top"></a></li>
   </ul>
@@ -47,6 +47,7 @@
 <script src="/bootstrap/js/bootstrap-twipsy.js"></script>
 <script src="/bootstrap/js/bootstrap-popover.js"></script>
 <script src="/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
 
 <!-- looseleaf -->
 <script src="/javascripts/lib/ejs.min.js"></script>

@@ -10,11 +10,17 @@ node_modules
 
 # Static, Temporary, Content files
 skeleton/data/posts/*.json
+skeleton/data/comments/*.json
+
 skeleton/data/users/*.json
 !skeleton/data/users/1.json
+
 skeleton/public/files/*
 !skeleton/public/files/.gitkeep
+
 TODO
+
 test/*
+
 skeleton/public/images/icons/mono/
 
