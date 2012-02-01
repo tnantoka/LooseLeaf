@@ -118,7 +118,7 @@ $(function () {
   /*
    * Comments
    */
-  if (!config.disqus_shortname) {
+  if (!config.disqus_shortname && posts.length) {
 
   var $comments = $('.comments');
   var $lastComment = $comments.find('dt:last');
@@ -216,7 +216,7 @@ Renderer.post = (function() {
 '        <li class="timeago" title="<%= post.createdAt %>"><%= $.timeago(post.createdAt) %></li>',
 '        <li class="tag"><%- tag(post.tag) %></li>',
 '        <% if (!config.disqus_shortname) { %>',
-'        <li class="comment"><a href="/posts/<%= post.id %>#comments"><%- post.comments.length %> comments</a></li>',
+'        <li class="comment"><a href="/posts/<%= post.id %>#comments"><%- post.comments ? post.comments.length : 0 %> comments</a></li>',
 '        <% if (isFeedbacks) { %>',
 '        <!-- http://twitter.com/goodies/tweetbutton -->',
 '        <li class="social"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a></li>',
@@ -249,7 +249,8 @@ Renderer.post = (function() {
 '      <h2>Comments</h2>',
 '      <dl>',
 '        <dt>',
-'          <img src="/images/icons/comment.png" alt="face" />',
+//'          <img src="/images/icons/comment.png" alt="face" />',
+'          <img src="/images/users/default.png" alt="face" />',
 '        </dt>',
 '        <dd>',
 '          <form action="/posts/<%= post.id %>/comments" method="post" id="addCommentForm">',
@@ -315,7 +316,8 @@ Renderer.comment = (function() {
 
   var comment = [
 '        <dt>',
-'          <img src="/images/icons/comment.png" alt="face" />',
+//'          <img src="/images/icons/comment.png" alt="face" />',
+'          <img src="/images/users/default.png" alt="face" />',
 '        </dt>',
 '        <dd class="<%= editable %>">',
 '          <p>',
