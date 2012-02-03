@@ -143,7 +143,7 @@ function setIconEvent($content) {
         reader.readAsDataURL(file);
       }
     } catch (e) {
-      console.log(e);
+      //console.log(e);
     }
   }, true);
 }
