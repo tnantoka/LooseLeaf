@@ -55,7 +55,7 @@ function copyDir(srcPath, dstPath) {
     create(dstPath)
   } catch (e) {
     // File exists
-    if (e.errno = 17) {
+    if (e.errno = 17 || e.errno = 45 || e.errno = 47) {
       warning(e.message);
     } else {
       throw e;
@@ -88,7 +88,7 @@ function copyDir(srcPath, dstPath) {
         warning("EEXIST, File exists '" + dstFile + "'");
       } catch (e) {
         // File NOT exists
-        if (e.errno == 2 || e.errno == 32) {
+        if (e.errno == 2 || e.errno == 32 || e.errno == 34) {
           var data = fs.readFileSync(srcFile);
           fs.writeFileSync(dstFile, data);
           create(dstFile)
