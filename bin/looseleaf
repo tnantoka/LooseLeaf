@@ -55,7 +55,7 @@ function copyDir(srcPath, dstPath) {
     create(dstPath)
   } catch (e) {
     // File exists
-    if (e.errno = 17 || e.errno = 45 || e.errno = 47) {
+    if (e.errno == 17 || e.errno == 45 || e.errno == 47) {
       warning(e.message);
     } else {
       throw e;
