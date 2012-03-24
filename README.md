@@ -3,20 +3,20 @@
 This branch will ad the ability to have e blog run at a set baseURL.
 Using this version together with nginx reverse_proxy will allow you to run multiple blog instances on one port ( e.g. port 80 )
 
-nginx.conf 
-http {
-  server {
+  nginx.conf 
+  http {
+    server {
     location /blog {
       reverse_proxy 127.0.0.1:3000;
     }
     location /blog2 {
       reverse_proxy 127.0.0.1:3001;
     }
+    }
   }
-}
 
-conf.json
-  "loc": "/blog", ...
+  conf.json
+    "loc": "/blog", ...
 
 
 Lightweight blog engine running on [node.js][] and [express][].
