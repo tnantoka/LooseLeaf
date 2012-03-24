@@ -41,7 +41,7 @@ Using this version together with nginx reverse_proxy will allow you to run multi
       "secret" : "AstraNOS"
     },
     "process" : {
-      "port"  : "8001",
+      "port"  : "3000",
       "loc"   : "/blog",
       "logging" : true
     },
