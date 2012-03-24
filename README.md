@@ -33,25 +33,25 @@ Using this version together with nginx reverse_proxy will allow you to run multi
     "site" : {
       "title" : "AstraNOS blog"
     },
-   "copyright" : {
-       "title" : "AstraNOS",
-      "uri" : "http://www.AstraNOS.org/"
+    "copyright" : {
+      "title"   : "AstraNOS",
+      "uri"     : "http://www.AstraNOS.org/"
     },
-    "session" : {
-      "secret" : "AstraNOS"
+    "session"   : {
+      "secret"  : "AstraNOS"
     },
-    "process" : {
-      "port"  : "3000",
-      "loc"   : "/blog",
+    "process"   : {
+      "port"    : "3000",
+      "loc"     : "/blog",
       "logging" : true
     },
     "analytics_id" : "",
     "disqus_shortname" : "",
-    "usersNav": {
-      "enable" : true,
-    "lead" : []  
-   }
- }
+    "usersNav"  : {
+      "enable"  : true,
+      "lead"    : []  
+    }
+  }
 
 </pre>
 
