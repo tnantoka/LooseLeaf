@@ -3,7 +3,6 @@
  */
 
 // Create express server and exports for spark like modules
-console.log ( " Hey : " + __dirname );
 var ll = require('looseleaf').init(__dirname);
 
 // For other controll modules
