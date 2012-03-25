@@ -1,13 +1,14 @@
 $(function () {
 
   var $main = $('#main');
+  var base = config.process.loc;
 
   // Render users
   for (var i = 0; i < users.length; i++) {
     $main.append(Renderer.user({ 
       user: users[i],
       editable: typeof user != 'undefined' && (user.id == users[i].id || user.isAdmin) ? ' editable': '',
-      action: '/users/' + users[i].id,
+      action: base + '/users/' + users[i].id,
       method: 'PUT'
     }));
   }
@@ -27,7 +28,7 @@ $(function () {
         $content.replaceWith(Renderer.user({ 
           user: user,
           editable: ' editable',
-          action: '/users/' + user.id,
+          action: base + '/users/' + user.id,
           method: 'PUT'
         }));
       }
@@ -38,7 +39,7 @@ $(function () {
 });
 
 Renderer.user = (function() {
-
+  var base = config.process.loc;
   var user = [
 '<div class="content<%= editable %>" data-user-id="<%= user.id %>" data-user-color="<%= user.color || \'\' %>" id="<%= user.username %>">',
 '  <div class="show">',
@@ -46,10 +47,10 @@ Renderer.user = (function() {
 '      <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
 '    </ul>',
 '    <div class="page-header clearfix">',
-'      <h1><a href="/users/<%= user.id %>"><%= user.fullname %></a></h1>',
+'      <h1><a href="' + base + '/users/<%= user.id %>"><%= user.fullname %></a></h1>',
 '      <ul class="info">',
-'        <li class="icon"><a href="/users/<%= user.id %>"><img src="<%= user.icon %>" alt="<%= user.username %>" /></a></li>',
-'        <li><a href="/users/<%= user.username %>/posts"><%= user.posts %> posts</a></li>',
+'        <li class="icon"><a href="' + base + '/users/<%= user.id %>"><img src="' + base + '<%= user.icon %>" alt="<%= user.username %>" /></a></li>',
+'        <li><a href="' + base + '/users/<%= user.username %>/posts"><%= user.posts %> posts</a></li>',
 '      </ul>',
 '    </div>',
 '    <div class="row body">',
@@ -64,7 +65,7 @@ Renderer.user = (function() {
 '    <div class="page-header clearfix">',
 '      <h1><input type="text" name="user[fullname]" class="userFullname" placeholder="fullname" value="<%= user.fullname %>" required /></h1>',
 '      <ul class="info">',
-'        <li class="icon"><img src="<%= user.icon || \'/images/users/default.png\' %>" alt="<%= user.username %>" /></li>',
+'        <li class="icon"><img src="' + base + '<%= user.icon || \'' + base + '/images/users/default.png\' %>" alt="<%= user.username %>" /></li>',
 '        <li><input type="text" name="user[username]" class="userUsername" placeholder="username" value="<%= user.username %>" /></li>',
 '        <li><input type="password" name="user[password]" class="userPassword" placeholder="password" /></li>',
 '        <!--li><input type="text" name="user[color]" class="userColor" placeholder="color" value="<%= user.color %>" /></li-->',

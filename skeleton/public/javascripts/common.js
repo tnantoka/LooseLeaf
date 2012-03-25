@@ -6,6 +6,7 @@ $(function () {
   $('footer').activity();
 
   var $main = $('#main');
+  var base  = config.process.loc;
 
   // Show login form
   $('#loginButton').click(function() {
@@ -30,7 +31,7 @@ $(function () {
         createdAt: new Date(), 
         user: user
       },
-      action: '/posts',
+      action: base + '/posts',
       method: 'POST',
       editable: ' editable',
       isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
@@ -54,7 +55,7 @@ $(function () {
         createdAt: new Date(), 
         user: user
       },
-      action: '/users',
+      action: base + '/users',
       method: 'POST',
       editable: ' editable'
     }));
@@ -80,7 +81,7 @@ $(function () {
   $('#searchForm').submit(function() {
     var keyword = $('#keyword').val();  
     if (keyword) {
-      location.href = '/search/' + encodeURIComponent(keyword);
+      location.href = base + '/search/' + encodeURIComponent(keyword);
     }
     return false; 
   });
@@ -162,8 +163,9 @@ $(function () {
 function tag(tags) {
   tags = tags.split(/[,、，]\s*/);
   var html = [];
+  var base = config.process.loc;
   tags.forEach(function(tag) {
-    html.push('<a href="/tags/' + encodeURIComponent(tag) + '">' + tag + '</a>');
+    html.push('<a href="' + base + '/tags/' + encodeURIComponent(tag) + '">' + tag + '</a>');
   });
   return html.join(', ');
 }

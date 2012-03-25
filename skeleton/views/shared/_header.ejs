@@ -2,15 +2,15 @@
   <div class="fill">
     <div class="container">
 
-      <a class="brand" href="/"><%= config.site.title %></a>
+      <a class="brand" href="<%= config.process.loc %>/"><%= config.site.title %></a>
 
-      <form action="/search/" id="searchForm">
+      <form action="<%= config.process.loc %>/search/" id="searchForm">
         <input type="text" placeholder="keyword" name="keyword" id="keyword" value="<%= req.params.keyword || '' %>" />
         <button class="btn" type="submit">search</button>
       </form>
 
       <ul class="nav secondary-nav" id="loginLink">
-        <li><a href="/users">users</a></li>
+        <li><a href="<%= config.process.loc %>/users">users</a></li>
         <% if (req.session.user) { %>
         <li><a href="#" id="openFiles">files</a></li>
         <% if (!/^\/users/.test(req.url)) { %>
@@ -22,9 +22,9 @@
         <li class="dropdown" data-dropdown="dropdown" >
           <a href="#" class="dropdown-toggle"><%= req.session.user.username %></a>
           <ul class="dropdown-menu">
-            <li><a href="/users/<%= req.session.user.id %>">profile</a></li>
+            <li><a href="<%= config.process.loc %>/users/<%= req.session.user.id %>">profile</a></li>
             <li class="divider"></li>
-            <li><a href="/auth/logout">logout</a></li>
+            <li><a href="<%= config.process.loc %>/auth/logout">logout</a></li>
           </ul>
         </li>
         <% } else {%>
@@ -32,7 +32,7 @@
         <% } %>
       </ul>
 
-      <form action="/auth/login" method="post" class="pull-right" id="loginForm">
+      <form action="<%= config.process.loc %>/auth/login" method="post" class="pull-right" id="loginForm">
         <input class="input-small" type="text" name="user[username]" id="username" placeholder="Username">
         <input class="input-small" type="password" name="user[password]" placeholder="Password">
         <button class="btn" type="submit">login</button>

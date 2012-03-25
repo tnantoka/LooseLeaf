@@ -1,23 +1,24 @@
 {
   "site" : {
-    "title" : "My LooseLeaf"
+    "title"   : "My LooseLeaf"
   },
   "copyright" : {
-    "title" : "Your site",
-    "uri" : "http://example.com/"
+    "title"   : "Your site",
+    "uri"     : "http://example.com/"
   },
   "session" : {
-    "secret" : "Unique string"
+    "secret"  : "Unique string"
   },
-  "process" : {
-    "port" : "3000",
+  "process"   : {
+    "port"    : "3000",
+    "loc"     : "",
     "logging" : true
   },
   "analytics_id" : "",
   "disqus_shortname" : "",
-  "usersNav": {
-    "enable" : false,
-    "lead" : []
+  "usersNav"  : {
+    "enable"  : false,
+    "lead"    : []
   }
 }
 
