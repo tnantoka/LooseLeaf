@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title ? title + ' - ' : '' %><%= config.site.title %></title>
-  <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
-  <link rel='stylesheet' href='/stylesheets/container-app.css' />
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-
 <script>
 var config = <%- JSON.stringify(config) %>;
 </script>
 
+  <title><%= title ? title + ' - ' : '' %><%= config.site.title %></title>
+  <link rel='stylesheet' href='<%= config.process.loc %>/bootstrap/bootstrap.css' />
+  <link rel='stylesheet' href='<%= config.process.loc %>/stylesheets/container-app.css' />
+  <link rel='stylesheet' href='<%= config.process.loc %>/stylesheets/style.css' />
+
 <%- body %>
 
 <% if (req.session.user) { %>
-<script src="/javascripts/files.js"></script>
+<script src="<%= config.process.loc %>/javascripts/files.js"></script>
 <% } %>
 
 <% if (config.analytics_id) { %>

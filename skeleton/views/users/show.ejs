@@ -1,5 +1,5 @@
-  <link rel="stylesheet" href="/javascripts/lib/google-code-prettify/prettify.css" />
-  <link rel="stylesheet" href="/javascripts/lib/cleditor/jquery.cleditor.css" />
+  <link rel="stylesheet" href="<%= config.process.loc %>/javascripts/lib/google-code-prettify/prettify.css" />
+  <link rel="stylesheet" href="<%= config.process.loc %>/javascripts/lib/cleditor/jquery.cleditor.css" />
 </head>
 <body>
 
@@ -18,6 +18,6 @@ var users = <%- JSON.stringify(users) %>;
 var user = <%- JSON.stringify(req.session.user) %>;
 </script>
 <% } %>
-<script src="/javascripts/common.js"></script>
-<script src="/javascripts/users.js"></script>
+<script src="<%= config.process.loc %>/javascripts/common.js"></script>
+<script src="<%= config.process.loc %>/javascripts/users.js"></script>
 

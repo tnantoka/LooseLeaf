@@ -9,7 +9,7 @@ var ll = require('looseleaf').init(__dirname);
 exports = ll.app;
 
 // Only listen when run on $ node app.js 
-if (!module.parent) {
-  ll.start();
+if ( ! module.parent )  {
+  ll.start ( );
 }
 

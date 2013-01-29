@@ -1,6 +1,7 @@
 $(function () {
 
   var $main = $('#main');
+  var base = config.process.loc;
 
   // Render posts
   for (var i = 0; i < posts.length; i++) {
@@ -8,7 +9,7 @@ $(function () {
     $main.append(Renderer.post({ 
       post: post,
       editable: typeof user != 'undefined' && (user.id == post.user.id || user.isAdmin) ? ' editable': '',
-      action: '/posts/' + post.id,
+      action: base + '/posts/' + post.id,
       method: 'PUT',
       isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
     }));
@@ -21,7 +22,7 @@ $(function () {
     if (confirm('Set ' + (isPrivate ? 'public' : 'private' ) + ' this post?')) {
       $.ajax({
         type: 'POST',
-        url: '/posts/' + $content.data('postId'),
+        url: base + '/posts/' + $content.data('postId'),
         data: '_method=PUT&post' + encodeURIComponent('[isPrivate]') + '=' + (isPrivate ? false : true),
         cache: false,
         success: function(data) {
@@ -30,7 +31,7 @@ $(function () {
           $content.replaceWith(Renderer.post({ 
             post: post,
             editable: ' editable',
-            action: '/posts/' + post.id,
+            action: base + '/posts/' + post.id,
             method: 'PUT',
             //isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
             isFeedbacks: false
@@ -46,7 +47,7 @@ $(function () {
     if (confirm('Delete this post?')) {
       $.ajax({
         type: 'POST',
-        url: '/posts/' + $content.data('postId'),
+        url: base + '/posts/' + $content.data('postId'),
         data: '_method=DELETE',
         success: function(data) {
           //$content.activity(false);
@@ -71,7 +72,7 @@ $(function () {
         $content.replaceWith(Renderer.post({ 
           post: post,
           editable: ' editable',
-          action: '/posts/' + post.id,
+          action: base + '/posts/' + post.id,
           method: 'put',
           //isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
           isFeedbacks: false
@@ -92,7 +93,7 @@ $(function () {
         $footer.activity();
         $.ajax({
           type: 'GET',
-          url: '/next/' + offset,
+          url: base + '/next/' + offset,
           success: function(data){
             $footer.activity(false);
             var post = JSON.parse(data);
@@ -103,7 +104,7 @@ $(function () {
             $main.append(Renderer.post({ 
               post: post,
               editable: typeof user != 'undefined' && (user.id == post.user.id || user.isAdmin) ? ' editable': '',
-              action: '/posts/' + post.id,
+              action: base + '/posts/' + post.id,
               method: 'PUT',
               isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
             }));
@@ -196,27 +197,27 @@ $(function () {
 });
 
 Renderer.post = (function() {
-
+  var base = config.process.loc;
   var post = [
 '<div class="content<%= editable %>" data-post-id="<%= post.id %>">',
 '  <div class="show">',
 '    <ul class="control action">',
-'      <li><button type="button" class="btn edit"><img src="/images/icons/edit.png" alt="edit" /></button></li>',
+'      <li><button type="button" class="btn edit"><img src="' + base + '/images/icons/edit.png" alt="edit" /></button></li>',
 '      <% if (post.isPrivate) { %>',
-'      <li><button type="button" class="btn private"><img src="/images/icons/public.png" alt="public" /></button></li>',
+'      <li><button type="button" class="btn private"><img src="' + base + '/images/icons/public.png" alt="public" /></button></li>',
 '      <% } else { %>',
-'      <li><button type="button" class="btn private"><img src="/images/icons/private.png" alt="private" /></button></li>',
+'      <li><button type="button" class="btn private"><img src="' + base + '/images/icons/private.png" alt="private" /></button></li>',
 '      <% } %>',
-'      <li><button type="button" class="btn delete"><img src="/images/icons/delete.png" alt="delete" /></button></li>',
+'      <li><button type="button" class="btn delete"><img src="' + base + '/images/icons/delete.png" alt="delete" /></button></li>',
 '    </ul>',
 '    <div class="page-header clearfix">',
-'      <h1><a href="/posts/<%= post.id %>"><%= post.title %></a></h1>',
+'      <h1><a href="' + base + '/posts/<%= post.id %>"><%= post.title %></a></h1>',
 '      <ul class="info">',
-'        <li class="icon"><a href="/users/<%= post.userId %>"><img src="<%= post.user.icon %>" alt="<%= post.user.username %>" /></a></li>',
+'        <li class="icon"><a href="' + base + '/users/<%= post.userId %>"><img src="' + base + '<%= post.user.icon %>" alt="<%= post.user.username %>" /></a></li>',
 '        <li class="timeago" title="<%= post.createdAt %>"><%= $.timeago(post.createdAt) %></li>',
 '        <li class="tag"><%- tag(post.tag) %></li>',
 '        <% if (!config.disqus_shortname) { %>',
-'        <li class="comment"><a href="/posts/<%= post.id %>#comments"><%- post.comments ? post.comments.length : 0 %> comments</a></li>',
+'        <li class="comment"><a href="' + base + '/posts/<%= post.id %>#comments"><%- post.comments ? post.comments.length : 0 %> comments</a></li>',
 '        <% if (isFeedbacks) { %>',
 '        <!-- http://twitter.com/goodies/tweetbutton -->',
 '        <li class="social"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a></li>',
@@ -230,13 +231,13 @@ Renderer.post = (function() {
 '      </ul>',
 '    </div>',
 '    <div class="row body">',
-'      <div class="span14"><%- post.body %></div>',
+'      <div class="span14-2"> <%- post.body %>&nbsp;<br></div>',
 '      <% if (isFeedbacks) { %>',
 '      <% if (config.disqus_shortname) { %>',
 '      <div id="disqus_thread"></div>',
 '      <script>',
 '        var disqus_shortname = \'<%= config.disqus_shortname %>\';',
-'        var disqus_identifier = \'/posts/<%= post.id %>\';',
+'        var disqus_identifier = \'' + base + '/posts/<%= post.id %>\';',
 '        //var disqus_developer = 1;',
 '        (function() {',
 '          var dsq = document.createElement(\'script\'); dsq.type = \'text/javascript\'; dsq.async = true;',
@@ -250,10 +251,10 @@ Renderer.post = (function() {
 '      <dl>',
 '        <dt>',
 //'          <img src="/images/icons/comment.png" alt="face" />',
-'          <img src="/images/users/default.png" alt="face" />',
+'          <img src="' + base + '/images/users/default.png" alt="face" />',
 '        </dt>',
 '        <dd>',
-'          <form action="/posts/<%= post.id %>/comments" method="post" id="addCommentForm">',
+'          <form action="' + base + '/posts/<%= post.id %>/comments" method="post" id="addCommentForm">',
 '            <div class="input-prepend">',
 '              <span class="add-on">by</span>', 
 '              <input type="text" name="comment[username]" class="medium" placeholder="name" required />',
@@ -276,15 +277,15 @@ Renderer.post = (function() {
 '    <div class="page-header clearfix">',
 '      <h1><input type="text" name="post[title]" class="postTitle" placeholder="title" value="<%= post.title %>" /></h1>',
 '      <ul class="info">',
-'        <li class="icon"><img src="<%= post.user.icon %>" alt="<%= post.user.username %>" /></li>',
+'        <li class="icon"><img src="' + base + '<%= post.user.icon %>" alt="<%= post.user.username %>" /></li>',
 '        <li class="timeago" title="<%= post.createdAt %>"><%= $.timeago(post.createdAt) %></li>',
 '        <li class="tag"><input type="text" name="post[tag]" class="postTag" placeholder="tag1, tag2..." value="<%= post.tag %>" /></li>',
-'        <!--li class="alias"><input type="text" name="post[alias]" class="postAlias" placeholder="alias" value="<%= post.alias %>" /></li-->',
+'        <li class="alias"><input type="text" name="post[alias]" class="postAlias" placeholder="alias" value="<%= post.alias %>" /></li>',
 '      </ul>',
 '    </div>',
 '    <div class="row">',
 '      <div class="span14">',
-'      <textarea name="post[body]" class="postBody"><%= post.body %></textarea>',
+'      <textarea name="post[body]" class="postBody" rows="30"><%= post.body %></textarea>', 
 '      </div>',
 '    </div>',
 '    <input type="hidden" name="_method" value="<%= method %>" >',
@@ -313,11 +314,11 @@ Renderer.post = (function() {
 
 
 Renderer.comment = (function() {
-
+  var base = config.process.loc;
   var comment = [
 '        <dt>',
 //'          <img src="/images/icons/comment.png" alt="face" />',
-'          <img src="/images/users/default.png" alt="face" />',
+'          <img src="' + base + '/images/users/default.png" alt="face" />',
 '        </dt>',
 '        <dd class="<%= editable %>">',
 '          <p>',
@@ -325,9 +326,9 @@ Renderer.comment = (function() {
 '            <span class="commentCreatedAt" title="<%= comment.createdAt %>"><%= $.timeago(comment.createdAt) %></span>',
 '          </p>',
 '          <p><%= comment.body %></p>',
-'          <form action="/posts/<%= post.id %>/comments/<%= comment.id %>" method="POST" class="control">',
+'          <form action="' + base + '/posts/<%= post.id %>/comments/<%= comment.id %>" method="POST" class="control">',
 '            <input type="hidden" name="_method" value="DELETE" />',
-'            <button type="submit" method="POST" class="btn delete"><img src="/images/icons/delete.png" alt="delete" /></button>',
+'            <button type="submit" method="POST" class="btn delete"><img src="' + base + '/images/icons/delete.png" alt="delete" /></button>',
 '          </form>',
 '        </dd>',
 ''
@@ -342,7 +343,9 @@ Renderer.comment = (function() {
 // edit post
 function edit($content) {
   if ($content.find('.cleditorMain').length == 0) {
-    var bodyHeight = $content.find('.body').height(); 
+    var bodyHeight = $content.find('.body').height();
+    if ( bodyHeight < 500 )
+         bodyHeight = 500;
     var editor = $content.find('.postBody').cleditor({
       height: bodyHeight
     })[0];

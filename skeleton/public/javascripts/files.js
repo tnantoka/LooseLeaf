@@ -3,6 +3,8 @@ $(function () {
   var $files = $('#files');
   var $table = $('#files table');
   var $tbody = $table.find('tbody');
+  var base   = config.process.loc;
+
   $table.tablesorter({ headers: { 3: { sorter: false } } });
   $files.modal({
     backdrop: true
@@ -13,7 +15,7 @@ $(function () {
     $files.modal('show');
     $files.activity();
     $.ajax({
-      url: '/files',
+      url: base + '/files',
       success: function(data) {
         $tbody.html('');
         var files = JSON.parse(data);
@@ -48,7 +50,7 @@ $(function () {
     data.append("files", files[0]);
 
     $.ajax({
-      url: '/files',
+      url: base + '/files',
       type: 'POST',
       data: data,
       processData: false,
@@ -108,19 +110,17 @@ $(function () {
     }
     return false;
   });
-
-
 })
 
 Renderer.file = (function() {
-
+  var base = config.process.loc;
   var file = [
 '        <tr>',
-'          <td><a href="/files/<%= file.user.id + \'/\' + file.filename %>"><%= file.filename %></a></td>',
-'          <td><a href="/users/<%= file.user.id %>"><%= file.user.username %></a></td>',
+'          <td><a href="' + base + '/files/<%= file.user.id + \'/\' + file.filename %>"><%= file.filename %></a></td>',
+'          <td><a href="' + base + '/users/<%= file.user.id %>"><%= file.user.username %></a></td>',
 '          <td><%= file.ctime %></td>',
 '          <td>',
-'            <form action="/files/<%= file.filename %>" method="POST">',
+'            <form action="' + base + '/files/<%= file.filename %>" method="POST">',
 '              <input type="hidden" name="_method" value="DELETE" />',
 '              <button type="submit" method="POST" class="btn delete"<%= disabled %>><img src="/images/icons/delete.png" alt="delete" /></button>',
 '            </form>',
