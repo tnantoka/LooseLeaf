@@ -12,8 +12,8 @@ Lightweight blog engine running on [node.js][] and [express][].
 
 ## Demo
 
-* [http://looseleafjs.org/][] (Official Website)
-[http://looseleafjs.org/]: LooseLeaf Website
+* [Official Site][]
+[Official Site]: http://looseleafjs.org/
 
 ## License 
 
